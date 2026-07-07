@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap');
+
+
+:root {
+
+  --earth:#2C1810;
+  --savanna:#C4873A;
+  --dusk:#8B4513;
+  --canopy:#2D5016;
+  --moss:#4A7A2B;
+  --sky:#1A3A5C;
+
+  --sand:#F5ECD7;
+  --cream:#FAF6EE;
+
+  --gold:#D4A940;
+
+  --white:#FFFFFF;
+
+  --text:#1A1208;
+  --muted:#6B5744;
+
+
+  --font-display:'Playfair Display', serif;
+  --font-body:'Jost', sans-serif;
+
+}
+
+
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
+
+
+html{
+ scroll-behavior:smooth;
+}
+
+
+body{
+
+ font-family:var(--font-body);
+ background:var(--cream);
+ color:var(--text);
+
+}
+
+.navbar{
+
+position:fixed;
+top:0;
+left:0;
+right:0;
+
+z-index:100;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:1.2rem 4rem;
+
+}
+
+
+.logo{
+
+font-family:var(--font-display);
+
+font-size:1.6rem;
+
+color:white;
+
+text-decoration:none;
+
+}
+
+
+.logo span{
+
+color:var(--gold);
+
+}
+
+
+.navbar ul{
+
+display:flex;
+gap:2.5rem;
+
+list-style:none;
+
+align-items:center;
+
+color:white;
+
+}
+
+
+.navbar button{
+
+background:var(--gold);
+
+border:none;
+
+padding:.7rem 1.5rem;
+
+cursor:pointer;
+
+font-weight:600;
+
+}
+
+.hero{
+
+height:100vh;
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+overflow:hidden;
+
+}
+
+
+.hero-bg{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+rgba(26,18,8,.3),
+rgba(26,18,8,.85)
+),
+
+url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5")
+center/cover;
+
+}
+
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+max-width:900px;
+
+color:white;
+
+padding:2rem;
+
+}
+
+
+.hero h1{
+
+font-family:var(--font-display);
+
+font-size:clamp(3rem,7vw,6rem);
+
+line-height:1.05;
+
+}
+
+
+.hero h1 em{
+
+color:var(--gold);
+
+}
+
+
+.hero p{
+
+margin:2rem auto;
+
+max-width:600px;
+
+font-size:1.1rem;
+
+line-height:1.8;
+
+color:#ddd;
+
+}
+
+
+.hero-badge{
+
+color:var(--gold);
+
+letter-spacing:.2em;
+
+font-size:.7rem;
+
+margin-bottom:2rem;
+
+}
+
+
+.primary-btn{
+
+background:var(--gold);
+
+padding:1rem 2rem;
+
+border:none;
+
+margin-right:1rem;
+
+}
+
+
+.outline-btn{
+
+background:transparent;
+
+border:1px solid white;
+
+color:white;
+
+padding:1rem 2rem;
+
+}
+
+.about{
+
+padding:7rem 4rem;
+
+background:var(--cream);
+
+}
+
+
+.about-container{
+
+max-width:1200px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:5rem;
+
+align-items:center;
+
+}
+
+
+
+.about-image{
+
+position:relative;
+
+}
+
+
+
+.about-image img{
+
+width:100%;
+
+height:600px;
+
+object-fit:cover;
+
+border-radius:5px;
+
+}
+
+
+
+.about-badge{
+
+position:absolute;
+
+bottom:-30px;
+
+right:-30px;
+
+background:var(--canopy);
+
+color:white;
+
+padding:2rem;
+
+width:170px;
+
+text-align:center;
+
+border-radius:5px;
+
+}
+
+
+
+.about-badge h3{
+
+font-family:var(--font-display);
+
+font-size:3rem;
+
+color:var(--gold);
+
+}
+
+
+
+.about-badge p{
+
+font-size:.75rem;
+
+text-transform:uppercase;
+
+}
+
+
+
+.section-tag{
+
+color:var(--savanna);
+
+font-size:.75rem;
+
+letter-spacing:.2em;
+
+font-weight:600;
+
+}
+
+
+
+.about-content h2{
+
+font-family:var(--font-display);
+
+font-size:3rem;
+
+margin:1rem 0;
+
+color:var(--earth);
+
+}
+
+
+
+.about-content h2 em{
+
+color:var(--moss);
+
+}
+
+
+
+.about-description{
+
+color:var(--muted);
+
+line-height:1.8;
+
+font-size:1.05rem;
+
+}
+
+
+
+.values{
+
+margin-top:2.5rem;
+
+display:flex;
+
+flex-direction:column;
+
+gap:1.5rem;
+
+}
+
+
+
+.value{
+
+display:flex;
+
+gap:1rem;
+
+}
+
+
+
+.value-icon{
+
+height:42px;
+
+width:42px;
+
+background:var(--sand);
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+
+
+.value h4{
+
+margin-bottom:.3rem;
+
+}
+
+
+
+.value p{
+
+font-size:.9rem;
+
+color:var(--muted);
+
+line-height:1.6;
+
+}
+
+
+
+@media(max-width:900px){
+
+.about-container{
+
+grid-template-columns:1fr;
+
+}
+
+
+.about-badge{
+
+right:0;
+
+}
+
+}
