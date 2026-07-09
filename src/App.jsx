@@ -2,53 +2,51 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import PackageDetails from "./pages/PackageDetails";
+import BookNow from "./pages/BookNow";
+
+function App() {
+
+  return (
+
+    <BrowserRouter>
+
+      <Routes>
+
+        {/* =========================
+            HOME PAGE
+        ========================== */}
+
+        <Route
+          path="/"
+          element={<Home />}
+        />
 
 
+        {/* =========================
+            GENERAL BOOKING PAGE
+        ========================== */}
 
-function App(){
-
-
-return(
-
-<BrowserRouter>
-
-
-<Routes>
+        <Route
+          path="/book-now"
+          element={<BookNow />}
+        />
 
 
-{/* Homepage */}
+        {/* =========================
+            INDIVIDUAL SAFARI PAGE
+        ========================== */}
 
-<Route
+        <Route
+          path="/packages/:id"
+          element={<PackageDetails />}
+        />
 
-path="/"
+      </Routes>
 
-element={<Home/>}
+    </BrowserRouter>
 
-/>
-
-
-
-
-{/* Individual package page */}
-
-<Route
-
-path="/packages/:id"
-
-element={<PackageDetails/>}
-
-/>
-
-
-</Routes>
-
-
-</BrowserRouter>
-
-
-)
+  );
 
 }
-
 
 export default App;

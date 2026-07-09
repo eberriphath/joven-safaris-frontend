@@ -1442,3 +1442,119 @@ margin-top:1.5rem;
 color:var(--moss);
 
 }
+
+/* ======================
+ CONTACT CTA
+====================== */
+
+
+.contact-cta{
+
+padding:7rem 4rem;
+
+background:
+
+linear-gradient(
+rgba(44,24,16,.85),
+rgba(44,24,16,.85)
+),
+
+url("https://images.unsplash.com/photo-1516426122078-c23e76319801");
+
+background-size:cover;
+
+background-position:center;
+
+color:white;
+
+text-align:center;
+
+}
+
+
+
+
+.contact-container{
+
+max-width:800px;
+
+margin:auto;
+
+}
+
+
+
+.contact-container h2{
+
+font-family:var(--font-display);
+
+font-size:3.5rem;
+
+margin:1rem 0;
+
+}
+
+
+
+.contact-container h2 em{
+
+color:var(--gold);
+
+}
+
+
+
+.contact-container p{
+
+color:rgba(255,255,255,.8);
+
+line-height:1.8;
+
+max-width:600px;
+
+margin:auto;
+
+}
+
+
+
+
+.contact-buttons{
+
+margin-top:2.5rem;
+
+display:flex;
+
+justify-content:center;
+
+gap:1rem;
+
+}
+
+
+
+.contact-buttons button{
+
+background:var(--gold);
+
+padding:1rem 2rem;
+
+border:none;
+
+font-weight:600;
+
+cursor:pointer;
+
+}
+
+
+
+.contact-buttons .outline{
+
+background:transparent;
+
+border:1px solid var(--gold);
+
+color:white;
+
+}

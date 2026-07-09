@@ -5,8 +5,9 @@ import Destinations from "../components/Destinations";
 import Sustainability from "../components/Sustainability";
 import FeaturedPackages from "../components/FeaturedPackages";
 import PackageDetails from "../pages/PackageDetails";
-import Reviews from "../components/Reviews"
+import Reviews from "../components/Reviews";
 import ReviewForm from "../components/ReviewForm";
+import ContactCTA from "../components/ContactCTA";
 
 
 function Home(){
@@ -30,6 +31,8 @@ return(
 <Reviews/>
 
 <ReviewForm/>
+
+<ContactCTA/>
 
 </div>
 

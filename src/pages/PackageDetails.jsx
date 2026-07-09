@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import BookingForm from "../components/BookingForm";
 import api from "../api/axios";
 
 
@@ -17,6 +18,7 @@ function PackageDetails(){
 
 
 
+
   // =========================
   // FETCH SINGLE PACKAGE
   // =========================
@@ -28,22 +30,20 @@ function PackageDetails(){
 
     .then((res)=>{
 
-
       setPkg(res.data);
-
 
     })
 
     .catch((err)=>{
 
-
       console.log(err);
-
 
     });
 
 
   },[id]);
+
+
 
 
 
@@ -85,8 +85,7 @@ function PackageDetails(){
 
 
 
-
-  return(
+return(
 
 
 <section className="
@@ -110,8 +109,9 @@ mx-auto
 
 
 
+
 {/* =========================
-    SAFARI IMAGE CARD
+    SAFARI HERO IMAGE
 ========================= */}
 
 
@@ -130,13 +130,8 @@ group
 
 
 
-{/* IMAGE */}
-
-
 {
-
 pkg.image_url ? (
-
 
 <img
 
@@ -157,13 +152,11 @@ group-hover:scale-105
 
 />
 
-
 )
 
 :
 
 (
-
 
 <div className="
 absolute
@@ -179,7 +172,6 @@ Safari Image
 
 </div>
 
-
 )
 
 }
@@ -189,9 +181,7 @@ Safari Image
 
 
 
-
-{/* OVERLAY */}
-
+{/* DARK OVERLAY */}
 
 <div className="
 absolute
@@ -208,8 +198,7 @@ to-transparent
 
 
 
-{/* HERO CONTENT */}
-
+{/* HERO TEXT */}
 
 <div className="
 absolute
@@ -267,24 +256,15 @@ flex-wrap
 gap-6
 mt-6
 text-gray-200
-text-sm
-md:text-base
 ">
 
-
 <span>
-
 ⏱ {pkg.duration}
-
 </span>
 
 
-
-
 <span>
-
 💰 KSh {pkg.price.toLocaleString()}
-
 </span>
 
 
@@ -311,7 +291,7 @@ md:text-base
 
 
 {/* =========================
-    PACKAGE DETAILS
+    PACKAGE INFORMATION
 ========================= */}
 
 
@@ -367,30 +347,19 @@ max-w-4xl
 
 
 
-{/* PRICE + CTA */}
-
-
 <div className="
 mt-10
 pt-8
 border-t
 flex
-flex-col
-md:flex-row
 justify-between
-items-start
-md:items-center
-gap-6
+items-center
 ">
 
 
 
 
-
-
-
 <div>
-
 
 <p className="
 text-xs
@@ -402,6 +371,7 @@ text-gray-500
 Starting From
 
 </p>
+
 
 
 
@@ -423,43 +393,6 @@ KSh {pkg.price.toLocaleString()}
 
 
 
-
-
-
-
-<button
-
-className="
-bg-[#2C1810]
-text-white
-px-10
-py-4
-rounded
-font-semibold
-transition
-duration-300
-hover:bg-[#C4873A]
-"
-
->
-
-Book This Safari
-
-</button>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
 </div>
 
 
@@ -469,12 +402,39 @@ Book This Safari
 
 </div>
 
+
+
+
+
+
+
+
+
+{/* =========================
+    BOOKING FORM
+========================= */}
+
+
+
+<BookingForm
+
+destination={pkg.destination}
+
+/>
+
+
+
+
+
+
+
+</div>
 
 
 </section>
 
 
-  )
+)
 
 
 }

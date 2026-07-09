@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Navbar(){
 
 return(
@@ -18,7 +20,11 @@ Joven <span>Safaris</span>
 
 <li>
 <button>
-Book Now
+<Link to="/book-now">
+
+    Book Now
+
+</Link>
 </button>
 </li>
 
