@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import BookingForm from "../components/BookingForm";
+import BookingForm from "../components/booking/BookingForm";
 import api from "../api/axios";
 
 

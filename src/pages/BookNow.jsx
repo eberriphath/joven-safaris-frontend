@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar";
-import BookingForm from "../components/BookingForm";
+import BookingForm from "../components/booking/BookingForm";
 
 function BookNow() {
 
