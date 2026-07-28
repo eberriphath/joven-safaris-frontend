@@ -19,12 +19,7 @@ KENYA · EAST AFRICA · DUBAI · SOUTH AFRICA
 
 
 <h1>
-
-Where The Wild
-<br/>
-
-Meets <em>Purpose</em>
-
+Where The Wild Meets Purpose
 </h1>
 
 

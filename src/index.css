@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap');
 
 
@@ -47,71 +49,7 @@ body{
 
 }
 
-.navbar{
 
-position:fixed;
-top:0;
-left:0;
-right:0;
-
-z-index:100;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-padding:1.2rem 4rem;
-
-}
-
-
-.logo{
-
-font-family:var(--font-display);
-
-font-size:1.6rem;
-
-color:white;
-
-text-decoration:none;
-
-}
-
-
-.logo span{
-
-color:var(--gold);
-
-}
-
-
-.navbar ul{
-
-display:flex;
-gap:2.5rem;
-
-list-style:none;
-
-align-items:center;
-
-color:white;
-
-}
-
-
-.navbar button{
-
-background:var(--gold);
-
-border:none;
-
-padding:.7rem 1.5rem;
-
-cursor:pointer;
-
-font-weight:600;
-
-}
 
 .hero{
 

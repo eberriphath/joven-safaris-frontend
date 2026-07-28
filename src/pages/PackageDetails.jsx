@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import Navbar from "../components/Navbar";
+
 import BookingForm from "../components/booking/BookingForm";
 import api from "../api/axios";
 
@@ -8,6 +10,7 @@ import api from "../api/axios";
 
 function PackageDetails(){
 
+  
 
   const { id } = useParams();
 
