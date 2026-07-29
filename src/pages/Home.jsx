@@ -8,6 +8,7 @@ import PackageDetails from "../pages/PackageDetails";
 import Reviews from "../components/Reviews";
 import ReviewForm from "../components/ReviewForm";
 import ContactCTA from "../components/ContactCTA";
+import BookingCTA from "../components/BookingCTA";
 
 
 function Home(){
@@ -31,6 +32,8 @@ return(
 <Reviews/>
 
 <ReviewForm/>
+
+<BookingCTA/>
 
 <ContactCTA/>
 

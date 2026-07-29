@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap');
 
 
 :root {
@@ -53,7 +52,7 @@ body{
 
 .hero{
 
-height:100vh;
+min-height:100vh;
 
 position:relative;
 
@@ -64,6 +63,8 @@ align-items:center;
 justify-content:center;
 
 overflow:hidden;
+
+padding-top:80px;
 
 }
 
@@ -268,7 +269,59 @@ text-transform:uppercase;
 
 }
 
+@keyframes fadeUp {
 
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes slowZoom {
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.08);
+    }
+
+}
+
+.fade-up{
+
+    animation:fadeUp .9s ease forwards;
+
+}
+
+.fade-up-delay{
+
+    opacity:0;
+    animation:fadeUp .9s ease forwards;
+    animation-delay:.3s;
+
+}
+
+.fade-up-delay2{
+
+    opacity:0;
+    animation:fadeUp .9s ease forwards;
+    animation-delay:.6s;
+
+}
+
+.hero-zoom{
+
+    animation:slowZoom 20s linear infinite alternate;
+
+}
 
 .section-tag{
 
@@ -879,7 +932,6 @@ align-items:center;
 }
 
 
-
 .package-footer button{
 
 background:var(--gold);
@@ -1030,9 +1082,6 @@ text-transform:uppercase;
 }
 
 
-
-
-
 .package-content h3{
 
 font-family:var(--font-display);
@@ -1044,8 +1093,6 @@ margin:1rem 0;
 color:var(--earth);
 
 }
-
-
 
 
 
@@ -1072,9 +1119,6 @@ align-items:center;
 margin-top:1.5rem;
 
 }
-
-
-
 
 
 .package-footer strong{
@@ -1125,7 +1169,6 @@ text-align:center;
 margin-bottom:4rem;
 
 }
-
 
 
 .review-header h2{
@@ -1485,7 +1528,17 @@ cursor:pointer;
 
 }
 
+@keyframes heroZoom{
 
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.12);
+    }
+
+}
 
 .contact-buttons .outline{
 
@@ -1494,5 +1547,51 @@ background:transparent;
 border:1px solid var(--gold);
 
 color:white;
+
+}
+
+@media(max-width:768px){
+
+    .hero{
+
+        padding-top:95px;
+
+        min-height:100svh;
+
+    }
+
+
+    .hero-content{
+
+        padding-left:1.5rem;
+        padding-right:1.5rem;
+
+    }
+
+
+    .hero-badge{
+
+        margin-top:1rem;
+
+        font-size:.65rem;
+
+    }
+
+
+    .hero h1{
+
+        font-size:clamp(2.5rem,10vw,4rem);
+
+    }
+
+
+    .hero p{
+
+        font-size:1rem;
+
+        margin-top:1.5rem;
+
+    }
+
 
 }

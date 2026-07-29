@@ -24,7 +24,7 @@ function Sustainability() {
 
   return (
 
-    <section className="sustainability">
+    <section id="sustainability" className="sustainability">
 
       <div className="sustainability-header">
 

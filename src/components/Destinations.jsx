@@ -46,14 +46,13 @@ image:
 
 return(
 
-<section className="destinations">
-
+<section id="destinations" className="destinations scroll-mt-28">
 
 <div className="destination-header">
 
 
 <span className="section-tag">
-WHERE WE GO
+DESTINATIONS
 </span>
 
 
