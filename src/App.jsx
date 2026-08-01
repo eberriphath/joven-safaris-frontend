@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import PackageDetails from "./pages/PackageDetails";
 import BookNow from "./pages/BookNow";
+import Experiences from "./pages/Experiences";
 
 function App() {
 
@@ -41,7 +42,14 @@ function App() {
           element={<PackageDetails />}
         />
 
+        <Route
+         path="/experiences"
+         element={<Experiences />}
+        />
+        
+
       </Routes>
+
 
     </BrowserRouter>
 

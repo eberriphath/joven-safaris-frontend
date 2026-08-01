@@ -17,7 +17,7 @@ function BookingCTA(){
             <div
                 className="
                 w-full
-                max-w-7xl
+                max-w-8xl
                 mx-auto
                 flex
                 flex-col
@@ -25,6 +25,8 @@ function BookingCTA(){
                 text-center
                 gap-8
                 px-6
+                md:px-8
+                lg:px-0
                 "
             >
 

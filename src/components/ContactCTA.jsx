@@ -36,12 +36,6 @@ we create safari experiences that stay with you forever.
 <div className="contact-buttons">
 
 
-<button>
-
-Explore Safaris
-
-</button>
-
 
 <button className="outline">
 

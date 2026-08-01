@@ -5,12 +5,48 @@ function Hero(){
 
     return(
 
-        <section className="hero">
+        <section
+
+        className="
+        relative
+        h-screen
+        min-h-[700px]
+        overflow-hidden
+        flex
+        items-center
+        justify-center
+        "
+
+        >
 
 
             {/* BACKGROUND */}
 
-            <div className="hero-bg hero-zoom"></div>
+            <div
+
+            className="
+            absolute
+            inset-0
+            bg-cover
+            bg-center
+            hero-zoom
+            "
+
+            style={{
+
+                backgroundImage:
+
+                `
+                linear-gradient(
+                rgba(26,18,8,.35),
+                rgba(26,18,8,.85)
+                ),
+                url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5")
+                `
+
+            }}
+
+            />
 
 
 
@@ -21,9 +57,16 @@ function Hero(){
             {/* CONTENT */}
 
             <div
+
             className="
-            hero-content
+            relative
+            z-10
+            max-w-5xl
+            px-6
+            text-center
+            text-white
             "
+
             >
 
 
@@ -32,13 +75,18 @@ function Hero(){
 
 
 
-
                 <div
+
                 className="
-                hero-badge
-                fade-up
+                text-[#D4A940]
+                uppercase
+                tracking-[0.3em]
+                text-xs
+                font-semibold
                 mb-5
+                fade-up
                 "
+
                 >
 
                     KENYA · EAST AFRICA · DUBAI · SOUTH AFRICA
@@ -53,10 +101,17 @@ function Hero(){
 
 
 
+
                 <h1
+
                 className="
                 fade-up
+                text-5xl
+                md:text-7xl
+                font-serif
+                leading-tight
                 "
+
                 >
 
                     Where The Wild Meets Purpose
@@ -72,18 +127,23 @@ function Hero(){
 
 
                 <p
+
                 className="
                 fade-up-delay
+                mt-6
+                max-w-2xl
+                mx-auto
+                text-white/80
+                text-lg
+                leading-relaxed
                 "
+
                 >
 
                     Extraordinary safari journeys rooted in sustainability,
                     community, and unforgettable experiences.
 
                 </p>
-
-
-
 
 
 
@@ -109,32 +169,38 @@ function Hero(){
 
                     <a
 
-                    href="#destinations"
+href="#destinations"
 
-                    className="
-                    primary-btn
-                    inline-flex
-                    items-center
-                    justify-center
-                    hover:-translate-y-1
-                    hover:shadow-xl
-                    transition-all
-                    duration-300
-                    "
+className="
+inline-flex
+items-center
+justify-center
+bg-[#D4A940]
+text-[#2C1810]
+px-12
+py-5
+rounded-sm
+uppercase
+tracking-[0.22em]
+text-sm
+font-bold
+shadow-[0_15px_35px_rgba(212,169,64,0.35)]
+hover:bg-white
+hover:-translate-y-1
+hover:shadow-[0_20px_45px_rgba(0,0,0,0.25)]
+transition-all
+duration-500
+"
 
-                    >
+>
 
-                        Explore Destinations
+    Explore Destinations
 
-                    </a>
+</a>
 
 
 
                 </div>
-
-
-
-
 
 
 
@@ -171,58 +237,13 @@ function Hero(){
 
 
 
-                    <Stat
+                    <Stat number="5" label="Years Experience"/>
 
-                    number="5"
+                    <Stat number="100+" label="Safari Tours"/>
 
-                    label="Years Experience"
+                    <Stat number="4" label="Destinations"/>
 
-                    />
-
-
-
-
-
-
-
-                    <Stat
-
-                    number="100+"
-
-                    label="Safari Tours"
-
-                    />
-
-
-
-
-
-
-
-
-                    <Stat
-
-                    number="4"
-
-                    label="Destinations"
-
-                    />
-
-
-
-
-
-
-
-
-                    <Stat
-
-                    number="98%"
-
-                    label="Happy Guests"
-
-                    />
-
+                    <Stat number="98%" label="Happy Guests"/>
 
 
 
@@ -263,77 +284,57 @@ function Hero(){
 
 
 
-
 function Stat({
 
-    number,
+number,
 
-    label
+label
 
 }){
 
 
-    return(
+return(
 
-        <div
-
-        className="
-        text-center
-        "
-
-        >
+<div className="text-center">
 
 
+<h3
+
+className="
+text-xl
+md:text-2xl
+font-serif
+text-[#D4A940]
+"
+
+>
+
+{number}
+
+</h3>
 
 
-            <h3
+<p
 
-            className="
-            text-xl
-            md:text-2xl
-            font-serif
-            text-[#D4A940]
-            "
+className="
+text-white/70
+uppercase
+tracking-[0.15em]
+text-[9px]
+md:text-[10px]
+mt-1
+"
 
-            >
+>
 
-                {number}
+{label}
 
-            </h3>
-
-
-
-
+</p>
 
 
+</div>
 
-            <p
-
-            className="
-            text-white/70
-            uppercase
-            tracking-[0.15em]
-            text-[9px]
-            md:text-[10px]
-            mt-1
-            "
-
-            >
-
-                {label}
-
-            </p>
-
-
-
-
-
-
-
-        </div>
-
-    )
-
+)
 
 }
 

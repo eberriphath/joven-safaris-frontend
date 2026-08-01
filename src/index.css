@@ -48,131 +48,21 @@ body{
 
 }
 
+.hero-zoom{
 
-
-.hero{
-
-min-height:100vh;
-
-position:relative;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-overflow:hidden;
-
-padding-top:80px;
+animation:slowZoom 20s linear infinite alternate;
 
 }
 
+@keyframes slowZoom{
 
-.hero-bg{
-
-position:absolute;
-
-inset:0;
-
-background:
-
-linear-gradient(
-rgba(26,18,8,.3),
-rgba(26,18,8,.85)
-),
-
-url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5")
-center/cover;
-
+from{
+transform:scale(1);
 }
 
-
-.hero-content{
-
-position:relative;
-
-z-index:2;
-
-text-align:center;
-
-max-width:900px;
-
-color:white;
-
-padding:2rem;
-
+to{
+transform:scale(1.12);
 }
-
-
-.hero h1{
-
-font-family:var(--font-display);
-
-font-size:clamp(3rem,7vw,6rem);
-
-line-height:1.05;
-
-}
-
-
-.hero h1 em{
-
-color:var(--gold);
-
-}
-
-
-.hero p{
-
-margin:2rem auto;
-
-max-width:600px;
-
-font-size:1.1rem;
-
-line-height:1.8;
-
-color:#ddd;
-
-}
-
-
-.hero-badge{
-
-color:var(--gold);
-
-letter-spacing:.2em;
-
-font-size:.7rem;
-
-margin-bottom:2rem;
-
-}
-
-
-.primary-btn{
-
-background:var(--gold);
-
-padding:1rem 2rem;
-
-border:none;
-
-margin-right:1rem;
-
-}
-
-
-.outline-btn{
-
-background:transparent;
-
-border:1px solid white;
-
-color:white;
-
-padding:1rem 2rem;
 
 }
 
@@ -1528,17 +1418,7 @@ cursor:pointer;
 
 }
 
-@keyframes heroZoom{
 
-    from{
-        transform:scale(1);
-    }
-
-    to{
-        transform:scale(1.12);
-    }
-
-}
 
 .contact-buttons .outline{
 
@@ -1547,51 +1427,5 @@ background:transparent;
 border:1px solid var(--gold);
 
 color:white;
-
-}
-
-@media(max-width:768px){
-
-    .hero{
-
-        padding-top:95px;
-
-        min-height:100svh;
-
-    }
-
-
-    .hero-content{
-
-        padding-left:1.5rem;
-        padding-right:1.5rem;
-
-    }
-
-
-    .hero-badge{
-
-        margin-top:1rem;
-
-        font-size:.65rem;
-
-    }
-
-
-    .hero h1{
-
-        font-size:clamp(2.5rem,10vw,4rem);
-
-    }
-
-
-    .hero p{
-
-        font-size:1rem;
-
-        margin-top:1.5rem;
-
-    }
-
 
 }
