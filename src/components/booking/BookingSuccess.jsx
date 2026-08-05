@@ -1,3 +1,5 @@
+import "./BookingSuccess.css";
+
 function BookingSuccess(){
 
 

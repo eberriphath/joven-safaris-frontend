@@ -1,0 +1,75 @@
+.booking-page {
+
+    min-height:100vh;
+
+    background:#F7F2E9;
+
+    padding-top:170px;
+
+    padding-bottom:100px;
+
+    padding-left:20px;
+
+    padding-right:20px;
+
+}
+
+
+/* HEADER */
+
+.booking-page-header {
+
+    max-width:850px;
+
+    margin:0 auto 60px;
+
+    text-align:center;
+
+}
+
+
+.booking-tag {
+
+    color:#C4873A;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:.35em;
+
+    text-transform:uppercase;
+
+}
+
+
+
+.booking-page-header h1 {
+
+    margin-top:20px;
+
+    font-family:"Playfair Display", serif;
+
+    color:#2C1810;
+
+    font-size:clamp(2.5rem,5vw,4rem);
+
+    line-height:1.1;
+
+}
+
+
+
+.booking-page-header p {
+
+    margin:25px auto 0;
+
+    max-width:720px;
+
+    color:#6B5744;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}

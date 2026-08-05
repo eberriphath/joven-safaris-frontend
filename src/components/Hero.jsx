@@ -5,50 +5,16 @@ function Hero(){
 
     return(
 
-        <section
-
-        className="
-        relative
-        h-screen
-        min-h-[700px]
-        overflow-hidden
-        flex
-        items-center
-        justify-center
-        "
-
-        >
+        <section className="hero">
 
 
             {/* BACKGROUND */}
 
-            <div
+            <div className="hero-background">
 
-            className="
-            absolute
-            inset-0
-            bg-cover
-            bg-center
-            hero-zoom
-            "
+                <div className="hero-overlay"></div>
 
-            style={{
-
-                backgroundImage:
-
-                `
-                linear-gradient(
-                rgba(26,18,8,.35),
-                rgba(26,18,8,.85)
-                ),
-                url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5")
-                `
-
-            }}
-
-            />
-
-
+            </div>
 
 
 
@@ -56,65 +22,23 @@ function Hero(){
 
             {/* CONTENT */}
 
-            <div
-
-            className="
-            relative
-            z-10
-            max-w-5xl
-            px-6
-            text-center
-            text-white
-            "
-
-            >
+            <div className="hero-content">
 
 
 
-
-
-
-
-                <div
-
-                className="
-                text-[#D4A940]
-                uppercase
-                tracking-[0.3em]
-                text-xs
-                font-semibold
-                mb-5
-                fade-up
-                "
-
-                >
+                <span className="hero-location">
 
                     KENYA · EAST AFRICA · DUBAI · SOUTH AFRICA
 
-                </div>
+                </span>
 
 
 
 
 
+                <h1>
 
-
-
-
-
-                <h1
-
-                className="
-                fade-up
-                text-5xl
-                md:text-7xl
-                font-serif
-                leading-tight
-                "
-
-                >
-
-                    Where The Wild Meets Purpose
+                    Where The Wild Meets <em>Purpose</em>
 
                 </h1>
 
@@ -122,26 +46,11 @@ function Hero(){
 
 
 
+                <p>
 
-
-
-
-                <p
-
-                className="
-                fade-up-delay
-                mt-6
-                max-w-2xl
-                mx-auto
-                text-white/80
-                text-lg
-                leading-relaxed
-                "
-
-                >
-
-                    Extraordinary safari journeys rooted in sustainability,
-                    community, and unforgettable experiences.
+                    Extraordinary safari journeys rooted in
+                    sustainability, community, and unforgettable
+                    African experiences.
 
                 </p>
 
@@ -151,56 +60,24 @@ function Hero(){
 
 
 
+                {/* CTA BUTTON */}
 
+                <Link
 
-                {/* BUTTON */}
+                    to="/#destinations"
 
-                <div
-
-                className="
-                fade-up-delay2
-                mt-8
-                mb-14
-                "
+                    className="hero-button"
 
                 >
 
+                    Explore Destinations
+
+                    <span className="button-arrow">
+                        →
+                    </span>
 
 
-                    <a
-
-href="#destinations"
-
-className="
-inline-flex
-items-center
-justify-center
-bg-[#D4A940]
-text-[#2C1810]
-px-12
-py-5
-rounded-sm
-uppercase
-tracking-[0.22em]
-text-sm
-font-bold
-shadow-[0_15px_35px_rgba(212,169,64,0.35)]
-hover:bg-white
-hover:-translate-y-1
-hover:shadow-[0_20px_45px_rgba(0,0,0,0.25)]
-transition-all
-duration-500
-"
-
->
-
-    Explore Destinations
-
-</a>
-
-
-
-                </div>
+                </Link>
 
 
 
@@ -212,50 +89,51 @@ duration-500
 
                 {/* TRUST STATS */}
 
-                <div
-
-                className="
-                fade-up-delay2
-                grid
-                grid-cols-2
-                md:grid-cols-4
-                gap-5
-                md:gap-8
-                max-w-4xl
-                mx-auto
-                border-t
-                border-white/20
-                pt-6
-                "
-
-                >
+                <div className="hero-stats">
 
 
 
+                    <Stat
+
+                        number="5+"
+
+                        label="Years Experience"
+
+                    />
 
 
 
+                    <Stat
 
+                        number="100+"
 
-                    <Stat number="5" label="Years Experience"/>
+                        label="Safari Tours"
 
-                    <Stat number="100+" label="Safari Tours"/>
-
-                    <Stat number="4" label="Destinations"/>
-
-                    <Stat number="98%" label="Happy Guests"/>
-
+                    />
 
 
 
+                    <Stat
+
+                        number="4"
+
+                        label="Destinations"
+
+                    />
+
+
+
+                    <Stat
+
+                        number="98%"
+
+                        label="Happy Guests"
+
+                    />
 
 
 
                 </div>
-
-
-
-
 
 
 
@@ -268,12 +146,21 @@ duration-500
 
 
 
+            {/* SCROLL INDICATOR */}
+
+            <div className="scroll-indicator">
+
+                SCROLL ↓
+
+            </div>
+
+
+
 
 
         </section>
 
-
-    )
+    );
 
 }
 
@@ -283,58 +170,32 @@ duration-500
 
 
 
-
-function Stat({
-
-number,
-
-label
-
-}){
+function Stat({number,label}){
 
 
-return(
+    return(
 
-<div className="text-center">
-
-
-<h3
-
-className="
-text-xl
-md:text-2xl
-font-serif
-text-[#D4A940]
-"
-
->
-
-{number}
-
-</h3>
+        <div className="hero-stat">
 
 
-<p
+            <h3>
 
-className="
-text-white/70
-uppercase
-tracking-[0.15em]
-text-[9px]
-md:text-[10px]
-mt-1
-"
+                {number}
 
->
-
-{label}
-
-</p>
+            </h3>
 
 
-</div>
+            <span>
 
-)
+                {label}
+
+            </span>
+
+
+
+        </div>
+
+    );
 
 }
 

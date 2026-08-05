@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 function Destinations(){
 
 const destinations = [
@@ -5,6 +8,7 @@ const destinations = [
 {
 region:"East Africa",
 name:"Kenya",
+path:"/destinations/kenya",
 description:
 "Witness the Great Migration, explore the Maasai Mara, and experience the Big Five.",
 image:
@@ -15,6 +19,7 @@ image:
 {
 region:"Middle East",
 name:"Dubai",
+path:"/destinations/dubai",
 description:
 "Experience golden dunes, desert adventures and Arabian culture.",
 image:
@@ -25,6 +30,7 @@ image:
 {
 region:"Southern Africa",
 name:"South Africa",
+path:"/destinations/south-africa",
 description:
 "Discover Kruger National Park and unforgettable wildlife encounters.",
 image:
@@ -35,6 +41,7 @@ image:
 {
 region:"East Africa",
 name:"East Africa",
+path:"/destinations/east-africa",
 description:
 "Explore Tanzania, Uganda and Rwanda's untouched wilderness.",
 image:
@@ -46,13 +53,16 @@ image:
 
 return(
 
-<section id="destinations" className="destinations scroll-mt-28">
+<section 
+id="destinations" 
+className="destinations scroll-mt-28"
+>
 
 <div className="destination-header">
 
 
 <span className="section-tag">
-DESTINATIONS
+WHERE WE GO
 </span>
 
 
@@ -62,10 +72,8 @@ Four <em>Worlds</em>, One Journey
 
 
 <p>
-
 From Kenya's savannahs to Dubai's deserts and beyond,
 we create unforgettable adventures.
-
 </p>
 
 
@@ -92,27 +100,40 @@ alt={destination.name}
 />
 
 
+
 <div className="destination-overlay">
 
 
-<span>
+<span className="destination-region">
 {destination.region}
 </span>
 
 
-<h3>
+
+<h3 className="destination-name">
 {destination.name}
 </h3>
 
 
-<p>
+
+<p className="destination-description">
 {destination.description}
 </p>
 
 
-<button>
+
+<Link
+
+to={destination.path}
+
+className="destination-button"
+
+>
+
 Explore
-</button>
+
+</Link>
+
 
 
 </div>

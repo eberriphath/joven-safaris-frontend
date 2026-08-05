@@ -1,3 +1,6 @@
+import "./ProgressIndicator.css";
+
+
 function ProgressIndicator({ step }) {
 
 
@@ -13,19 +16,14 @@ function ProgressIndicator({ step }) {
 
     return (
 
-        <div className="
-        mb-10
-        ">
+        <div className="progress-wrapper">
 
-            <div className="
-            flex
-            justify-between
-            items-center
-            ">
+
+            <div className="progress-container">
 
 
                 {
-                    steps.map((item,index)=>{
+                    steps.map((item, index) => {
 
 
                         const stepNumber = index + 1;
@@ -33,41 +31,22 @@ function ProgressIndicator({ step }) {
                         const active = stepNumber <= step;
 
 
+
                         return (
 
                             <div
                             key={item}
-                            className="
-                            flex
-                            flex-col
-                            items-center
-                            relative
-                            flex-1
-                            "
+                            className="progress-step"
                             >
 
 
-                                {/* CIRCLE */}
+
+                                {/* STEP CIRCLE */}
 
                                 <div
                                 className={`
-                                w-10
-                                h-10
-                                rounded-full
-                                flex
-                                items-center
-                                justify-center
-                                font-semibold
-                                transition
-
-                                ${
-                                    active
-                                    ?
-                                    "bg-[#C4873A] text-white"
-                                    :
-                                    "bg-gray-200 text-gray-500"
-                                }
-
+                                progress-circle
+                                ${active ? "active" : "inactive"}
                                 `}
                                 >
 
@@ -79,22 +58,14 @@ function ProgressIndicator({ step }) {
 
 
 
-                                {/* LABEL */}
+
+
+                                {/* STEP LABEL */}
 
                                 <span
                                 className={`
-                                text-xs
-                                mt-3
-                                font-medium
-
-                                ${
-                                    active
-                                    ?
-                                    "text-[#2C1810]"
-                                    :
-                                    "text-gray-400"
-                                }
-
+                                progress-label
+                                ${active ? "active" : "inactive"}
                                 `}
                                 >
 
@@ -107,28 +78,22 @@ function ProgressIndicator({ step }) {
 
 
 
-                                {/* LINE */}
+
+                                {/* CONNECTING LINE */}
 
                                 {
                                     stepNumber !== steps.length && (
 
                                         <div
                                         className={`
-                                        absolute
-                                        top-5
-                                        left-1/2
-                                        w-full
-                                        h-[2px]
-                                        -z-10
-
+                                        progress-line
                                         ${
                                             stepNumber < step
                                             ?
-                                            "bg-[#C4873A]"
+                                            "completed"
                                             :
-                                            "bg-gray-200"
+                                            "pending"
                                         }
-
                                         `}
                                         >
 
@@ -139,13 +104,15 @@ function ProgressIndicator({ step }) {
 
 
 
+
                             </div>
 
-                        )
+                        );
 
 
                     })
                 }
+
 
 
             </div>
@@ -153,7 +120,7 @@ function ProgressIndicator({ step }) {
 
         </div>
 
-    )
+    );
 
 
 }

@@ -60,9 +60,7 @@ function TravellerDetails({
 
         onSubmit={handleSubmit}
 
-        className="
-        space-y-8
-        "
+        className="booking-step"
 
         >
 
@@ -70,21 +68,14 @@ function TravellerDetails({
 
 
 
-            <div>
+            <div className="step-header">
 
-                <h2 className="
-                text-3xl
-                font-serif
-                text-[#2C1810]
-                mb-2
-                ">
+                <h2>
                     Traveller Information
                 </h2>
 
 
-                <p className="
-                text-gray-500
-                ">
+                <p>
                     Tell us who will be joining this safari.
                 </p>
 
@@ -101,19 +92,10 @@ function TravellerDetails({
 
             {/* RESIDENTS */}
 
-            <div className="
-            bg-[#FAF6EE]
-            rounded-xl
-            p-6
-            ">
+            <div className="traveller-card">
 
 
-                <h3 className="
-                text-xl
-                font-semibold
-                text-[#2C1810]
-                mb-5
-                ">
+                <h3>
                     Residents
                 </h3>
 
@@ -170,19 +152,10 @@ function TravellerDetails({
 
             {/* NON RESIDENTS */}
 
-            <div className="
-            bg-[#FAF6EE]
-            rounded-xl
-            p-6
-            ">
+            <div className="traveller-card">
 
 
-                <h3 className="
-                text-xl
-                font-semibold
-                text-[#2C1810]
-                mb-5
-                ">
+                <h3>
                     Non-Residents
                 </h3>
 
@@ -239,11 +212,7 @@ function TravellerDetails({
 
             {/* BUTTONS */}
 
-            <div className="
-            flex
-            justify-between
-            pt-4
-            ">
+            <div className="step-actions">
 
 
 
@@ -254,13 +223,8 @@ function TravellerDetails({
                 onClick={previousStep}
 
                 className="
-                border
-                border-[#2C1810]
-                text-[#2C1810]
-                px-8
-                py-3
-                rounded-lg
-                font-semibold
+                step-button
+                step-button-secondary
                 "
 
                 >
@@ -280,14 +244,8 @@ function TravellerDetails({
                 type="submit"
 
                 className="
-                bg-[#2C1810]
-                text-white
-                px-8
-                py-3
-                rounded-lg
-                font-semibold
-                hover:bg-[#C4873A]
-                transition
+                step-button
+                step-button-primary
                 "
 
                 >
@@ -329,32 +287,17 @@ function Counter({
 
     return (
 
-        <div className="
-        flex
-        justify-between
-        items-center
-        bg-white
-        rounded-lg
-        p-4
-        mb-4
-        ">
+        <div className="counter-row">
 
 
-            <span className="
-            font-medium
-            text-gray-700
-            ">
+            <span>
                 {label}
             </span>
 
 
 
 
-            <div className="
-            flex
-            items-center
-            gap-4
-            ">
+            <div className="counter-controls">
 
 
                 <button
@@ -363,15 +306,11 @@ function Counter({
 
                 onClick={decrease}
 
-                className="
-                w-8
-                h-8
-                rounded-full
-                bg-gray-200
-                "
+                className="counter-minus"
+
                 >
 
-                    -
+                    −
 
                 </button>
 
@@ -379,12 +318,10 @@ function Counter({
 
 
 
-                <span className="
-                font-bold
-                w-5
-                text-center
-                ">
+                <span className="counter-number">
+
                     {value}
+
                 </span>
 
 
@@ -397,13 +334,8 @@ function Counter({
 
                 onClick={increase}
 
-                className="
-                w-8
-                h-8
-                rounded-full
-                bg-[#C4873A]
-                text-white
-                "
+                className="counter-plus"
+
                 >
 
                     +

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function EmergencyContact({
     formData,
     updateFormData,
@@ -5,379 +7,228 @@ function EmergencyContact({
     previousStep
 }) {
 
+    const [error, setError] = useState("");
 
-
-    function handleSubmit(e){
+    function handleSubmit(e) {
 
         e.preventDefault();
 
-
-
-        if(
+        if (
             !formData.emergency_contact_name ||
             !formData.emergency_contact_phone ||
             !formData.emergency_contact_relationship
-        ){
+        ) {
 
-            alert(
-                "Please complete emergency contact details."
+            setError(
+                "Please complete emergency contact details before continuing."
             );
 
             return;
 
         }
 
-
+        setError("");
 
         nextStep();
 
     }
 
-
-
-
-
-
     return (
 
         <form
-
-        onSubmit={handleSubmit}
-
-        className="
-        space-y-6
-        "
-
+            onSubmit={handleSubmit}
+            className="booking-step"
         >
 
+            <div className="step-header">
 
-
-
-
-            <div>
-
-                <h2 className="
-                text-3xl
-                font-serif
-                text-[#2C1810]
-                mb-2
-                ">
+                <h2>
                     Emergency Contact
                 </h2>
 
-
-                <p className="
-                text-gray-500
-                ">
+                <p>
                     Provide someone we can reach if needed during your safari.
                 </p>
 
-
             </div>
 
+            {
+                error && (
 
+                    <div className="form-error">
 
+                        <span>
+                            ⚠
+                        </span>
 
+                        <p>
+                            {error}
+                        </p>
 
+                    </div>
 
+                )
+            }
 
+            {/* CONTACT NAME */}
 
+            <div className="form-group">
 
-            {/* NAME */}
-
-            <div>
-
-
-                <label className="
-                block
-                text-sm
-                font-semibold
-                text-gray-700
-                mb-2
-                ">
-
+                <label>
                     Contact Name *
-
                 </label>
 
-
-
                 <input
-
-                type="text"
-
-                value={formData.emergency_contact_name}
-
-                onChange={(e)=>
-
-                    updateFormData(
-                        "emergency_contact_name",
-                        e.target.value
-                    )
-
-                }
-
-                placeholder="Emergency contact full name"
-
-                className="
-                w-full
-                border
-                rounded-lg
-                p-3
-                focus:outline-none
-                focus:ring-2
-                focus:ring-[#C4873A]
-                "
-
+                    type="text"
+                    value={formData.emergency_contact_name}
+                    onChange={(e) =>
+                        updateFormData(
+                            "emergency_contact_name",
+                            e.target.value
+                        )
+                    }
+                    placeholder="Emergency contact full name"
                 />
-
 
             </div>
 
+            {/* CONTACT PHONE */}
 
+            <div className="form-group">
 
-
-
-
-
-
-
-            {/* PHONE */}
-
-            <div>
-
-
-                <label className="
-                block
-                text-sm
-                font-semibold
-                text-gray-700
-                mb-2
-                ">
-
+                <label>
                     Contact Phone *
-
                 </label>
 
-
-
-
                 <input
-
-                type="tel"
-
-                value={formData.emergency_contact_phone}
-
-                onChange={(e)=>
-
-                    updateFormData(
-                        "emergency_contact_phone",
-                        e.target.value
-                    )
-
-                }
-
-                placeholder="+254..."
-
-                className="
-                w-full
-                border
-                rounded-lg
-                p-3
-                focus:outline-none
-                focus:ring-2
-                focus:ring-[#C4873A]
-                "
-
+                    type="tel"
+                    value={formData.emergency_contact_phone}
+                    onChange={(e) =>
+                        updateFormData(
+                            "emergency_contact_phone",
+                            e.target.value
+                        )
+                    }
+                    placeholder="+254..."
                 />
 
-
             </div>
-
-
-
-
-
-
-
-
 
             {/* RELATIONSHIP */}
 
-            <div>
+            <div className="form-group">
 
-
-                <label className="
-                block
-                text-sm
-                font-semibold
-                text-gray-700
-                mb-2
-                ">
-
+                <label>
                     Relationship *
-
                 </label>
 
-
-
-
-
                 <select
-
-                value={
-                    formData.emergency_contact_relationship
-                }
-
-                onChange={(e)=>
-
-                    updateFormData(
-                        "emergency_contact_relationship",
-                        e.target.value
-                    )
-
-                }
-
-                className="
-                w-full
-                border
-                rounded-lg
-                p-3
-                "
-
+                    value={formData.emergency_contact_relationship}
+                    onChange={(e) =>
+                        updateFormData(
+                            "emergency_contact_relationship",
+                            e.target.value
+                        )
+                    }
                 >
-
 
                     <option value="">
                         Select relationship
                     </option>
 
-
                     <option value="Spouse">
                         Spouse
                     </option>
-
 
                     <option value="Parent">
                         Parent
                     </option>
 
-
                     <option value="Sibling">
                         Sibling
                     </option>
-
 
                     <option value="Child">
                         Child
                     </option>
 
-
                     <option value="Friend">
                         Friend
                     </option>
-
 
                     <option value="Relative">
                         Relative
                     </option>
 
-
                     <option value="Guardian">
                         Guardian
                     </option>
-
 
                     <option value="Other">
                         Other
                     </option>
 
-
                 </select>
-
 
             </div>
 
+            {/* PERSONALIZE YOUR SAFARI */}
 
+            <div className="form-group">
 
+                <label>
+                    Help us personalize your safari
+                </label>
 
+                <textarea
+                    rows="5"
+                    value={formData.special_requests}
+                    onChange={(e) =>
+                        updateFormData(
+                            "special_requests",
+                            e.target.value
+                        )
+                    }
+                    placeholder="Dietary requirements, honeymoon arrangements, accessibility needs, birthday celebrations, photography interests, airport pickup preferences, or anything else you'd like us to know. (Optional)"
+                />
 
+                <small className="form-helper">
+                    Optional — the more we know, the better we can tailor your safari.
+                </small>
 
-
-
+            </div>
 
             {/* BUTTONS */}
 
-            <div className="
-            flex
-            justify-between
-            pt-6
-            ">
-
+            <div className="step-actions">
 
                 <button
-
-                type="button"
-
-                onClick={previousStep}
-
-                className="
-                border
-                border-[#2C1810]
-                text-[#2C1810]
-                px-8
-                py-3
-                rounded-lg
-                font-semibold
-                "
-
+                    type="button"
+                    onClick={previousStep}
+                    className="
+                    step-button
+                    step-button-secondary
+                    "
                 >
-
                     ← Back
-
                 </button>
-
-
-
-
-
-
 
                 <button
-
-                type="submit"
-
-                className="
-                bg-[#2C1810]
-                text-white
-                px-8
-                py-3
-                rounded-lg
-                font-semibold
-                hover:bg-[#C4873A]
-                transition
-                "
-
+                    type="submit"
+                    className="
+                    step-button
+                    step-button-primary
+                    "
                 >
-
                     Continue →
-
                 </button>
-
-
 
             </div>
 
-
-
-
-
         </form>
 
-    )
+    );
 
 }
-
-
 
 export default EmergencyContact;

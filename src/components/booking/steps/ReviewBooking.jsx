@@ -7,31 +7,27 @@ function ReviewBooking({
 
     return (
 
-        <div className="
-        space-y-8
-        ">
+        <div className="review-booking">
 
 
 
-            <div>
+            {/* HEADER */}
 
-                <h2 className="
-                text-3xl
-                font-serif
-                text-[#2C1810]
-                mb-2
-                ">
+            <div className="review-header">
+
+
+                <h2>
                     Review Your Booking
                 </h2>
 
 
-                <p className="
-                text-gray-500
-                ">
+                <p>
                     Please confirm your details before submitting your safari request.
                 </p>
 
+
             </div>
+
 
 
 
@@ -152,38 +148,26 @@ function ReviewBooking({
 
 
                 <ReviewItem
-
                     label="Resident Adults"
-
                     value={formData.resident_adults}
-
                 />
 
 
                 <ReviewItem
-
                     label="Resident Children"
-
                     value={formData.resident_children}
-
                 />
 
 
                 <ReviewItem
-
                     label="Non-Resident Adults"
-
                     value={formData.non_resident_adults}
-
                 />
 
 
                 <ReviewItem
-
                     label="Non-Resident Children"
-
                     value={formData.non_resident_children}
-
                 />
 
 
@@ -197,41 +181,26 @@ function ReviewBooking({
 
 
 
-            {/* EMERGENCY */}
+            {/* EMERGENCY CONTACT */}
 
             <ReviewSection title="Emergency Contact">
 
 
                 <ReviewItem
-
                     label="Name"
-
-                    value={
-                        formData.emergency_contact_name
-                    }
-
+                    value={formData.emergency_contact_name}
                 />
 
 
                 <ReviewItem
-
                     label="Phone"
-
-                    value={
-                        formData.emergency_contact_phone
-                    }
-
+                    value={formData.emergency_contact_phone}
                 />
 
 
                 <ReviewItem
-
                     label="Relationship"
-
-                    value={
-                        formData.emergency_contact_relationship
-                    }
-
+                    value={formData.emergency_contact_relationship}
                 />
 
 
@@ -245,14 +214,12 @@ function ReviewBooking({
 
 
 
-            {/* SPECIAL REQUEST */}
+            {/* SPECIAL REQUESTS */}
 
             <ReviewSection title="Special Requests">
 
 
-                <p className="
-                text-gray-700
-                ">
+                <p className="review-special">
 
                     {
                         formData.special_requests ||
@@ -272,13 +239,9 @@ function ReviewBooking({
 
 
 
-            {/* BUTTONS */}
+            {/* ACTION BUTTONS */}
 
-            <div className="
-            flex
-            justify-between
-            pt-6
-            ">
+            <div className="booking-actions">
 
 
                 <button
@@ -286,13 +249,8 @@ function ReviewBooking({
                 onClick={previousStep}
 
                 className="
-                border
-                border-[#2C1810]
-                text-[#2C1810]
-                px-8
-                py-3
-                rounded-lg
-                font-semibold
+                step-button
+                step-button-secondary
                 "
 
                 >
@@ -312,14 +270,8 @@ function ReviewBooking({
                 onClick={submitBooking}
 
                 className="
-                bg-[#2C1810]
-                text-white
-                px-8
-                py-3
-                rounded-lg
-                font-semibold
-                hover:bg-[#C4873A]
-                transition
+                step-button
+                step-button-primary
                 "
 
                 >
@@ -327,7 +279,6 @@ function ReviewBooking({
                     Submit Booking
 
                 </button>
-
 
 
             </div>
@@ -349,6 +300,7 @@ function ReviewBooking({
 
 
 
+
 function ReviewSection({
     title,
     children
@@ -357,28 +309,16 @@ function ReviewSection({
 
     return (
 
-        <div className="
-        bg-[#FAF6EE]
-        rounded-xl
-        p-6
-        ">
+        <div className="review-section">
 
 
-            <h3 className="
-            text-xl
-            font-semibold
-            text-[#2C1810]
-            mb-4
-            ">
-
+            <h3>
                 {title}
-
             </h3>
 
 
-            <div className="
-            space-y-3
-            ">
+
+            <div className="review-items">
 
                 {children}
 
@@ -398,6 +338,7 @@ function ReviewSection({
 
 
 
+
 function ReviewItem({
     label,
     value
@@ -406,18 +347,10 @@ function ReviewItem({
 
     return (
 
-        <div className="
-        flex
-        justify-between
-        gap-5
-        border-b
-        pb-2
-        ">
+        <div className="review-item">
 
 
-            <span className="
-            text-gray-500
-            ">
+            <span className="review-label">
 
                 {label}
 
@@ -426,11 +359,8 @@ function ReviewItem({
 
 
 
-            <span className="
-            font-medium
-            text-right
-            text-[#2C1810]
-            ">
+
+            <span className="review-value">
 
                 {value}
 
@@ -443,6 +373,7 @@ function ReviewItem({
     )
 
 }
+
 
 
 

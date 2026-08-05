@@ -1,3 +1,6 @@
+import { useState } from "react";
+
+
 function TravelDetails({
     formData,
     updateFormData,
@@ -5,6 +8,11 @@ function TravelDetails({
     nextStep,
     previousStep
 }) {
+
+
+    const [error,setError] = useState("");
+
+
 
 
 
@@ -19,9 +27,10 @@ function TravelDetails({
             !formData.number_of_nights
         ){
 
-            alert(
-                "Please complete the required travel details."
+            setError(
+                "Please complete the required travel details before continuing."
             );
+
 
             return;
 
@@ -29,9 +38,13 @@ function TravelDetails({
 
 
 
+        setError("");
+
         nextStep();
 
     }
+
+
 
 
 
@@ -44,31 +57,30 @@ function TravelDetails({
 
         onSubmit={handleSubmit}
 
-        className="
-        space-y-6
-        "
+        className="booking-step-form"
 
         >
 
 
 
+
+
             <div>
 
-                <h2 className="
-                text-3xl
-                font-serif
-                text-[#2C1810]
-                mb-2
-                ">
+                <h2 className="booking-step-title">
+
                     Travel Details
+
                 </h2>
 
 
-                <p className="
-                text-gray-500
-                ">
+
+                <p className="booking-step-description">
+
                     Tell us about the safari experience you would like.
+
                 </p>
+
 
             </div>
 
@@ -78,20 +90,44 @@ function TravelDetails({
 
 
 
+
+            {
+                error && (
+
+                    <div className="form-error">
+
+                        <span>
+                            ⚠
+                        </span>
+
+                        <p>
+                            {error}
+                        </p>
+
+                    </div>
+
+                )
+            }
+
+
+
+
+
+
+
+
+
             {/* DESTINATION */}
 
-            <div>
+            <div className="form-group">
 
 
-                <label className="
-                block
-                text-sm
-                font-semibold
-                text-gray-700
-                mb-2
-                ">
+                <label className="booking-label">
+
                     Safari Destination *
+
                 </label>
+
 
 
 
@@ -106,24 +142,25 @@ function TravelDetails({
                     )
                 }
 
-                className="
-                w-full
-                border
-                rounded-lg
-                p-3
-                "
+                className="booking-input"
 
                 >
 
 
+
                     <option value="">
+
                         Select destination
+
                     </option>
+
+
 
 
 
                     {
                         packages.map((pkg)=>(
+
 
                             <option
 
@@ -135,10 +172,15 @@ function TravelDetails({
 
                                 {pkg.destination}
 
+
                             </option>
+
 
                         ))
                     }
+
+
+
 
 
 
@@ -147,6 +189,8 @@ function TravelDetails({
                         Custom Safari
 
                     </option>
+
+
 
 
                 </select>
@@ -162,30 +206,23 @@ function TravelDetails({
 
 
 
-            <div className="
-            grid
-            md:grid-cols-2
-            gap-6
-            ">
+            {/* DATE + TIME */}
+
+            <div className="booking-grid">
 
 
 
 
 
-                {/* TRAVEL DATE */}
-
-                <div>
+                <div className="form-group">
 
 
-                    <label className="
-                    block
-                    text-sm
-                    font-semibold
-                    text-gray-700
-                    mb-2
-                    ">
+                    <label className="booking-label">
+
                         Travel Date
+
                     </label>
+
 
 
 
@@ -202,12 +239,9 @@ function TravelDetails({
                         )
                     }
 
-                    className="
-                    w-full
-                    border
-                    rounded-lg
-                    p-3
-                    "
+
+                    className="booking-input"
+
 
                     />
 
@@ -221,21 +255,16 @@ function TravelDetails({
 
 
 
-
-                {/* EXPECTED TIME */}
-
-                <div>
+                <div className="form-group">
 
 
-                    <label className="
-                    block
-                    text-sm
-                    font-semibold
-                    text-gray-700
-                    mb-2
-                    ">
+                    <label className="booking-label">
+
                         Expected Travel Time
+
                     </label>
+
+
 
 
 
@@ -252,17 +281,16 @@ function TravelDetails({
                         )
                     }
 
-                    className="
-                    w-full
-                    border
-                    rounded-lg
-                    p-3
-                    "
+
+                    className="booking-input"
+
 
                     />
 
 
+
                 </div>
+
 
 
 
@@ -278,18 +306,16 @@ function TravelDetails({
 
             {/* NIGHTS */}
 
-            <div>
+            <div className="form-group">
 
 
-                <label className="
-                block
-                text-sm
-                font-semibold
-                text-gray-700
-                mb-2
-                ">
+                <label className="booking-label">
+
                     Number of Nights *
+
                 </label>
+
+
 
 
 
@@ -308,14 +334,12 @@ function TravelDetails({
                     )
                 }
 
+
                 placeholder="Example: 5"
 
-                className="
-                w-full
-                border
-                rounded-lg
-                p-3
-                "
+
+                className="booking-input"
+
 
                 />
 
@@ -332,18 +356,17 @@ function TravelDetails({
 
             {/* ACCOMMODATION */}
 
-            <div>
+            <div className="form-group">
 
 
-                <label className="
-                block
-                text-sm
-                font-semibold
-                text-gray-700
-                mb-2
-                ">
+                <label className="booking-label">
+
                     Accommodation Preference
+
                 </label>
+
+
+
 
 
 
@@ -358,44 +381,69 @@ function TravelDetails({
                     )
                 }
 
-                className="
-                w-full
-                border
-                rounded-lg
-                p-3
-                "
+
+                className="booking-input"
+
 
                 >
 
 
+
+
+
                     <option value="">
+
                         Select preference
+
                     </option>
 
 
+
+
                     <option>
+
                         Budget Lodge
+
                     </option>
 
 
+
+
                     <option>
+
                         Mid-range Lodge
+
                     </option>
 
 
+
+
                     <option>
+
                         Luxury Lodge
+
                     </option>
 
 
+
+
                     <option>
+
                         Luxury Camp
+
                     </option>
+
+
 
 
                     <option>
+
                         Not Sure Yet
+
                     </option>
+
+
+
 
 
                 </select>
@@ -411,13 +459,12 @@ function TravelDetails({
 
 
 
-            {/* NAVIGATION BUTTONS */}
+            {/* BUTTONS */}
 
-            <div className="
-            flex
-            justify-between
-            pt-6
-            ">
+            <div className="booking-actions">
+
+
+
 
 
                 <button
@@ -427,13 +474,8 @@ function TravelDetails({
                 onClick={previousStep}
 
                 className="
-                border
-                border-[#2C1810]
-                text-[#2C1810]
-                px-8
-                py-3
-                rounded-lg
-                font-semibold
+                step-button
+                step-button-secondary
                 "
 
                 >
@@ -446,19 +488,16 @@ function TravelDetails({
 
 
 
+
+
+
                 <button
 
                 type="submit"
 
                 className="
-                bg-[#2C1810]
-                text-white
-                px-8
-                py-3
-                rounded-lg
-                font-semibold
-                hover:bg-[#C4873A]
-                transition
+                step-button
+                step-button-primary
                 "
 
                 >
@@ -468,6 +507,9 @@ function TravelDetails({
                 </button>
 
 
+
+
+
             </div>
 
 
@@ -475,6 +517,7 @@ function TravelDetails({
 
 
         </form>
+
 
     )
 

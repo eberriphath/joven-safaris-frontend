@@ -11,6 +11,8 @@ import EmergencyContact from "./steps/EmergencyContact";
 import ReviewBooking from "./steps/ReviewBooking";
 
 import BookingSuccess from "./BookingSuccess";
+import "./BookingForm.css";
+
 
 
 
@@ -19,65 +21,41 @@ function BookingForm() {
 
     const [step, setStep] = useState(1);
 
-
     const [packages, setPackages] = useState([]);
-
 
     const [submitted, setSubmitted] = useState(false);
 
 
-
     const [formData, setFormData] = useState({
 
-        // PERSONAL DETAILS
+        full_name:"",
+        email:"",
+        phone:"",
+        passport_number:"",
+        date_of_birth:"",
+        country_of_origin:"",
 
-        full_name: "",
-        email: "",
-        phone: "",
-        passport_number: "",
-        date_of_birth: "",
-        country_of_origin: "",
+        destination:"",
+        travel_date:"",
+        expected_travel_time:"",
+        number_of_nights:"",
+        accommodation_preference:"",
 
+        resident_adults:0,
+        resident_children:0,
 
-        // TRAVEL DETAILS
+        non_resident_adults:0,
+        non_resident_children:0,
 
-        destination: "",
-        travel_date: "",
-        expected_travel_time: "",
-        number_of_nights: "",
-        accommodation_preference: "",
-
-
-        // TRAVELLERS
-
-        resident_adults: 0,
-        resident_children: 0,
-
-        non_resident_adults: 0,
-        non_resident_children: 0,
-
-
-        // EMERGENCY CONTACT
-
-        emergency_contact_name: "",
-        emergency_contact_phone: "",
-        emergency_contact_relationship: "",
-
-
-        // EXTRA
+        emergency_contact_name:"",
+        emergency_contact_phone:"",
+        emergency_contact_relationship:"",
 
         special_requests:""
 
     });
 
 
-
-
-
-
-    // ==========================
-    // FETCH SAFARI PACKAGES
-    // ==========================
 
     useEffect(()=>{
 
@@ -103,20 +81,14 @@ function BookingForm() {
 
 
 
-
-
-    // ==========================
-    // UPDATE FORM DATA
-    // ==========================
-
     function updateFormData(field,value){
 
 
-        setFormData((previous)=>({
+        setFormData(previous=>({
 
             ...previous,
 
-            [field]: value
+            [field]:value
 
         }));
 
@@ -127,16 +99,9 @@ function BookingForm() {
 
 
 
-
-    // ==========================
-    // NEXT STEP
-    // ==========================
-
     function nextStep(){
 
-
-        setStep((previous)=>previous + 1);
-
+        setStep(previous=>previous+1);
 
     }
 
@@ -144,17 +109,10 @@ function BookingForm() {
 
 
 
-
-
-    // ==========================
-    // PREVIOUS STEP
-    // ==========================
 
     function previousStep(){
 
-
-        setStep((previous)=>previous - 1);
-
+        setStep(previous=>previous-1);
 
     }
 
@@ -163,10 +121,6 @@ function BookingForm() {
 
 
 
-
-    // ==========================
-    // SUBMIT BOOKING
-    // ==========================
 
     async function submitBooking(){
 
@@ -178,7 +132,6 @@ function BookingForm() {
                 "/book",
                 formData
             );
-
 
 
             setSubmitted(true);
@@ -203,19 +156,11 @@ function BookingForm() {
 
 
 
-
-
     if(submitted){
 
-
-        return(
-
-            <BookingSuccess/>
-
-        )
+        return <BookingSuccess/>
 
     }
-
 
 
 
@@ -227,139 +172,133 @@ function BookingForm() {
     return(
 
 
-        <section className="
-        bg-white
-        rounded-2xl
-        shadow-xl
-        p-8
-        md:p-12
-        max-w-4xl
-        mx-auto
-        ">
+        <section className="booking-form-card">
 
 
 
-            <ProgressIndicator
-                step={step}
-            />
+            <div className="booking-form-inner">
 
 
+                <ProgressIndicator
+                    step={step}
+                />
 
 
 
+                {
+                    step === 1 && (
 
-            {
-                step === 1 && (
+                        <PersonalDetails
 
-                    <PersonalDetails
+                        formData={formData}
 
-                    formData={formData}
+                        updateFormData={updateFormData}
 
-                    updateFormData={updateFormData}
+                        nextStep={nextStep}
 
-                    nextStep={nextStep}
+                        />
 
-                    />
+                    )
+                }
 
-                )
-            }
 
 
 
 
+                {
+                    step === 2 && (
 
-            {
-                step === 2 && (
+                        <TravelDetails
 
-                    <TravelDetails
+                        formData={formData}
 
-                    formData={formData}
+                        updateFormData={updateFormData}
 
-                    updateFormData={updateFormData}
+                        packages={packages}
 
-                    packages={packages}
+                        nextStep={nextStep}
 
-                    nextStep={nextStep}
+                        previousStep={previousStep}
 
-                    previousStep={previousStep}
+                        />
 
-                    />
+                    )
+                }
 
-                )
-            }
 
 
 
 
+                {
+                    step === 3 && (
 
-            {
-                step === 3 && (
+                        <TravellerDetails
 
-                    <TravellerDetails
+                        formData={formData}
 
-                    formData={formData}
+                        updateFormData={updateFormData}
 
-                    updateFormData={updateFormData}
+                        nextStep={nextStep}
 
-                    nextStep={nextStep}
+                        previousStep={previousStep}
 
-                    previousStep={previousStep}
+                        />
 
-                    />
+                    )
+                }
 
-                )
-            }
 
 
 
 
+                {
+                    step === 4 && (
 
-            {
-                step === 4 && (
+                        <EmergencyContact
 
-                    <EmergencyContact
+                        formData={formData}
 
-                    formData={formData}
+                        updateFormData={updateFormData}
 
-                    updateFormData={updateFormData}
+                        nextStep={nextStep}
 
-                    nextStep={nextStep}
+                        previousStep={previousStep}
 
-                    previousStep={previousStep}
+                        />
 
-                    />
+                    )
+                }
 
-                )
-            }
 
 
 
 
+                {
+                    step === 5 && (
 
-            {
-                step === 5 && (
+                        <ReviewBooking
 
-                    <ReviewBooking
+                        formData={formData}
 
-                    formData={formData}
+                        submitBooking={submitBooking}
 
-                    submitBooking={submitBooking}
+                        previousStep={previousStep}
 
-                    previousStep={previousStep}
+                        />
 
-                    />
+                    )
+                }
 
-                )
-            }
 
 
+            </div>
 
 
 
         </section>
 
 
-    )
+    );
 
 
 }

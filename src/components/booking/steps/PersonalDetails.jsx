@@ -1,8 +1,15 @@
+import { useState } from "react";
+
+
 function PersonalDetails({
     formData,
     updateFormData,
     nextStep
 }) {
+
+
+    const [error,setError] = useState("");
+
 
 
 
@@ -19,15 +26,18 @@ function PersonalDetails({
             !formData.passport_number
         ){
 
-            alert(
-                "Please complete all required fields."
+            setError(
+                "Please complete all required fields before continuing."
             );
+
 
             return;
 
         }
 
 
+
+        setError("");
 
         nextStep();
 
@@ -42,10 +52,10 @@ function PersonalDetails({
 
         <form
         onSubmit={handleSubmit}
-        className="
-        space-y-6
-        "
+        className="space-y-6"
         >
+
+
 
 
 
@@ -73,18 +83,31 @@ function PersonalDetails({
 
 
 
+            {
+                error && (
 
-            {/* FULL NAME */}
+                    <div className="form-error">
+
+                        <span>
+                            ⚠
+                        </span>
+
+                        <p>
+                            {error}
+                        </p>
+
+                    </div>
+
+                )
+            }
+
+
+
+
 
             <div>
 
-                <label className="
-                block
-                text-sm
-                font-semibold
-                text-gray-700
-                mb-2
-                ">
+                <label>
                     Full Name *
                 </label>
 
@@ -104,16 +127,6 @@ function PersonalDetails({
 
                 placeholder="Enter your full name"
 
-                className="
-                w-full
-                border
-                rounded-lg
-                p-3
-                focus:outline-none
-                focus:ring-2
-                focus:ring-[#C4873A]
-                "
-
                 />
 
             </div>
@@ -123,19 +136,9 @@ function PersonalDetails({
 
 
 
-
-
-            {/* EMAIL */}
-
             <div>
 
-                <label className="
-                block
-                text-sm
-                font-semibold
-                text-gray-700
-                mb-2
-                ">
+                <label>
                     Email Address *
                 </label>
 
@@ -155,16 +158,6 @@ function PersonalDetails({
 
                 placeholder="example@email.com"
 
-                className="
-                w-full
-                border
-                rounded-lg
-                p-3
-                focus:outline-none
-                focus:ring-2
-                focus:ring-[#C4873A]
-                "
-
                 />
 
             </div>
@@ -175,18 +168,9 @@ function PersonalDetails({
 
 
 
-
-            {/* PHONE */}
-
             <div>
 
-                <label className="
-                block
-                text-sm
-                font-semibold
-                text-gray-700
-                mb-2
-                ">
+                <label>
                     Phone Number *
                 </label>
 
@@ -206,16 +190,6 @@ function PersonalDetails({
 
                 placeholder="+254..."
 
-                className="
-                w-full
-                border
-                rounded-lg
-                p-3
-                focus:outline-none
-                focus:ring-2
-                focus:ring-[#C4873A]
-                "
-
                 />
 
             </div>
@@ -226,18 +200,9 @@ function PersonalDetails({
 
 
 
-
-            {/* PASSPORT */}
-
             <div>
 
-                <label className="
-                block
-                text-sm
-                font-semibold
-                text-gray-700
-                mb-2
-                ">
+                <label>
                     Passport / ID Number *
                 </label>
 
@@ -257,19 +222,10 @@ function PersonalDetails({
 
                 placeholder="Passport or national ID number"
 
-                className="
-                w-full
-                border
-                rounded-lg
-                p-3
-                focus:outline-none
-                focus:ring-2
-                focus:ring-[#C4873A]
-                "
-
                 />
 
             </div>
+
 
 
 
@@ -285,17 +241,9 @@ function PersonalDetails({
             ">
 
 
-                {/* DATE OF BIRTH */}
-
                 <div>
 
-                    <label className="
-                    block
-                    text-sm
-                    font-semibold
-                    text-gray-700
-                    mb-2
-                    ">
+                    <label>
                         Date of Birth
                     </label>
 
@@ -313,13 +261,6 @@ function PersonalDetails({
                         )
                     }
 
-                    className="
-                    w-full
-                    border
-                    rounded-lg
-                    p-3
-                    "
-
                     />
 
                 </div>
@@ -328,18 +269,9 @@ function PersonalDetails({
 
 
 
-
-                {/* COUNTRY */}
-
                 <div>
 
-                    <label className="
-                    block
-                    text-sm
-                    font-semibold
-                    text-gray-700
-                    mb-2
-                    ">
+                    <label>
                         Country of Origin
                     </label>
 
@@ -359,16 +291,10 @@ function PersonalDetails({
 
                     placeholder="Country"
 
-                    className="
-                    w-full
-                    border
-                    rounded-lg
-                    p-3
-                    "
-
                     />
 
                 </div>
+
 
 
             </div>
@@ -379,8 +305,6 @@ function PersonalDetails({
 
 
 
-
-            {/* BUTTON */}
 
             <div className="
             flex
@@ -394,14 +318,8 @@ function PersonalDetails({
                 type="submit"
 
                 className="
-                bg-[#2C1810]
-                text-white
-                px-8
-                py-3
-                rounded-lg
-                font-semibold
-                hover:bg-[#C4873A]
-                transition
+                step-button
+                step-button-primary
                 "
 
                 >

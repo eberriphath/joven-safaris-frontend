@@ -1,0 +1,397 @@
+/* =====================================
+   PREMIUM BOOKING PROGRESS INDICATOR
+===================================== */
+
+
+.progress-wrapper {
+
+    margin-bottom:50px;
+
+    width:100%;
+
+}
+
+
+
+
+
+.progress-container {
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    width:100%;
+
+    position:relative;
+
+}
+
+
+
+
+
+
+
+.progress-step {
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    flex:1;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+   CIRCLE
+================================ */
+
+
+.progress-circle {
+
+
+    width:48px;
+
+    height:48px;
+
+
+    border-radius:50%;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    font-family:"Playfair Display",serif;
+
+
+    font-size:18px;
+
+
+    font-weight:700;
+
+
+    transition:.4s ease;
+
+
+    border:2px solid transparent;
+
+
+}
+
+
+
+
+
+
+.progress-circle.active {
+
+
+    background:#C4873A;
+
+
+    color:white;
+
+
+    border-color:#C4873A;
+
+
+    box-shadow:
+
+    0 10px 25px
+
+    rgba(196,135,58,.35);
+
+
+}
+
+
+
+
+
+
+
+.progress-circle.inactive {
+
+
+    background:#EFE7D8;
+
+
+    color:#8A7560;
+
+
+    border-color:#E4D6C0;
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   LABEL
+================================ */
+
+
+
+.progress-label {
+
+
+    margin-top:15px;
+
+
+    font-size:12px;
+
+
+    letter-spacing:.12em;
+
+
+    text-transform:uppercase;
+
+
+    font-weight:600;
+
+
+    transition:.3s ease;
+
+
+}
+
+
+
+
+
+.progress-label.active {
+
+
+    color:#2C1810;
+
+
+}
+
+
+
+
+.progress-label.inactive {
+
+
+    color:#A89B8C;
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   CONNECTING LINE
+================================ */
+
+
+.progress-line {
+
+
+    position:absolute;
+
+
+    top:24px;
+
+
+    left:50%;
+
+
+    width:100%;
+
+
+    height:2px;
+
+
+    z-index:-1;
+
+
+    transition:.5s ease;
+
+
+}
+
+
+
+
+
+.progress-line.completed {
+
+
+    background:#C4873A;
+
+
+}
+
+
+
+
+
+.progress-line.pending {
+
+
+    background:#E4D6C0;
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   CONTAINER CARD FEEL
+================================ */
+
+
+.progress-wrapper::before {
+
+
+    content:"";
+
+
+    display:block;
+
+
+    height:1px;
+
+
+    width:100%;
+
+
+    margin-bottom:35px;
+
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(196,135,58,.35),
+
+        transparent
+
+    );
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   MOBILE
+================================ */
+
+
+@media(max-width:768px){
+
+
+.progress-container {
+
+
+    flex-direction:column;
+
+
+    gap:25px;
+
+
+    align-items:flex-start;
+
+
+}
+
+
+
+
+
+.progress-step {
+
+
+    flex-direction:row;
+
+
+    gap:15px;
+
+
+    width:100%;
+
+
+}
+
+
+
+
+
+.progress-label {
+
+
+    margin-top:0;
+
+
+}
+
+
+
+
+
+.progress-line {
+
+
+    width:2px;
+
+
+    height:100%;
+
+
+    left:24px;
+
+
+    top:48px;
+
+
+}
+
+
+
+
+
+}

@@ -6,13 +6,11 @@ const values = [
         title:"Every visitor plants a tree",
         text:"Every guest contributes to our tree planting programme, helping restore Africa's natural landscapes."
     },
-
     {
         icon:"📚",
         title:"Education for communities",
         text:"A portion of every booking supports education initiatives for children in underserved communities."
     },
-
     {
         icon:"🤝",
         title:"Community-first tourism",
@@ -22,12 +20,9 @@ const values = [
 
 
 return(
-
 <section className="about">
 
-
 <div className="about-container">
-
 
 <div className="about-image">
 
@@ -35,7 +30,6 @@ return(
 src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa"
 alt="Safari landscape"
 />
-
 
 <div className="about-badge">
 
@@ -49,14 +43,10 @@ Years of Responsible Safari Excellence
 
 </div>
 
-
 </div>
 
 
-
-
-<div className="about-content">
-
+<div className="about-text">
 
 <span className="section-tag">
 WHO WE ARE
@@ -64,7 +54,7 @@ WHO WE ARE
 
 
 <h2>
-Safari With A <em>Soul</em>
+Safari With a <em>Soul</em>
 </h2>
 
 
@@ -77,20 +67,17 @@ We craft immersive safari experiences built around adventure, sustainability and
 </p>
 
 
-
-<div className="values">
-
+<div className="usp-list">
 
 {
 values.map((value,index)=>(
 
 <div 
-className="value"
+className="usp-item"
 key={index}
 >
 
-
-<div className="value-icon">
+<div className="usp-icon">
 {value.icon}
 </div>
 
@@ -107,28 +94,20 @@ key={index}
 
 </div>
 
-
 </div>
 
 ))
 }
 
-
+</div>
 
 </div>
 
-
 </div>
-
-
-</div>
-
 
 </section>
-
 )
 
 }
-
 
 export default About;
