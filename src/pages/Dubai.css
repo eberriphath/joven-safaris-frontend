@@ -1,0 +1,686 @@
+/* =====================================
+   DUBAI PAGE
+===================================== */
+
+
+.dubai-container{
+
+    max-width:1200px;
+
+    margin:0 auto;
+
+    padding:0 24px;
+
+}
+
+
+
+
+
+
+/* =====================================
+   HERO
+===================================== */
+
+
+.dubai-hero{
+
+    height:100vh;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+
+.dubai-hero-image{
+
+    position:absolute;
+
+    inset:0;
+
+
+    background-image:url(
+    "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1800&q=80"
+    );
+
+
+    background-size:cover;
+
+    background-position:center;
+
+
+    transform:scale(1.05);
+
+}
+
+
+
+
+.dubai-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.75)
+    );
+
+}
+
+
+
+
+.dubai-hero-content{
+
+
+    position:relative;
+
+    z-index:2;
+
+    height:100%;
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+
+    color:white;
+
+    padding:30px;
+
+
+}
+
+
+
+
+.dubai-hero-content span{
+
+
+    text-transform:uppercase;
+
+    letter-spacing:.35em;
+
+    color:#D4A940;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+}
+
+
+
+
+.dubai-hero-content h1{
+
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(4rem,8vw,7rem);
+
+    margin-top:25px;
+
+
+}
+
+
+
+
+.dubai-hero-content p{
+
+
+    max-width:700px;
+
+    margin-top:30px;
+
+
+    font-size:1.2rem;
+
+    line-height:1.8;
+
+    color:rgba(255,255,255,.9);
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+   INTRO
+===================================== */
+
+
+.dubai-intro{
+
+
+    background:#FAF6EE;
+
+    padding:100px 0;
+
+    text-align:center;
+
+
+}
+
+
+
+
+.dubai-intro h2{
+
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(2.5rem,5vw,4rem);
+
+    color:#2C1810;
+
+
+}
+
+
+
+
+.dubai-intro p{
+
+
+    max-width:850px;
+
+    margin:35px auto 0;
+
+
+    color:#6B5744;
+
+
+    font-size:1.15rem;
+
+    line-height:2;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+   HIGHLIGHTS
+===================================== */
+
+
+.dubai-highlights{
+
+
+    background:white;
+
+    padding:100px 0;
+
+
+}
+
+
+
+.dubai-highlights h2{
+
+
+    text-align:center;
+
+
+    font-family:"Playfair Display",serif;
+
+    font-size:3rem;
+
+
+    color:#2C1810;
+
+    margin-bottom:60px;
+
+
+}
+
+
+
+
+.dubai-highlight-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:repeat(3,1fr);
+
+
+    gap:30px;
+
+
+}
+
+
+
+
+
+.dubai-card{
+
+
+    background:#FAF6EE;
+
+
+    padding:40px;
+
+
+    border-radius:24px;
+
+
+    border:1px solid rgba(196,135,58,.15);
+
+
+    transition:.35s;
+
+
+}
+
+
+
+
+.dubai-card:hover{
+
+
+    transform:translateY(-8px);
+
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.08);
+
+
+}
+
+
+
+
+.dubai-card h3{
+
+
+    font-family:"Playfair Display",serif;
+
+    font-size:1.8rem;
+
+    color:#2C1810;
+
+
+}
+
+
+
+
+.dubai-card p{
+
+
+    margin-top:18px;
+
+
+    color:#6B5744;
+
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+
+@media(max-width:900px){
+
+
+.dubai-highlight-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.dubai-highlights h2{
+
+    font-size:2.4rem;
+
+}
+
+
+}
+
+/* =====================================
+   EXPERIENCES
+===================================== */
+
+
+.dubai-experiences{
+
+    background:#FAF6EE;
+
+    padding:100px 0;
+
+}
+
+
+
+.dubai-experiences h2{
+
+    text-align:center;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:3rem;
+
+    color:#2C1810;
+
+    margin-bottom:60px;
+
+}
+
+
+
+.experience-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+
+
+
+.experience-card{
+
+
+    background:white;
+
+    border-radius:26px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.08);
+
+
+}
+
+
+
+.experience-image{
+
+    height:260px;
+
+    overflow:hidden;
+
+}
+
+
+
+.experience-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+
+
+.experience-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+
+.experience-content{
+
+    padding:35px;
+
+}
+
+
+
+.experience-content h3{
+
+
+    font-family:"Playfair Display",serif;
+
+    color:#2C1810;
+
+    font-size:1.8rem;
+
+
+}
+
+
+
+.experience-content p{
+
+
+    margin-top:15px;
+
+    color:#6B5744;
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+   SEASON SECTION
+===================================== */
+
+
+.dubai-season{
+
+
+    background:white;
+
+    padding:100px 0;
+
+
+}
+
+
+
+.season-card{
+
+
+    background:#2C1810;
+
+    color:white;
+
+    border-radius:30px;
+
+    padding:70px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+.season-card h2{
+
+
+    font-family:"Playfair Display",serif;
+
+    font-size:3rem;
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+.season-card p{
+
+
+    max-width:800px;
+
+    margin:auto;
+
+    color:rgba(255,255,255,.8);
+
+    line-height:2;
+
+
+}
+
+
+
+.season-grid{
+
+
+    margin-top:50px;
+
+
+    display:grid;
+
+
+    grid-template-columns:repeat(2,1fr);
+
+
+    gap:25px;
+
+
+}
+
+
+
+
+.season-grid div{
+
+
+    background:rgba(255,255,255,.1);
+
+    border-radius:18px;
+
+    padding:30px;
+
+
+}
+
+
+
+.season-grid h3{
+
+
+    color:#D4A940;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:1.8rem;
+
+
+}
+
+
+
+.season-grid span{
+
+
+    display:block;
+
+    margin-top:10px;
+
+    color:white;
+
+
+}
+
+
+
+
+
+
+
+
+@media(max-width:900px){
+
+
+.experience-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.season-card{
+
+    padding:40px 25px;
+
+}
+
+
+
+.season-card h2{
+
+    font-size:2.3rem;
+
+}
+
+
+
+.season-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+}

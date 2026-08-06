@@ -1,43 +1,23 @@
 import "./BookingSuccess.css";
 
+
 function BookingSuccess(){
 
 
     return (
 
-        <section className="
-        min-h-[500px]
-        flex
-        items-center
-        justify-center
-        bg-[#FAF6EE]
-        rounded-2xl
-        p-8
-        ">
+        <section className="booking-success-page">
 
 
-            <div className="
-            max-w-xl
-            text-center
-            ">
+            <div className="booking-success-card">
 
 
 
-                {/* ICON */}
 
-                <div className="
-                w-20
-                h-20
-                mx-auto
-                rounded-full
-                bg-[#C4873A]
-                flex
-                items-center
-                justify-center
-                text-white
-                text-4xl
-                mb-8
-                ">
+
+                {/* SUCCESS ICON */}
+
+                <div className="booking-success-icon">
 
                     ✓
 
@@ -50,16 +30,16 @@ function BookingSuccess(){
 
 
 
-                <h1 className="
-                text-4xl
-                md:text-5xl
-                font-serif
-                text-[#2C1810]
-                mb-5
-                ">
+                {/* TITLE */}
 
-                    Thank You For Choosing
-                    Joven Safaris
+                <h1>
+
+                    Your Journey
+                    <br />
+
+                    <em>
+                        Begins Here
+                    </em>
 
                 </h1>
 
@@ -70,19 +50,21 @@ function BookingSuccess(){
 
 
 
-                <p className="
-                text-gray-600
-                text-lg
-                leading-8
-                mb-6
-                ">
+                {/* MESSAGE */}
+
+                <p className="success-message">
+
+                    Thank you for choosing
+                    <strong> Joven Safaris.</strong>
+
+                    <br />
 
                     Your safari request has been received
                     successfully.
 
-                    Our travel team will review your
-                    details and contact you shortly to
-                    finalize your safari experience.
+                    Our travel specialists will review your
+                    details and contact you shortly to design
+                    your perfect experience.
 
                 </p>
 
@@ -93,22 +75,13 @@ function BookingSuccess(){
 
 
 
-                <div className="
-                bg-white
-                rounded-xl
-                shadow
-                p-6
-                text-left
-                ">
+
+                {/* NEXT STEPS */}
+
+                <div className="success-next">
 
 
-
-                    <h3 className="
-                    text-xl
-                    font-semibold
-                    text-[#2C1810]
-                    mb-3
-                    ">
+                    <h3>
 
                         What Happens Next?
 
@@ -117,29 +90,70 @@ function BookingSuccess(){
 
 
 
-
-                    <ul className="
-                    space-y-3
-                    text-gray-600
-                    ">
+                    <div className="success-step">
 
 
-                        <li>
-                            ✓ Our team reviews your safari request
-                        </li>
+                        <span>
+                            01
+                        </span>
 
 
-                        <li>
-                            ✓ We confirm availability and arrangements
-                        </li>
+                        <p>
+
+                            Our safari team reviews your
+                            travel preferences.
+
+                        </p>
 
 
-                        <li>
-                            ✓ We contact you to finalize your journey
-                        </li>
+                    </div>
 
 
-                    </ul>
+
+
+
+
+                    <div className="success-step">
+
+
+                        <span>
+                            02
+                        </span>
+
+
+                        <p>
+
+                            We confirm availability and
+                            prepare your itinerary.
+
+                        </p>
+
+
+                    </div>
+
+
+
+
+
+
+                    <div className="success-step">
+
+
+                        <span>
+                            03
+                        </span>
+
+
+                        <p>
+
+                            We contact you to finalize
+                            your unforgettable journey.
+
+                        </p>
+
+
+                    </div>
+
 
 
                 </div>
@@ -151,15 +165,10 @@ function BookingSuccess(){
 
 
 
-                <p className="
-                mt-8
-                text-[#8B4513]
-                font-serif
-                italic
-                ">
 
-                    We look forward to welcoming you
-                    on an unforgettable adventure.
+                <p className="success-footer">
+
+                    Africa awaits. We cannot wait to welcome you.
 
                 </p>
 
@@ -167,8 +176,8 @@ function BookingSuccess(){
 
 
 
-
             </div>
+
 
 
         </section>

@@ -1,0 +1,264 @@
+.memories-section {
+
+    background:#FAF6EE;
+
+    padding:120px 24px;
+
+}
+
+
+
+
+
+.memories-container {
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+
+
+
+
+.memories-header {
+
+    max-width:750px;
+
+    margin:0 auto 70px;
+
+    text-align:center;
+
+}
+
+
+
+
+
+.memories-tag {
+
+    display:block;
+
+    color:#C4873A;
+
+    text-transform:uppercase;
+
+    letter-spacing:.35em;
+
+    font-size:.8rem;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+
+.memories-header h2 {
+
+
+    font-family:"Playfair Display", serif;
+
+    font-size:clamp(3rem,6vw,5rem);
+
+    line-height:1.1;
+
+    color:#2C1810;
+
+    font-weight:700;
+
+}
+
+
+
+
+
+.memories-header h2 span {
+
+
+    display:block;
+
+    color:#4A7A2B;
+
+    font-style:italic;
+
+    font-weight:400;
+
+}
+
+
+
+
+
+.memories-header p {
+
+
+    margin:30px auto 0;
+
+    max-width:650px;
+
+    color:#6B5744;
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+
+
+.memories-grid {
+
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    grid-auto-rows:280px;
+
+    gap:24px;
+
+}
+
+
+
+
+
+.memory-card {
+
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+
+}
+
+
+
+
+
+.memory-card img {
+
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .8s ease;
+
+
+}
+
+
+
+
+
+.memory-card:hover img {
+
+
+    transform:scale(1.08);
+
+}
+
+
+
+
+
+.memory-overlay {
+
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.25),
+        transparent
+    );
+
+
+}
+
+
+
+
+
+
+.memory-tall {
+
+
+    grid-row:span 2;
+
+
+}
+
+
+
+
+
+
+
+
+@media(max-width:900px){
+
+
+    .memories-grid {
+
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+}
+
+
+
+
+
+@media(max-width:600px){
+
+
+    .memories-section {
+
+        padding:80px 20px;
+
+    }
+
+
+
+    .memories-grid {
+
+
+        grid-template-columns:1fr;
+
+        grid-auto-rows:300px;
+
+    }
+
+
+
+    .memory-tall {
+
+        grid-row:span 1;
+
+    }
+
+
+}

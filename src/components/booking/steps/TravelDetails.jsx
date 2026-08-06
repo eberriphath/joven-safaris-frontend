@@ -131,36 +131,39 @@ function TravelDetails({
 
 
 
-                <select
+
+                <input
+
+                type="text"
+
+                list="safari-destinations"
 
                 value={formData.destination}
 
                 onChange={(e)=>
+
                     updateFormData(
                         "destination",
                         e.target.value
                     )
+
                 }
+
+                placeholder="Select a package or enter your own destination"
 
                 className="booking-input"
 
-                >
+                />
 
 
 
-                    <option value="">
-
-                        Select destination
-
-                    </option>
 
 
-
+                <datalist id="safari-destinations">
 
 
                     {
                         packages.map((pkg)=>(
-
 
                             <option
 
@@ -168,32 +171,18 @@ function TravelDetails({
 
                             value={pkg.destination}
 
-                            >
-
-                                {pkg.destination}
-
-
-                            </option>
-
+                            />
 
                         ))
                     }
 
 
 
+                   {/* <option value="Custom Safari"> */}
 
 
+                </datalist>
 
-                    <option value="Custom Safari">
-
-                        Custom Safari
-
-                    </option>
-
-
-
-
-                </select>
 
 
             </div>

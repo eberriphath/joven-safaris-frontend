@@ -1,109 +1,94 @@
 import BookingCTA from "../components/BookingCTA";
+import "./SouthAfrica.css";
 
 
 function SouthAfrica(){
+
+
+    const experiences = [
+
+
+        {
+            title:"Kruger Safari",
+            text:
+            "Discover one of Africa's most famous wildlife destinations and encounter the Big Five in their natural habitat.",
+            image:
+            "https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=900&q=80"
+        },
+
+
+
+        {
+            title:"Cape Town Adventures",
+            text:
+            "Experience dramatic mountains, coastal beauty, world-class scenery and unforgettable city experiences.",
+            image:
+            "https://images.unsplash.com/photo-1576485375217-d6a95e34d043?auto=format&fit=crop&w=900&q=80"
+        },
+
+
+
+        {
+            title:"Luxury Wilderness",
+            text:
+            "Combine comfort and nature through carefully selected lodges, private reserves and premium safari experiences.",
+            image:
+            "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=80"
+        }
+
+
+    ];
+
+
+
+
+
+
 
     return(
 
         <>
 
+
+
+
+
         {/* HERO */}
 
-        <section
-        className="
-        relative
-        h-screen
-        overflow-hidden
-        "
-        >
 
-            <div
-            className="
-            absolute
-            inset-0
-            bg-cover
-            bg-center
-            "
-            style={{
-                backgroundImage:
-                "url('https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=1800&q=80')"
-            }}
-            />
+        <section className="south-hero">
+
+
+            <div className="south-hero-image"></div>
+
+
+            <div className="south-overlay"></div>
 
 
 
-            <div
-            className="
-            absolute
-            inset-0
-            bg-black/50
-            "
-            />
+            <div className="south-hero-content">
 
 
-
-            <div
-            className="
-            relative
-            z-10
-            h-full
-            flex
-            items-center
-            justify-center
-            text-center
-            px-6
-            "
-            >
-
-                <div>
-
-                    <span
-                    className="
-                    uppercase
-                    tracking-[0.35em]
-                    text-[#D4A940]
-                    font-semibold
-                    "
-                    >
-                        Destination
-                    </span>
+                <span>
+                    Destination
+                </span>
 
 
-
-                    <h1
-                    className="
-                    mt-6
-                    text-white
-                    font-serif
-                    text-5xl
-                    md:text-7xl
-                    "
-                    >
-                        South Africa
-                    </h1>
+                <h1>
+                    South Africa
+                </h1>
 
 
+                <p>
+                    A destination where wild landscapes,
+                    incredible wildlife and unforgettable
+                    adventures come together.
+                </p>
 
-                    <p
-                    className="
-                    mt-6
-                    max-w-2xl
-                    mx-auto
-                    text-lg
-                    text-white/85
-                    leading-relaxed
-                    "
-                    >
-                        A destination where wild landscapes,
-                        incredible wildlife and unforgettable
-                        adventures come together.
-                    </p>
-
-
-                </div>
 
 
             </div>
+
 
 
         </section>
@@ -112,45 +97,27 @@ function SouthAfrica(){
 
 
 
+
+
+
+
         {/* INTRO */}
 
-        <section
-        className="
-        bg-[#FAF6EE]
-        py-24
-        px-6
-        "
-        >
 
-            <div
-            className="
-            max-w-5xl
-            mx-auto
-            text-center
-            "
-            >
 
-                <h2
-                className="
-                font-serif
-                text-4xl
-                md:text-5xl
-                text-[#2C1810]
-                "
-                >
+        <section className="south-intro">
+
+
+            <div className="south-container">
+
+
+                <h2>
                     Where Wildlife Meets Wonder
                 </h2>
 
 
 
-                <p
-                className="
-                mt-8
-                text-[#6B5744]
-                text-lg
-                leading-relaxed
-                "
-                >
+                <p>
 
                     Explore South Africa's diverse landscapes,
                     from legendary national parks to breathtaking
@@ -171,113 +138,86 @@ function SouthAfrica(){
 
 
 
+
+
+
+
         {/* EXPERIENCES */}
 
-        <section
-        className="
-        py-24
-        px-6
-        bg-white
-        "
-        >
-
-            <div
-            className="
-            max-w-6xl
-            mx-auto
-            "
-            >
 
 
-                <h2
-                className="
-                text-center
-                font-serif
-                text-4xl
-                text-[#2C1810]
-                mb-12
-                "
-                >
+        <section className="south-experiences">
+
+
+            <div className="south-container">
+
+
+                <h2>
                     South Africa Experiences
                 </h2>
 
 
 
 
-                <div
-                className="
-                grid
-                md:grid-cols-3
-                gap-8
-                "
-                >
+                <div className="south-grid">
+
 
 
                     {
-                    [
-
-                    {
-                    title:"Kruger Safari",
-                    text:"Discover one of Africa's most famous wildlife destinations and encounter the Big Five."
-                    },
+                        experiences.map((experience)=>(
 
 
-                    {
-                    title:"Cape Town",
-                    text:"Experience dramatic mountains, coastal beauty and unforgettable city adventures."
-                    },
+                            <div
+                            key={experience.title}
+                            className="south-card"
+                            >
 
 
-                    {
-                    title:"Luxury Wilderness",
-                    text:"Combine comfort and nature through carefully selected safari experiences."
+                                <div className="south-card-image">
+
+
+                                    <img
+
+                                    src={experience.image}
+
+                                    alt={experience.title}
+
+                                    />
+
+
+                                </div>
+
+
+
+
+
+                                <div className="south-card-content">
+
+
+                                    <h3>
+                                        {experience.title}
+                                    </h3>
+
+
+                                    <p>
+                                        {experience.text}
+                                    </p>
+
+
+                                </div>
+
+
+
+                            </div>
+
+
+                        ))
                     }
 
-
-                    ].map((experience)=>(
-
-
-                        <div
-                        key={experience.title}
-                        className="
-                        bg-[#FAF6EE]
-                        p-8
-                        rounded-xl
-                        shadow-md
-                        "
-                        >
-
-                            <h3
-                            className="
-                            font-serif
-                            text-2xl
-                            text-[#2C1810]
-                            "
-                            >
-                                {experience.title}
-                            </h3>
-
-
-                            <p
-                            className="
-                            mt-4
-                            text-[#6B5744]
-                            leading-relaxed
-                            "
-                            >
-                                {experience.text}
-                            </p>
-
-
-                        </div>
-
-
-                    ))
-
-                    }
 
 
                 </div>
+
 
 
             </div>
@@ -289,9 +229,17 @@ function SouthAfrica(){
 
 
 
+
+
+
+
         {/* CTA */}
 
+
         <BookingCTA />
+
+
+
 
 
         </>
@@ -299,6 +247,7 @@ function SouthAfrica(){
     )
 
 }
+
 
 
 export default SouthAfrica;

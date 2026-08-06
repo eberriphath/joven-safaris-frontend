@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./ExperiencesCTA.css";
 
 
 function ExperiencesCTA(){
@@ -7,152 +8,109 @@ function ExperiencesCTA(){
 
         <section
             id="experiences-cta"
-            className="
-            w-full
-            bg-[#FAF6EE]
-            py-32
-            "
+            className="experiences-cta"
         >
 
-            <div
-                className="
-                w-full
-                max-w-8xl
-                mx-auto
-                flex
-                flex-col
-                items-center
-                text-center
-                gap-8
-                px-6
-                md:px-8
-                lg:px-0
-                "
-            >
 
 
-                {/* TAG */}
-                <div
-                    className="
-                    text-[#C4873A]
-                    uppercase
-                    tracking-[0.35em]
-                    text-lg
-                    font-semibold
-                    "
-                >
+            <div className="experiences-divider"></div>
+
+
+
+
+
+            <div className="experiences-container">
+
+
+
+
+
+                <div className="experiences-tag">
+
                     Create Your Memory
+
                 </div>
 
 
 
-                {/* TITLE */}
-                <h2
-                    className="
-                    w-full
-                    max-w-4xl
-                    text-4xl
-                    md:text-5xl
-                    lg:text-6xl
-                    font-serif
-                    font-extrabold
-                    text-[#111111]
-                    leading-tight
-                    text-center
-                    "
-                >
+
+
+
+
+
+                <h2 className="experiences-title">
+
                     Your Next Adventure
-                    {" "}
-                    <em
-                        className="
-                        text-[#2F7D32]
-                        italic
-                        font-medium
-                        "
-                    >
+
+                    <span>
+
                         Awaits
-                    </em>
+
+                    </span>
+
                 </h2>
 
 
 
 
 
-                {/* DESCRIPTION */}
-                <p
-                    className="
-                    max-w-2xl
-                    text-[#6B5744]
-                    text-base
-                    md:text-lg
-                    leading-relaxed
-                    text-center
-                    "
-                >
-                    From unforgettable wildlife encounters to
-                    meaningful journeys across Africa, we create
-                    safari experiences designed around you.
+
+
+
+
+                <p className="experiences-description">
+
+                    From unforgettable wildlife encounters
+                    to meaningful journeys across Africa,
+                    we create safari experiences designed
+                    around your dreams.
+
                 </p>
 
 
 
 
 
-                {/* BUTTON */}
-                <div
-                    className="
-                    flex
-                    justify-center
-                    "
+
+
+
+
+                <Link
+
+                to="/book-now"
+
+                className="experiences-button"
+
                 >
 
-                    <Link
-                        to="/book-now"
+                    Plan My Safari →
 
-                        className="
-                        flex
-                        items-center
-                        justify-center
-                        w-[560px]
-                        h-16
-                        bg-[#C4873A]
-                        text-white
-                        uppercase
-                        tracking-[0.25em]
-                        text-lg
-                        font-bold
-                        shadow-lg
-                        hover:bg-[#2C1810]
-                        hover:-translate-y-1
-                        transition-all
-                        duration-300
-                        "
-                    >
-                        Plan My Safari →
-                    </Link>
-
-                </div>
+                </Link>
 
 
 
 
 
-                {/* FOOTNOTE */}
-                <p
-                    className="
-                    max-w-2xl
-                    text-lg
-                    text-[#6B5744]
-                    leading-relaxed
-                    "
-                >
+
+
+
+
+                <p className="experiences-footnote">
+
                     Every journey supports responsible tourism,
                     local communities and conservation efforts.
+
                 </p>
+
+
 
 
 
             </div>
+
+
+
+
 
         </section>
 

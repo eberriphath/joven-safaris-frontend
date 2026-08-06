@@ -3325,5 +3325,20 @@ flex-wrap:wrap;
 }
 
 
+#footer{
+    scroll-margin-top:120px;
+}
 
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
 
+body {
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}

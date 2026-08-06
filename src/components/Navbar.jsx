@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 
 function Navbar() {
@@ -11,8 +11,11 @@ function Navbar() {
 
     const location = useLocation();
 
+    const navigate = useNavigate();
+
 
     const isHome = location.pathname === "/";
+
 
 
 
@@ -53,12 +56,66 @@ function Navbar() {
 
 
 
+
+
+
+    function handleScrollLink(section){
+
+
+        setMenuOpen(false);
+
+
+
+        if(isHome){
+
+
+            document
+            .getElementById(section)
+            ?.scrollIntoView({
+                behavior:"smooth"
+            });
+
+
+        }
+
+        else{
+
+
+            navigate("/");
+
+
+            setTimeout(()=>{
+
+
+                document
+                .getElementById(section)
+                ?.scrollIntoView({
+                    behavior:"smooth"
+                });
+
+
+            },300);
+
+
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
     const links = [
 
 
         {
             name:"Destinations",
-            path:"#destinations",
+            section:"destinations",
             type:"scroll"
         },
 
@@ -72,19 +129,21 @@ function Navbar() {
 
         {
             name:"Sustainability",
-            path:"#sustainability",
+            section:"sustainability",
             type:"scroll"
         },
 
 
         {
-            name:"Impact",
-            path:"#impact",
+            name:"Contact",
+            section:"footer",
             type:"scroll"
         }
 
 
     ];
+
+
 
 
 
@@ -244,11 +303,11 @@ function Navbar() {
 
 
 
-                    <a
+                    <button
 
                     key={link.name}
 
-                    href={link.path}
+                    onClick={()=>handleScrollLink(link.section)}
 
                     className="
 
@@ -289,7 +348,7 @@ function Navbar() {
 
 
 
-                    </a>
+                    </button>
 
 
 
@@ -597,13 +656,11 @@ function Navbar() {
 
 
 
-                <a
+                <button
 
                 key={link.name}
 
-                href={link.path}
-
-                onClick={()=>setMenuOpen(false)}
+                onClick={()=>handleScrollLink(link.section)}
 
                 className="
 
@@ -619,7 +676,7 @@ function Navbar() {
                     {link.name}
 
 
-                </a>
+                </button>
 
 
 

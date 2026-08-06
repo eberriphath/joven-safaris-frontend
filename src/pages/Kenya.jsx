@@ -1,102 +1,89 @@
 import BookingCTA from "../components/BookingCTA";
+import "./Kenya.css";
 
 
 function Kenya(){
+
+
+    const experiences = [
+
+        {
+            title:"Maasai Mara Migration",
+            text:
+            "Witness one of nature's greatest spectacles with endless savannahs, lions, elephants and the famous Great Migration.",
+            image:
+            "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80"
+        },
+
+
+        {
+            title:"Amboseli Elephants",
+            text:
+            "Experience breathtaking views of Mount Kilimanjaro while encountering some of Africa's largest elephant herds.",
+            image:
+            "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=900&q=80"
+        },
+
+
+        {
+            title:"Tsavo Wilderness",
+            text:
+            "Explore one of Kenya's largest wilderness areas, famous for dramatic landscapes and incredible wildlife.",
+            image:
+            "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=80"
+        }
+
+    ];
+
+
+
+
+
 
     return(
 
         <>
 
+
+
+
+
         {/* HERO */}
 
-        <section
-        className="
-        relative
-        h-screen
-        overflow-hidden
-        "
-        >
 
-            <div
-            className="
-            absolute
-            inset-0
-            bg-cover
-            bg-center
-            "
-            style={{
-                backgroundImage:
-                "url('https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1800&q=80')"
-            }}
-            />
+        <section className="kenya-hero">
 
 
-            <div
-            className="
-            absolute
-            inset-0
-            bg-black/50
-            "
-            />
+            <div className="kenya-hero-image"></div>
 
 
-            <div
-            className="
-            relative
-            z-10
-            h-full
-            flex
-            items-center
-            justify-center
-            text-center
-            px-6
-            "
-            >
-
-                <div>
-
-                    <span
-                    className="
-                    uppercase
-                    tracking-[0.35em]
-                    text-[#D4A940]
-                    font-semibold
-                    "
-                    >
-                        Destination
-                    </span>
+            <div className="kenya-overlay"></div>
 
 
-                    <h1
-                    className="
-                    mt-6
-                    text-white
-                    font-serif
-                    text-5xl
-                    md:text-7xl
-                    "
-                    >
-                        Kenya
-                    </h1>
 
 
-                    <p
-                    className="
-                    mt-6
-                    max-w-2xl
-                    text-white/80
-                    text-lg
-                    mx-auto
-                    "
-                    >
-                        The birthplace of the safari.
-                        Discover endless landscapes,
-                        incredible wildlife and unforgettable
-                        African adventures.
-                    </p>
+            <div className="kenya-hero-content">
 
 
-                </div>
+                <span>
+                    Destination
+                </span>
+
+
+
+                <h1>
+                    Kenya
+                </h1>
+
+
+
+                <p>
+                    The birthplace of the safari.
+                    Discover endless landscapes,
+                    incredible wildlife and unforgettable
+                    African adventures.
+                </p>
+
 
 
             </div>
@@ -106,49 +93,33 @@ function Kenya(){
 
 
 
+
+
+
+
+
+
         {/* INTRO */}
 
-        <section
-        className="
-        bg-[#FAF6EE]
-        py-24
-        px-6
-        "
-        >
 
-            <div
-            className="
-            max-w-5xl
-            mx-auto
-            text-center
-            "
-            >
+        <section className="kenya-intro">
 
-                <h2
-                className="
-                font-serif
-                text-4xl
-                md:text-5xl
-                text-[#2C1810]
-                "
-                >
+
+            <div className="kenya-container">
+
+
+                <h2>
                     Experience Kenya's Wild Heart
                 </h2>
 
 
-                <p
-                className="
-                mt-8
-                text-[#6B5744]
-                text-lg
-                leading-relaxed
-                "
-                >
 
-                From the legendary Maasai Mara
-                to the dramatic landscapes of Amboseli
-                and Tsavo, Kenya offers some of the
-                world's most iconic safari experiences.
+                <p>
+
+                    From the legendary Maasai Mara
+                    to the dramatic landscapes of Amboseli
+                    and Tsavo, Kenya offers some of the
+                    world's most iconic safari experiences.
 
                 </p>
 
@@ -160,94 +131,93 @@ function Kenya(){
 
 
 
+
+
+
+
+
+
         {/* EXPERIENCES */}
 
-        <section
-        className="
-        py-24
-        px-6
-        bg-white
-        "
-        >
 
-            <div
-            className="
-            max-w-6xl
-            mx-auto
-            "
-            >
 
-                <h2
-                className="
-                font-serif
-                text-4xl
-                text-[#2C1810]
-                mb-12
-                text-center
-                "
-                >
+        <section className="kenya-experiences">
+
+
+            <div className="kenya-container">
+
+
+                <h2>
                     Kenya Experiences
                 </h2>
 
 
-                <div
-                className="
-                grid
-                md:grid-cols-3
-                gap-8
-                "
-                >
+
+
+                <div className="kenya-grid">
+
 
 
                     {
-                    [
-                        "Maasai Mara Migration",
-                        "Amboseli Elephants",
-                        "Tsavo Wilderness"
+                        experiences.map((experience)=>(
 
-                    ].map((item)=>(
-                        
-                        <div
-                        key={item}
-                        className="
-                        bg-[#FAF6EE]
-                        p-8
-                        rounded-xl
-                        shadow-md
-                        "
-                        >
 
-                            <h3
-                            className="
-                            font-serif
-                            text-2xl
-                            text-[#2C1810]
-                            "
+                            <div
+                            key={experience.title}
+                            className="kenya-card"
                             >
-                                {item}
-                            </h3>
 
 
-                            <p
-                            className="
-                            mt-4
-                            text-[#6B5744]
-                            "
-                            >
-                                Explore one of Kenya's most
-                                unforgettable safari experiences.
-                            </p>
+
+                                <div className="kenya-card-image">
 
 
-                        </div>
+                                    <img
+
+                                    src={experience.image}
+
+                                    alt={experience.title}
+
+                                    />
 
 
-                    ))
+                                </div>
 
+
+
+
+
+
+
+                                <div className="kenya-card-content">
+
+
+                                    <h3>
+                                        {experience.title}
+                                    </h3>
+
+
+
+                                    <p>
+                                        {experience.text}
+                                    </p>
+
+
+
+                                </div>
+
+
+
+                            </div>
+
+
+                        ))
                     }
 
 
+
                 </div>
+
 
 
             </div>
@@ -257,7 +227,20 @@ function Kenya(){
 
 
 
+
+
+
+
+
+
+        {/* CTA */}
+
+
         <BookingCTA />
+
+
+
+
 
 
         </>
@@ -265,6 +248,7 @@ function Kenya(){
     )
 
 }
+
 
 
 export default Kenya;

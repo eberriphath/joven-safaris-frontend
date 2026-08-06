@@ -1,105 +1,132 @@
 import BookingCTA from "../components/BookingCTA";
+import "./Dubai.css";
 
 
 function Dubai(){
+
+
+    const highlights = [
+
+        {
+            title:"Luxury Desert Safaris",
+            text:
+            "Experience golden dunes, sunset drives, traditional Arabian camps and unforgettable desert adventures."
+        },
+
+
+        {
+            title:"Modern Arabian Culture",
+            text:
+            "Discover Dubai's heritage, architecture, cuisine and the traditions that shaped this global destination."
+        },
+
+
+        {
+            title:"Premium Experiences",
+            text:
+            "From luxury stays to exclusive adventures, Dubai offers comfort, excitement and unforgettable memories."
+        }
+
+    ];
+
+
+
+
+
+
+
+    const experiences = [
+
+        {
+            title:"Desert Safari Adventure",
+
+            image:
+            "https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=900&q=80",
+
+            text:
+            "Ride across golden dunes, enjoy breathtaking sunsets and experience authentic Arabian hospitality."
+        },
+
+
+
+        {
+            title:"Dubai City Luxury",
+
+            image:
+            "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=900&q=80",
+
+            text:
+            "Explore Dubai's iconic skyline, luxury shopping and world-class attractions."
+        },
+
+
+
+        {
+            title:"Cultural Discovery",
+
+            image:
+            "https://images.unsplash.com/photo-1524230572899-a752b3835840?auto=format&fit=crop&w=900&q=80",
+
+            text:
+            "Discover traditional markets, heritage sites and the history behind modern Dubai."
+        }
+
+    ];
+
+
+
+
+
+
 
     return(
 
         <>
 
-        {/* HERO */}
-
-        <section
-        className="
-        relative
-        h-screen
-        overflow-hidden
-        "
-        >
-
-            <div
-            className="
-            absolute
-            inset-0
-            bg-cover
-            bg-center
-            "
-            style={{
-                backgroundImage:
-                "url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1800&q=80')"
-            }}
-            />
 
 
 
-            <div
-            className="
-            absolute
-            inset-0
-            bg-black/50
-            "
-            />
+
+        {/* =========================
+            HERO
+        ========================= */}
+
+
+        <section className="dubai-hero">
+
+
+            <div className="dubai-hero-image"></div>
+
+
+            <div className="dubai-overlay"></div>
 
 
 
-            <div
-            className="
-            relative
-            z-10
-            h-full
-            flex
-            items-center
-            justify-center
-            text-center
-            px-6
-            "
-            >
 
-                <div>
+            <div className="dubai-hero-content">
 
-                    <span
-                    className="
-                    uppercase
-                    tracking-[0.35em]
-                    text-[#D4A940]
-                    font-semibold
-                    "
-                    >
-                        Destination
-                    </span>
+
+                <span>
+                    Destination
+                </span>
 
 
 
-                    <h1
-                    className="
-                    mt-6
-                    text-white
-                    font-serif
-                    text-5xl
-                    md:text-7xl
-                    "
-                    >
-                        Dubai
-                    </h1>
+                <h1>
+                    Dubai
+                </h1>
 
 
 
-                    <p
-                    className="
-                    mt-6
-                    max-w-2xl
-                    mx-auto
-                    text-lg
-                    text-white/85
-                    leading-relaxed
-                    "
-                    >
-                        Experience the beauty of the Arabian desert,
-                        where luxury, culture and adventure meet.
-                    </p>
 
+                <p>
 
-                </div>
+                    Experience the perfect blend of Arabian heritage,
+                    luxury and adventure in one of the world's most
+                    iconic destinations.
+
+                </p>
+
 
 
             </div>
@@ -111,52 +138,37 @@ function Dubai(){
 
 
 
-        {/* INTRO */}
 
-        <section
-        className="
-        bg-[#FAF6EE]
-        py-24
-        px-6
-        "
-        >
 
-            <div
-            className="
-            max-w-5xl
-            mx-auto
-            text-center
-            "
-            >
 
-                <h2
-                className="
-                font-serif
-                text-4xl
-                md:text-5xl
-                text-[#2C1810]
-                "
-                >
+
+        {/* =========================
+            INTRODUCTION
+        ========================= */}
+
+
+        <section className="dubai-intro">
+
+
+            <div className="dubai-container">
+
+
+                <h2>
                     Arabian Luxury Meets Adventure
                 </h2>
 
 
 
-                <p
-                className="
-                mt-8
-                text-[#6B5744]
-                text-lg
-                leading-relaxed
-                "
-                >
+                <p>
 
-                    Discover Dubai beyond the skyscrapers.
-                    From golden desert landscapes to cultural
-                    experiences, we create journeys that combine
-                    excitement, comfort and unforgettable memories.
+                    Dubai is more than towering skyscrapers and
+                    modern luxury. Discover breathtaking desert
+                    landscapes, rich cultural experiences and
+                    unforgettable adventures designed around your
+                    comfort.
 
                 </p>
+
 
 
             </div>
@@ -168,102 +180,63 @@ function Dubai(){
 
 
 
-        {/* EXPERIENCES */}
-
-        <section
-        className="
-        py-24
-        px-6
-        bg-white
-        "
-        >
-
-            <div
-            className="
-            max-w-6xl
-            mx-auto
-            "
-            >
 
 
-                <h2
-                className="
-                text-center
-                font-serif
-                text-4xl
-                text-[#2C1810]
-                mb-12
-                "
-                >
-                    Dubai Experiences
+
+
+        {/* =========================
+            HIGHLIGHTS
+        ========================= */}
+
+
+
+        <section className="dubai-highlights">
+
+
+            <div className="dubai-container">
+
+
+                <h2>
+                    Why Visit Dubai?
                 </h2>
 
 
 
 
-                <div
-                className="
-                grid
-                md:grid-cols-3
-                gap-8
-                "
-                >
+
+                <div className="dubai-highlight-grid">
 
 
                     {
-                    [
 
-                    {
-                    title:"Desert Safari",
-                    text:"Experience dune drives, sunsets and traditional Arabian hospitality."
-                    },
-
-
-                    {
-                    title:"Luxury Escapes",
-                    text:"Enjoy premium experiences designed around comfort and style."
-                    },
-
-
-                    {
-                    title:"Cultural Adventures",
-                    text:"Explore Dubai's heritage, traditions and hidden gems."
-                    }
-
-
-                    ].map((experience)=>(
+                    highlights.map((item)=>(
 
 
                         <div
-                        key={experience.title}
-                        className="
-                        bg-[#FAF6EE]
-                        p-8
-                        rounded-xl
-                        shadow-md
-                        "
+
+                        key={item.title}
+
+                        className="dubai-card"
+
                         >
 
-                            <h3
-                            className="
-                            font-serif
-                            text-2xl
-                            text-[#2C1810]
-                            "
-                            >
-                                {experience.title}
+
+
+                            <h3>
+
+                                {item.title}
+
                             </h3>
 
 
-                            <p
-                            className="
-                            mt-4
-                            text-[#6B5744]
-                            leading-relaxed
-                            "
-                            >
-                                {experience.text}
+
+
+                            <p>
+
+                                {item.text}
+
                             </p>
+
 
 
                         </div>
@@ -274,7 +247,9 @@ function Dubai(){
                     }
 
 
+
                 </div>
+
 
 
             </div>
@@ -285,9 +260,241 @@ function Dubai(){
 
 
 
-        {/* CTA */}
+
+
+
+
+
+        {/* =========================
+            EXPERIENCES
+        ========================= */}
+
+
+
+        <section className="dubai-experiences">
+
+
+            <div className="dubai-container">
+
+
+
+                <h2>
+
+                    Dubai Experiences
+
+                </h2>
+
+
+
+
+
+                <div className="experience-grid">
+
+
+                    {
+
+                    experiences.map((experience)=>(
+
+
+                        <div
+
+                        key={experience.title}
+
+                        className="experience-card"
+
+                        >
+
+
+
+                            <div className="experience-image">
+
+
+                                <img
+
+                                src={experience.image}
+
+                                alt={experience.title}
+
+                                />
+
+
+
+                            </div>
+
+
+
+
+
+
+
+                            <div className="experience-content">
+
+
+
+                                <h3>
+
+                                    {experience.title}
+
+                                </h3>
+
+
+
+
+                                <p>
+
+                                    {experience.text}
+
+                                </p>
+
+
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+                    ))
+
+                    }
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+        {/* =========================
+            BEST TIME TO VISIT
+        ========================= */}
+
+
+
+        <section className="dubai-season">
+
+
+            <div className="dubai-container">
+
+
+
+                <div className="season-card">
+
+
+                    <h2>
+
+                        Best Time To Visit Dubai
+
+                    </h2>
+
+
+
+
+                    <p>
+
+                        The best time to experience Dubai is between
+                        October and April when temperatures are pleasant
+                        for desert adventures, sightseeing and outdoor
+                        activities.
+
+                    </p>
+
+
+
+
+
+                    <div className="season-grid">
+
+
+
+                        <div>
+
+
+                            <h3>
+                                October - April
+                            </h3>
+
+
+                            <span>
+                                Ideal weather for outdoor adventures
+                            </span>
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <div>
+
+
+                            <h3>
+                                May - September
+                            </h3>
+
+
+                            <span>
+                                Hot season with luxury indoor experiences
+                            </span>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+        {/* =========================
+            CTA
+        ========================= */}
+
 
         <BookingCTA />
+
+
+
+
+
 
 
         </>
@@ -295,6 +502,7 @@ function Dubai(){
     )
 
 }
+
 
 
 export default Dubai;

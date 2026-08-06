@@ -1,0 +1,338 @@
+.experience-hero{
+
+    position:relative;
+
+    height:100vh;
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+
+/* BACKGROUND IMAGE */
+
+
+.experience-hero-image{
+
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+    url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1800&q=80");
+
+    background-size:cover;
+
+    background-position:center;
+
+    animation:
+    heroZoom 18s ease-in-out infinite alternate;
+
+
+}
+
+
+
+
+
+@keyframes heroZoom{
+
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+
+    to{
+
+        transform:scale(1.12);
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* OVERLAY */
+
+
+.experience-hero-overlay{
+
+
+    position:absolute;
+
+    inset:0;
+
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.65)
+    );
+
+
+}
+
+
+
+
+
+
+
+
+/* CONTENT */
+
+
+.experience-hero-content{
+
+
+    position:relative;
+
+    z-index:2;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:0 24px;
+
+
+}
+
+
+
+
+
+
+
+.experience-tag{
+
+
+    text-transform:uppercase;
+
+    letter-spacing:.35em;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#D4A940;
+
+    margin-bottom:28px;
+
+
+}
+
+
+
+
+
+
+
+.experience-hero-content h1{
+
+
+    font-family:Georgia,serif;
+
+    font-size:clamp(3rem,6vw,5.5rem);
+
+    line-height:1.05;
+
+    color:white;
+
+    font-weight:500;
+
+
+}
+
+
+
+
+
+
+
+
+.experience-hero-content p{
+
+
+    margin-top:32px;
+
+    max-width:650px;
+
+    color:rgba(255,255,255,.85);
+
+    font-size:20px;
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+
+
+/* SCROLL LINK */
+
+
+.experience-scroll{
+
+
+    margin-top:70px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:12px;
+
+
+    color:
+    rgba(255,255,255,.8);
+
+
+    text-decoration:none;
+
+    transition:.3s ease;
+
+
+}
+
+
+
+.experience-scroll:hover{
+
+
+    color:#D4A940;
+
+
+}
+
+
+
+
+
+.experience-scroll span{
+
+
+    text-transform:uppercase;
+
+    letter-spacing:.25em;
+
+    font-size:13px;
+
+
+}
+
+
+
+
+
+.experience-scroll strong{
+
+
+    font-size:36px;
+
+    font-weight:400;
+
+    animation:bounce 2s infinite;
+
+
+}
+
+
+
+
+
+
+
+@keyframes bounce{
+
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(12px);
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:768px){
+
+
+
+.experience-hero-content h1{
+
+
+    font-size:42px;
+
+
+}
+
+
+
+
+.experience-hero-content p{
+
+
+    font-size:17px;
+
+
+}
+
+
+
+.experience-scroll{
+
+
+    margin-top:45px;
+
+
+}
+
+
+
+}

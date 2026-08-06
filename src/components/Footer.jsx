@@ -3,7 +3,7 @@ function Footer() {
 
     return (
 
-        <footer className="footer">
+        <footer id="footer" className="footer">
 
 
             {/* Decorative top line */}

@@ -1,167 +1,83 @@
 import BookingCTA from "../components/BookingCTA";
+import "./EastAfrica.css";
 
 
 function EastAfrica(){
+
+
+    const experiences = [
+
+        {
+            title:"Kenya Safaris",
+            text:
+            "Experience the Maasai Mara, Amboseli landscapes and unforgettable wildlife encounters.",
+            image:
+            "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80"
+        },
+
+
+        {
+            title:"Tanzania Adventures",
+            text:
+            "Discover Serengeti migrations, Ngorongoro Crater and some of Africa's greatest wilderness.",
+            image:
+            "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=80"
+        },
+
+
+        {
+            title:"Uganda & Rwanda",
+            text:
+            "Explore tropical forests, mountain landscapes and incredible primate experiences.",
+            image:
+            "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=80"
+        }
+
+
+    ];
+
+
+
+
+
 
     return(
 
         <>
 
+
         {/* HERO */}
 
-        <section
-        className="
-        relative
-        h-screen
-        overflow-hidden
-        "
-        >
 
-            <div
-            className="
-            absolute
-            inset-0
-            bg-cover
-            bg-center
-            "
-            style={{
-                backgroundImage:
-                "url('https://images.unsplash.com/photo-1535941339077-2dd1c7963098?auto=format&fit=crop&w=1800&q=80')"
-            }}
-            />
+        <section className="east-hero">
+
+
+            <div className="east-hero-image"></div>
+
+
+            <div className="east-overlay"></div>
 
 
 
-            <div
-            className="
-            absolute
-            inset-0
-            bg-black/50
-            "
-            />
+            <div className="east-hero-content">
+
+
+                <span>
+                    Destination
+                </span>
+
+
+                <h1>
+                    East Africa
+                </h1>
 
 
 
-            <div
-            className="
-            relative
-            z-10
-            h-full
-            flex
-            items-center
-            justify-center
-            text-center
-            px-6
-            "
-            >
+                <p>
 
-                <div>
-
-
-                    <span
-                    className="
-                    uppercase
-                    tracking-[0.35em]
-                    text-[#D4A940]
-                    font-semibold
-                    "
-                    >
-                        Destination
-                    </span>
-
-
-
-
-                    <h1
-                    className="
-                    mt-6
-                    text-white
-                    font-serif
-                    text-5xl
-                    md:text-7xl
-                    "
-                    >
-                        East Africa
-                    </h1>
-
-
-
-
-                    <p
-                    className="
-                    mt-6
-                    max-w-2xl
-                    mx-auto
-                    text-lg
-                    text-white/85
-                    leading-relaxed
-                    "
-                    >
-                        A journey across borders,
-                        cultures and landscapes where
-                        Africa's wilderness comes alive.
-                    </p>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-
-
-        {/* INTRO */}
-
-        <section
-        className="
-        bg-[#FAF6EE]
-        py-24
-        px-6
-        "
-        >
-
-            <div
-            className="
-            max-w-5xl
-            mx-auto
-            text-center
-            "
-            >
-
-                <h2
-                className="
-                font-serif
-                text-4xl
-                md:text-5xl
-                text-[#2C1810]
-                "
-                >
-                    Beyond One Country
-                </h2>
-
-
-
-                <p
-                className="
-                mt-8
-                text-[#6B5744]
-                text-lg
-                leading-relaxed
-                "
-                >
-
-                    Explore the incredible diversity of East Africa
-                    through multi-country adventures.
-
-                    From Kenya's savannahs to Tanzania's plains,
-                    Uganda's forests and Rwanda's mountains,
-                    experience a region filled with wildlife,
-                    culture and natural beauty.
+                    A journey across borders,
+                    cultures and landscapes where
+                    Africa's wilderness comes alive.
 
                 </p>
 
@@ -175,113 +91,38 @@ function EastAfrica(){
 
 
 
-        {/* EXPERIENCES */}
-
-        <section
-        className="
-        py-24
-        px-6
-        bg-white
-        "
-        >
-
-            <div
-            className="
-            max-w-6xl
-            mx-auto
-            "
-            >
 
 
-                <h2
-                className="
-                text-center
-                font-serif
-                text-4xl
-                text-[#2C1810]
-                mb-12
-                "
-                >
-                    East Africa Experiences
+
+
+        {/* INTRO */}
+
+
+
+        <section className="east-intro">
+
+
+            <div className="east-container">
+
+
+                <h2>
+                    Beyond One Country
                 </h2>
 
 
 
+                <p>
 
-                <div
-                className="
-                grid
-                md:grid-cols-3
-                gap-8
-                "
-                >
+                    Explore the incredible diversity of East Africa
+                    through multi-country adventures.
 
+                    From Kenya's endless savannahs to Tanzania's
+                    legendary plains, Uganda's forests and Rwanda's
+                    mountains, experience a region filled with wildlife,
+                    culture and natural beauty.
 
-                    {
-                    [
+                </p>
 
-                    {
-                    title:"Tanzania Safaris",
-                    text:"Discover Serengeti landscapes, Ngorongoro Crater and unforgettable wildlife encounters."
-                    },
-
-
-                    {
-                    title:"Uganda Adventures",
-                    text:"Experience lush forests, mountain landscapes and incredible primate encounters."
-                    },
-
-
-                    {
-                    title:"Rwanda Exploration",
-                    text:"Explore Rwanda's natural beauty, culture and iconic mountain gorilla experiences."
-                    }
-
-
-                    ].map((experience)=>(
-
-
-                        <div
-                        key={experience.title}
-                        className="
-                        bg-[#FAF6EE]
-                        p-8
-                        rounded-xl
-                        shadow-md
-                        "
-                        >
-
-                            <h3
-                            className="
-                            font-serif
-                            text-2xl
-                            text-[#2C1810]
-                            "
-                            >
-                                {experience.title}
-                            </h3>
-
-
-                            <p
-                            className="
-                            mt-4
-                            text-[#6B5744]
-                            leading-relaxed
-                            "
-                            >
-                                {experience.text}
-                            </p>
-
-
-                        </div>
-
-
-                    ))
-
-                    }
-
-
-                </div>
 
 
             </div>
@@ -293,9 +134,104 @@ function EastAfrica(){
 
 
 
+
+
+
+
+        {/* EXPERIENCES */}
+
+
+
+        <section className="east-experiences">
+
+
+            <div className="east-container">
+
+
+                <h2>
+                    East Africa Experiences
+                </h2>
+
+
+
+
+                <div className="east-grid">
+
+
+
+                {
+                    experiences.map((item)=>(
+
+
+                        <div
+                        className="east-card"
+                        key={item.title}
+                        >
+
+
+
+                            <img
+
+                            src={item.image}
+
+                            alt={item.title}
+
+                            />
+
+
+
+                            <div className="east-card-overlay"></div>
+
+
+
+
+
+                            <div className="east-card-content">
+
+
+                                <h3>
+                                    {item.title}
+                                </h3>
+
+
+                                <p>
+                                    {item.text}
+                                </p>
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+                    ))
+                }
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+
+
         {/* CTA */}
 
+
         <BookingCTA />
+
 
 
         </>
@@ -303,6 +239,7 @@ function EastAfrica(){
     )
 
 }
+
 
 
 export default EastAfrica;

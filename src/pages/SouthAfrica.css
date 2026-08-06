@@ -1,0 +1,376 @@
+.south-container{
+
+    max-width:1200px;
+    margin:auto;
+    padding:0 24px;
+
+}
+
+
+
+
+
+
+
+/* HERO */
+
+
+.south-hero{
+
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+
+}
+
+
+
+.south-hero-image{
+
+    position:absolute;
+    inset:0;
+
+    background-image:url(
+    "https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=1800&q=80"
+    );
+
+    background-size:cover;
+    background-position:center;
+
+}
+
+
+
+
+
+.south-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.8)
+    );
+
+}
+
+
+
+
+
+
+.south-hero-content{
+
+
+    position:relative;
+
+    z-index:2;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:24px;
+
+    color:white;
+
+}
+
+
+
+
+.south-hero-content span{
+
+    text-transform:uppercase;
+
+    letter-spacing:.35em;
+
+    color:#D4A940;
+
+    font-weight:600;
+
+    font-size:.85rem;
+
+}
+
+
+
+
+
+.south-hero-content h1{
+
+
+    margin-top:25px;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(4rem,8vw,7rem);
+
+}
+
+
+
+
+
+.south-hero-content p{
+
+
+    max-width:700px;
+
+    margin-top:25px;
+
+    font-size:1.2rem;
+
+    line-height:1.8;
+
+    color:rgba(255,255,255,.85);
+
+}
+
+
+
+
+
+
+
+
+
+/* INTRO */
+
+
+.south-intro{
+
+    background:#FAF6EE;
+
+    padding:100px 0;
+
+    text-align:center;
+
+}
+
+
+
+.south-intro h2{
+
+
+    font-family:"Playfair Display",serif;
+
+    color:#2C1810;
+
+    font-size:clamp(2.5rem,5vw,4rem);
+
+}
+
+
+
+.south-intro p{
+
+
+    max-width:850px;
+
+    margin:35px auto 0;
+
+    color:#6B5744;
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+}
+
+
+
+
+
+
+
+
+
+/* EXPERIENCES */
+
+
+.south-experiences{
+
+    background:white;
+
+    padding:100px 0;
+
+}
+
+
+
+
+
+.south-experiences h2{
+
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+    font-family:"Playfair Display",serif;
+
+    color:#2C1810;
+
+    font-size:3rem;
+
+}
+
+
+
+
+
+
+.south-grid{
+
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:32px;
+
+}
+
+
+
+
+
+.south-card{
+
+
+    background:#FAF6EE;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+}
+
+
+
+
+
+.south-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+
+
+
+.south-card-image{
+
+
+    height:280px;
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+.south-card-image img{
+
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+
+
+
+
+.south-card:hover img{
+
+
+    transform:scale(1.08);
+
+}
+
+
+
+
+
+
+.south-card-content{
+
+
+    padding:32px;
+
+}
+
+
+
+
+
+.south-card-content h3{
+
+
+    font-family:"Playfair Display",serif;
+
+    font-size:1.8rem;
+
+    color:#2C1810;
+
+}
+
+
+
+
+.south-card-content p{
+
+
+    margin-top:16px;
+
+    color:#6B5744;
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+
+
+
+@media(max-width:900px){
+
+
+    .south-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+}
