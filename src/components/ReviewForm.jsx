@@ -51,7 +51,7 @@ api.post("/reviews",formData)
 
 
 setStatus(
-"Thank you! Your review has been submitted and is awaiting approval."
+"Thank you for choosing us, your review is well received. We look forward to hosting you again!"
 );
 
 
@@ -116,7 +116,10 @@ Tell Us About Your <em>Journey</em>
 
 <p>
 
-Your story helps other travellers discover Africa.
+We hope you had a memorable experience with us! 
+ We'd love to hear your thoughts - kindly rate your safari and share a short review, 
+Your feedback helps us improve and also guide future travellers.
+
 
 </p>
 
@@ -160,7 +163,7 @@ type="text"
 
 name="location"
 
-placeholder="Location"
+placeholder="Country of Origin"
 
 value={formData.location}
 
@@ -219,7 +222,7 @@ onChange={handleChange}
 
 name="message"
 
-placeholder="Write your safari experience..."
+placeholder="Review"
 
 value={formData.message}
 

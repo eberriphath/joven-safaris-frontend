@@ -27,7 +27,7 @@ return(
 <div className="about-image">
 
 <img 
-src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa"
+src="https://res.cloudinary.com/qnyhrcim/image/upload/v1786318035/49ddea32-1606-47f7-ba17-aaa065476fb9_C4D362BC-AD94-4783-AD81-697D3A29697E_mjt9hq.jpg"
 alt="Safari landscape"
 />
 

@@ -20,7 +20,7 @@ function Story() {
 
           <img
 
-            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
+            src="https://res.cloudinary.com/qnyhrcim/image/upload/v1786318079/65af095d-185b-4eee-af8d-8d9c5f1a30e8_FE7ECF6A-0F6C-4725-8FC6-2ABE38546B37_sxbmmg.jpg"
 
             alt="Safari experience"
 

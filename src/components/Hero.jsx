@@ -95,7 +95,7 @@ function Hero(){
 
                     <Stat
 
-                        number="5+"
+                        number="4"
 
                         label="Years Experience"
 
@@ -115,7 +115,7 @@ function Hero(){
 
                     <Stat
 
-                        number="4"
+                        number="30+"
 
                         label="Destinations"
 

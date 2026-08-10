@@ -22,21 +22,21 @@ function MemoriesGallery() {
 
         {
             image:
-            "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=900&q=80",
+            "https://res.cloudinary.com/qnyhrcim/image/upload/v1786318098/348285a6-3ae8-45d8-8af5-5b7c42f7f4f8_8BA12169-89C5-4D69-AA16-95A70C27836B_zff57n.jpg",
             alt:"Safari adventure",
         },
 
 
         {
             image:
-            "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=80",
+            "https://res.cloudinary.com/qnyhrcim/image/upload/v1786318123/6109e446-7077-4d60-975d-7b83caa83541_E3A37C46-EA83-4211-AAA3-3D3A06232112_o2fpuq.jpg",
             alt:"African wilderness",
         },
 
 
         {
             image:
-            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+            "https://res.cloudinary.com/qnyhrcim/image/upload/v1786318035/49ddea32-1606-47f7-ba17-aaa065476fb9_C4D362BC-AD94-4783-AD81-697D3A29697E_mjt9hq.jpg",
             alt:"Travel experience",
         },
 
@@ -47,6 +47,12 @@ function MemoriesGallery() {
             alt:"Safari journey",
         },
 
+
+        {
+            image:
+            "https://res.cloudinary.com/qnyhrcim/image/upload/v1786318056/0b794d1d-8b6e-456e-8838-494a042ec8a7_98427851-B9C5-405D-BD87-30013FEF1112_rac5th.jpg",
+            alt:"Safari journey",
+        },        
     ];
 
 
