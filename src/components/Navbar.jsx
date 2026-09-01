@@ -125,6 +125,13 @@ function Navbar() {
             path:"/experiences",
             type:"page"
         },
+        
+
+        {
+            name:"Services",
+            path:"/services",
+            type:"page"
+        },
 
 
         {

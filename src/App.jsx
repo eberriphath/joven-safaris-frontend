@@ -10,6 +10,11 @@ import SouthAfrica from "./pages/SouthAfrica";
 import EastAfrica from "./pages/EastAfrica";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToHash from "./components/ScrollToHash";
+import CarRental from "./pages/CarRental";
+import Services from "./pages/Services";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+
 
 function App() {
 
@@ -40,6 +45,11 @@ function App() {
           element={<BookNow />}
         />
 
+        <Route
+          path="/car-rental"
+          element={<CarRental />}
+        />
+
 
         {/* =========================
             INDIVIDUAL SAFARI PAGE
@@ -53,6 +63,11 @@ function App() {
         <Route
          path="/experiences"
          element={<Experiences />}
+        />
+
+        <Route
+         path="/services"
+         element={<Services />}
         />
         
         <Route
@@ -74,6 +89,16 @@ function App() {
          path="/destinations/east-africa"
          element={<EastAfrica />}
         />        
+
+        <Route
+         path="/terms-and-conditions"
+         element={<TermsAndConditions />}
+        />
+
+        <Route
+         path="/privacy-policy"
+         element={<PrivacyPolicy />}
+        />
 
       </Routes>
 

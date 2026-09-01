@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 
 function Footer() {
 
@@ -72,24 +74,31 @@ function Footer() {
                     <ul>
 
                         <li>
-                            Kenya
+                            <Link to="/destinations/Kenya">
+                                Kenya
+                            </Link>
                         </li>
 
 
                         <li>
-                            East Africa
+                            <Link to="/destinations/east-africa">
+                                East Africa
+                            </Link>
                         </li>
 
 
                         <li>
-                            Dubai
+                            <Link to="/destinations/dubai">
+                                Dubai
+                            </Link>
                         </li>
 
 
                         <li>
-                            South Africa
+                            <Link to="/destinations/south-africa">
+                                South Africa
+                            </Link>
                         </li>
-
 
                     </ul>
 
@@ -129,12 +138,12 @@ function Footer() {
 
 
 
-                    <a
-                        href="/book-now"
+                    <Link
+                        to="/book-now"
                         className="footer-button"
                     >
                         Plan Your Safari →
-                    </a>
+                    </Link>
 
 
                 </div>
@@ -155,16 +164,34 @@ function Footer() {
             <div className="footer-bottom">
 
 
-                <p>
-                    © {new Date().getFullYear()} Joven Safaris.
-                    All rights reserved.
-                </p>
+                <div>
+
+                    <p>
+                        © {new Date().getFullYear()} Joven Safaris.
+                        All rights reserved.
+                    </p>
 
 
+                    <p>
+                        Responsible travel. Meaningful experiences.
+                    </p>
 
-                <p>
-                    Responsible travel. Meaningful experiences.
-                </p>
+                </div>
+
+
+                {/* LEGAL */}
+
+                <div className="footer-legal">
+
+                    <Link to="/terms-and-conditions">
+                        Terms & Conditions
+                    </Link>
+
+                    <Link to="/privacy-policy">
+                        Privacy Policy
+                    </Link>
+
+                </div>
 
 
             </div>
@@ -179,3 +206,4 @@ function Footer() {
 
 
 export default Footer;
+
