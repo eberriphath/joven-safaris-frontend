@@ -5,41 +5,104 @@ function TravellerDetails({
     previousStep
 }) {
 
+    function updateTravellerCount(field, value, ageField) {
 
+        let count = Number(value);
 
-    function increase(field){
+        if (isNaN(count) || count < 0) {
+            count = 0;
+        }
 
-        updateFormData(
-            field,
-            Number(formData[field]) + 1
-        );
+        count = Math.floor(count);
 
-    }
+        updateFormData(field, count);
 
+        if (ageField) {
 
+            const currentAges = [
+                ...(formData[ageField] || [])
+            ];
 
+            if (count > currentAges.length) {
 
+                const additionalAges =
+                    Array(count - currentAges.length).fill("");
 
-    function decrease(field){
+                updateFormData(
+                    ageField,
+                    [
+                        ...currentAges,
+                        ...additionalAges
+                    ]
+                );
 
-        if(formData[field] > 0){
+            } else {
 
-            updateFormData(
-                field,
-                Number(formData[field]) - 1
-            );
+                updateFormData(
+                    ageField,
+                    currentAges.slice(0, count)
+                );
+
+            }
 
         }
 
     }
 
 
+    function increase(field, ageField) {
+
+        const currentValue =
+            Number(formData[field]) || 0;
+
+        updateTravellerCount(
+            field,
+            currentValue + 1,
+            ageField
+        );
+
+    }
 
 
+    function decrease(field, ageField) {
+
+        const currentValue =
+            Number(formData[field]) || 0;
+
+        if (currentValue <= 0) {
+            return;
+        }
+
+        updateTravellerCount(
+            field,
+            currentValue - 1,
+            ageField
+        );
+
+    }
 
 
+    function updateChildAge(
+        ageField,
+        index,
+        value
+    ) {
 
-    function handleSubmit(e){
+        const updatedAges = [
+            ...(formData[ageField] || [])
+        ];
+
+        updatedAges[index] = value;
+
+        updateFormData(
+            ageField,
+            updatedAges
+        );
+
+    }
+
+
+    function handleSubmit(e) {
 
         e.preventDefault();
 
@@ -48,25 +111,16 @@ function TravellerDetails({
     }
 
 
-
-
-
-
-
-
     return (
 
         <form
-
-        onSubmit={handleSubmit}
-
-        className="booking-step"
-
+            onSubmit={handleSubmit}
+            className="booking-step"
         >
 
-
-
-
+            {/* =========================
+                HEADER
+            ========================= */}
 
             <div className="step-header">
 
@@ -74,291 +128,400 @@ function TravellerDetails({
                     Traveller Information
                 </h2>
 
-
                 <p>
                     Tell us who will be joining this safari.
                 </p>
 
-
             </div>
 
 
-
-
-
-
-
-
-
-            {/* RESIDENTS */}
+            {/* =========================
+                RESIDENTS
+            ========================= */}
 
             <div className="traveller-card">
 
+                <div className="traveller-card-header">
 
-                <h3>
-                    Residents
-                </h3>
+                    <div>
+
+                        <h3>
+                            Residents
+                        </h3>
+
+                        <p>
+                            Kenyan residents travelling on this safari.
+                        </p>
+
+                    </div>
+
+                </div>
 
 
-
-
-
-                <Counter
-
-                label="Adults"
-
-                value={formData.resident_adults}
-
-                increase={() =>
-                    increase("resident_adults")
-                }
-
-                decrease={() =>
-                    decrease("resident_adults")
-                }
-
+                <TravellerCounter
+                    label="Adults"
+                    value={formData.resident_adults}
+                    onIncrease={() =>
+                        increase("resident_adults")
+                    }
+                    onDecrease={() =>
+                        decrease("resident_adults")
+                    }
+                    onChange={(value) =>
+                        updateTravellerCount(
+                            "resident_adults",
+                            value
+                        )
+                    }
                 />
 
 
-
-
-
-                <Counter
-
-                label="Children"
-
-                value={formData.resident_children}
-
-                increase={() =>
-                    increase("resident_children")
-                }
-
-                decrease={() =>
-                    decrease("resident_children")
-                }
-
+                <TravellerCounter
+                    label="Children"
+                    value={formData.resident_children}
+                    onIncrease={() =>
+                        increase(
+                            "resident_children",
+                            "resident_children_ages"
+                        )
+                    }
+                    onDecrease={() =>
+                        decrease(
+                            "resident_children",
+                            "resident_children_ages"
+                        )
+                    }
+                    onChange={(value) =>
+                        updateTravellerCount(
+                            "resident_children",
+                            value,
+                            "resident_children_ages"
+                        )
+                    }
                 />
 
+
+                {/* RESIDENT CHILDREN */}
+
+                {formData.resident_children > 0 && (
+
+                    <ChildrenAges
+                        title="Resident children"
+                        ages={
+                            formData.resident_children_ages || []
+                        }
+                        ageField="resident_children_ages"
+                        updateChildAge={updateChildAge}
+                    />
+
+                )}
 
             </div>
 
 
-
-
-
-
-
-
-
-            {/* NON RESIDENTS */}
+            {/* =========================
+                NON-RESIDENTS
+            ========================= */}
 
             <div className="traveller-card">
 
+                <div className="traveller-card-header">
 
-                <h3>
-                    Non-Residents
-                </h3>
+                    <div>
+
+                        <h3>
+                            Non-Residents
+                        </h3>
+
+                        <p>
+                            International or non-resident travellers.
+                        </p>
+
+                    </div>
+
+                </div>
 
 
-
-
-
-                <Counter
-
-                label="Adults"
-
-                value={formData.non_resident_adults}
-
-                increase={() =>
-                    increase("non_resident_adults")
-                }
-
-                decrease={() =>
-                    decrease("non_resident_adults")
-                }
-
+                <TravellerCounter
+                    label="Adults"
+                    value={formData.non_resident_adults}
+                    onIncrease={() =>
+                        increase("non_resident_adults")
+                    }
+                    onDecrease={() =>
+                        decrease("non_resident_adults")
+                    }
+                    onChange={(value) =>
+                        updateTravellerCount(
+                            "non_resident_adults",
+                            value
+                        )
+                    }
                 />
 
 
-
-
-
-                <Counter
-
-                label="Children"
-
-                value={formData.non_resident_children}
-
-                increase={() =>
-                    increase("non_resident_children")
-                }
-
-                decrease={() =>
-                    decrease("non_resident_children")
-                }
-
+                <TravellerCounter
+                    label="Children"
+                    value={formData.non_resident_children}
+                    onIncrease={() =>
+                        increase(
+                            "non_resident_children",
+                            "non_resident_children_ages"
+                        )
+                    }
+                    onDecrease={() =>
+                        decrease(
+                            "non_resident_children",
+                            "non_resident_children_ages"
+                        )
+                    }
+                    onChange={(value) =>
+                        updateTravellerCount(
+                            "non_resident_children",
+                            value,
+                            "non_resident_children_ages"
+                        )
+                    }
                 />
 
+
+                {/* NON-RESIDENT CHILDREN */}
+
+                {formData.non_resident_children > 0 && (
+
+                    <ChildrenAges
+                        title="Non-resident children"
+                        ages={
+                            formData.non_resident_children_ages || []
+                        }
+                        ageField="non_resident_children_ages"
+                        updateChildAge={updateChildAge}
+                    />
+
+                )}
 
             </div>
 
 
+            {/* =========================
+                AGE INFORMATION
+            ========================= */}
+
+            <div className="traveller-age-note">
+
+                <span className="traveller-age-note-icon">
+                    i
+                </span>
+
+                <div>
+
+                    <strong>
+                        Children’s ages
+                    </strong>
+
+                    <p>
+                        Please enter the actual age of every child
+                        travelling. Children are grouped into
+                        0–4, 5–12 and 13–18 years.
+                    </p>
+
+                </div>
+
+            </div>
 
 
-
-
-
-
-
-            {/* BUTTONS */}
+            {/* =========================
+                BUTTONS
+            ========================= */}
 
             <div className="step-actions">
 
-
-
                 <button
-
-                type="button"
-
-                onClick={previousStep}
-
-                className="
-                step-button
-                step-button-secondary
-                "
-
+                    type="button"
+                    onClick={previousStep}
+                    className="
+                    step-button
+                    step-button-secondary
+                    "
                 >
-
                     ← Back
-
                 </button>
-
-
-
-
-
 
 
                 <button
-
-                type="submit"
-
-                className="
-                step-button
-                step-button-primary
-                "
-
+                    type="submit"
+                    className="
+                    step-button
+                    step-button-primary
+                    "
                 >
-
                     Continue →
-
                 </button>
-
-
 
             </div>
-
-
-
-
 
         </form>
 
-
-    )
-
+    );
 
 }
 
 
+/* =====================================================
+   TRAVELLER COUNTER
+===================================================== */
 
-
-
-
-
-
-function Counter({
+function TravellerCounter({
     label,
     value,
-    increase,
-    decrease
-}){
-
+    onIncrease,
+    onDecrease,
+    onChange
+}) {
 
     return (
 
-        <div className="counter-row">
+        <div className="traveller-counter-row">
 
+            <div className="traveller-counter-label">
 
-            <span>
-                {label}
-            </span>
-
-
-
-
-            <div className="counter-controls">
-
-
-                <button
-
-                type="button"
-
-                onClick={decrease}
-
-                className="counter-minus"
-
-                >
-
-                    −
-
-                </button>
-
-
-
-
-
-                <span className="counter-number">
-
-                    {value}
-
+                <span>
+                    {label}
                 </span>
-
-
-
-
-
-                <button
-
-                type="button"
-
-                onClick={increase}
-
-                className="counter-plus"
-
-                >
-
-                    +
-
-                </button>
-
 
             </div>
 
 
+            <div className="traveller-counter-controls">
+
+                <button
+                    type="button"
+                    onClick={onDecrease}
+                    className="traveller-counter-button"
+                    aria-label={`Decrease ${label}`}
+                >
+                    −
+                </button>
+
+
+                <input
+                    type="number"
+                    min="0"
+                    value={value}
+                    onFocus={(e) => {
+                        if (Number(value) === 0) {
+                            e.target.select();
+                        }
+                    }}
+                    onChange={(e) => onChange(e.target.value)}
+                    className="traveller-counter-input"
+                    aria-label={`${label} number`}
+                />
+
+
+                <button
+                    type="button"
+                    onClick={onIncrease}
+                    className="traveller-counter-button"
+                    aria-label={`Increase ${label}`}
+                >
+                    +
+                </button>
+
+            </div>
 
         </div>
 
-
-    )
-
+    );
 
 }
 
 
+/* =====================================================
+   CHILDREN AGES
+===================================================== */
+
+function ChildrenAges({
+    title,
+    ages,
+    ageField,
+    updateChildAge
+}) {
+
+    return (
+
+        <div className="children-ages-section">
+
+            <div className="children-ages-header">
+
+                <div>
+
+                    <h4>
+                        {title} — ages
+                    </h4>
+
+                    <p>
+                        Enter the age of each child.
+                    </p>
+
+                </div>
+
+                <span className="children-count-badge">
+                    {ages.length}
+                    {ages.length === 1 ? " child" : " children"}
+                </span>
+
+            </div>
 
 
+            <div className="children-age-grid">
 
+                {ages.map((age, index) => (
+
+                    <div
+                        className="child-age-field"
+                        key={index}
+                    >
+
+                        <label>
+                            Child {index + 1}
+                        </label>
+
+                        <div className="child-age-input-wrapper">
+
+                            <input
+                                type="number"
+                                min="0"
+                                max="18"
+                                value={age}
+                                onChange={(e) =>
+                                    updateChildAge(
+                                        ageField,
+                                        index,
+                                        e.target.value
+                                    )
+                                }
+                                placeholder="Age"
+                                required
+                            />
+
+                            <span>
+                                years
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                ))}
+
+            </div>
+
+        </div>
+
+    );
+
+}
 
 
 export default TravellerDetails;

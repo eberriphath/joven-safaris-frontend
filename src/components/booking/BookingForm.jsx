@@ -43,9 +43,11 @@ function BookingForm() {
 
         resident_adults:0,
         resident_children:0,
+        resident_children_ages:[],
 
         non_resident_adults:0,
         non_resident_children:0,
+        non_resident_children_ages:[],
 
         emergency_contact_name:"",
         emergency_contact_phone:"",

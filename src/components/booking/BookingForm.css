@@ -1317,3 +1317,438 @@ transform:translateY(0);
 
 
 }
+
+/* ==========================================
+   TRAVELLER DETAILS
+========================================== */
+
+.traveller-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            #FAF6EE,
+            #FFFDF9
+        );
+
+    border:
+        1px solid
+        rgba(196,135,58,.15);
+
+    border-radius:20px;
+
+    padding:28px;
+
+    margin-top:22px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(44,24,16,.05);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.traveller-card:hover {
+
+    box-shadow:
+        0 12px 32px
+        rgba(44,24,16,.08);
+
+}
+
+
+/* ==========================================
+   TRAVELLER CARD HEADING
+========================================== */
+
+.traveller-card h3 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:1.45rem;
+
+    color:#2C1810;
+
+    margin-bottom:20px;
+
+}
+
+
+/* ==========================================
+   COUNTER ROW
+========================================== */
+
+.counter-row {
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    min-height:64px;
+
+    padding:14px 0;
+
+    border-bottom:
+        1px solid
+        rgba(44,24,16,.08);
+
+}
+
+
+.counter-row:last-child {
+
+    border-bottom:none;
+
+}
+
+
+/* LABEL */
+
+.counter-label {
+
+    color:#2C1810;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+}
+
+
+/* ==========================================
+   COUNTER CONTROLS
+========================================== */
+
+.counter-controls {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:0;
+
+    border:
+        1px solid
+        rgba(44,24,16,.15);
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    background:white;
+
+}
+
+
+/* ==========================================
+   PLUS / MINUS
+========================================== */
+
+.counter-minus,
+.counter-plus {
+
+    width:46px;
+
+    height:46px;
+
+    border:none;
+
+    background:#F7F2E9;
+
+    color:#2C1810;
+
+    font-size:1.35rem;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:
+        background .25s ease,
+        color .25s ease;
+
+}
+
+
+.counter-minus:hover,
+.counter-plus:hover {
+
+    background:#C4873A;
+
+    color:white;
+
+}
+
+
+/* ==========================================
+   NUMBER INPUT
+========================================== */
+
+.counter-number-input {
+
+    width:58px !important;
+
+    height:46px;
+
+    padding:0 !important;
+
+    border:none !important;
+
+    border-left:
+        1px solid
+        rgba(44,24,16,.1) !important;
+
+    border-right:
+        1px solid
+        rgba(44,24,16,.1) !important;
+
+    border-radius:0 !important;
+
+    background:white !important;
+
+    box-shadow:none !important;
+
+    text-align:center;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:#2C1810;
+
+}
+
+
+/* Remove browser number arrows */
+
+.counter-number-input::-webkit-inner-spin-button,
+.counter-number-input::-webkit-outer-spin-button {
+
+    -webkit-appearance:none;
+
+    margin:0;
+
+}
+
+
+.counter-number-input {
+
+    -moz-appearance:textfield;
+
+}
+
+
+.counter-number-input:focus {
+
+    border-left:
+        1px solid
+        #C4873A !important;
+
+    border-right:
+        1px solid
+        #C4873A !important;
+
+    outline:none;
+
+}
+
+
+/* ==========================================
+   CHILDREN AGE SECTION
+========================================== */
+
+.children-age-section {
+
+    margin-top:24px;
+
+    padding-top:22px;
+
+    border-top:
+        1px solid
+        rgba(44,24,16,.1);
+
+}
+
+
+.children-age-section h4 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:1.15rem;
+
+    color:#2C1810;
+
+    margin-bottom:6px;
+
+}
+
+
+.children-age-section > p {
+
+    color:#7B6A58;
+
+    font-size:.88rem;
+
+    line-height:1.6;
+
+}
+
+
+/* ==========================================
+   CHILD AGE ROW
+========================================== */
+
+.child-age-row {
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:15px;
+
+    margin-top:14px;
+
+}
+
+
+.child-age-field {
+
+    flex:1;
+
+}
+
+
+.child-age-field label {
+
+    display:block;
+
+    margin-bottom:7px;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+    color:#6B5744;
+
+}
+
+
+.child-age-field input {
+
+    width:100%;
+
+}
+
+
+/* ==========================================
+   AGE INFORMATION
+========================================== */
+
+.age-group-note {
+
+    margin-top:18px;
+
+    padding:14px 16px;
+
+    background:
+        rgba(196,135,58,.07);
+
+    border-left:
+        3px solid
+        #C4873A;
+
+    border-radius:8px;
+
+    color:#6B5744;
+
+    font-size:.82rem;
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:600px) {
+
+    .traveller-card {
+
+        padding:20px;
+
+        border-radius:16px;
+
+    }
+
+
+    .counter-row {
+
+        min-height:58px;
+
+    }
+
+
+    .counter-controls {
+
+        flex-shrink:0;
+
+    }
+
+
+    .counter-minus,
+    .counter-plus {
+
+        width:40px;
+
+        height:42px;
+
+    }
+
+
+    .counter-number-input {
+
+        width:52px !important;
+
+        height:42px;
+
+    }
+
+
+    .counter-label {
+
+        font-size:.95rem;
+
+    }
+
+
+    .child-age-row {
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+    }
+
+
+    .child-age-field {
+
+        width:100%;
+
+    }
+
+}
+
