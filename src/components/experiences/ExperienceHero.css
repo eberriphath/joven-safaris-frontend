@@ -1,338 +1,387 @@
 .experience-hero{
 
-    position:relative;
+position:relative;
 
-    height:100vh;
+height:100vh;
 
-    overflow:hidden;
-
-}
-
-
-
-
-
-
-/* BACKGROUND IMAGE */
-
-
-.experience-hero-image{
-
-
-    position:absolute;
-
-    inset:0;
-
-    background-image:
-    url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1800&q=80");
-
-    background-size:cover;
-
-    background-position:center;
-
-    animation:
-    heroZoom 18s ease-in-out infinite alternate;
-
+overflow:hidden;
 
 }
 
+/* =========================================
+BACKGROUND VIDEOS
+========================================= */
 
+.experience-hero-video{
 
+position:absolute;
 
+inset:0;
 
-@keyframes heroZoom{
+width:100%;
 
+height:100%;
 
-    from{
+object-fit:cover;
 
-        transform:scale(1);
+object-position:center;
 
-    }
+opacity:0;
 
+transition:opacity 1.5s ease-in-out;
 
-    to{
-
-        transform:scale(1.12);
-
-    }
-
+pointer-events:none;
 
 }
 
+/* ACTIVE VIDEO */
 
+.experience-hero-video.active{
 
+opacity:1;
 
+}
 
-
-
-/* OVERLAY */
-
+/* =========================================
+OVERLAY
+========================================= */
 
 .experience-hero-overlay{
 
+position:absolute;
 
-    position:absolute;
+inset:0;
 
-    inset:0;
+z-index:1;
 
 
-    background:
-    linear-gradient(
-        to bottom,
-        rgba(0,0,0,.35),
-        rgba(0,0,0,.65)
-    );
-
+background:
+linear-gradient(
+    to bottom,
+    rgba(0,0,0,.35),
+    rgba(0,0,0,.65)
+);
 
 }
 
-
-
-
-
-
-
-
-/* CONTENT */
-
+/* =========================================
+CONTENT
+========================================= */
 
 .experience-hero-content{
 
+position:relative;
 
-    position:relative;
+z-index:2;
 
-    z-index:2;
+height:100%;
 
-    height:100%;
+display:flex;
 
-    display:flex;
+flex-direction:column;
 
-    flex-direction:column;
+align-items:center;
 
-    align-items:center;
+justify-content:center;
 
-    justify-content:center;
+text-align:center;
 
-    text-align:center;
-
-    padding:0 24px;
-
+padding:0 24px;
 
 }
 
-
-
-
-
-
+/* =========================================
+TAG
+========================================= */
 
 .experience-tag{
 
+text-transform:uppercase;
 
-    text-transform:uppercase;
+letter-spacing:.35em;
 
-    letter-spacing:.35em;
+font-size:14px;
 
-    font-size:14px;
+font-weight:600;
 
-    font-weight:600;
+color:#D4A940;
 
-    color:#D4A940;
-
-    margin-bottom:28px;
-
+margin-bottom:28px;
 
 }
 
-
-
-
-
-
+/* =========================================
+HEADING
+========================================= */
 
 .experience-hero-content h1{
 
+font-family:Georgia,serif;
 
-    font-family:Georgia,serif;
+font-size:clamp(3rem,6vw,5.5rem);
 
-    font-size:clamp(3rem,6vw,5.5rem);
+line-height:1.05;
 
-    line-height:1.05;
+color:white;
 
-    color:white;
+font-weight:500;
 
-    font-weight:500;
-
+margin:0;
 
 }
 
-
-
-
-
-
-
+/* =========================================
+DESCRIPTION
+========================================= */
 
 .experience-hero-content p{
 
+margin-top:32px;
 
-    margin-top:32px;
+max-width:650px;
 
-    max-width:650px;
+color:rgba(255,255,255,.85);
 
-    color:rgba(255,255,255,.85);
+font-size:20px;
 
-    font-size:20px;
+line-height:1.8;
 
-    line-height:1.8;
-
+margin-bottom:0;
 
 }
 
-
-
-
-
-
-
-/* SCROLL LINK */
-
+/* =========================================
+SCROLL LINK
+========================================= */
 
 .experience-scroll{
 
+margin-top:70px;
 
-    margin-top:70px;
+display:flex;
 
-    display:flex;
+flex-direction:column;
 
-    flex-direction:column;
+align-items:center;
 
-    align-items:center;
+gap:12px;
 
-    gap:12px;
+color:rgba(255,255,255,.8);
 
+text-decoration:none;
 
-    color:
-    rgba(255,255,255,.8);
-
-
-    text-decoration:none;
-
-    transition:.3s ease;
+transition:.3s ease;
 
 
 }
-
-
 
 .experience-scroll:hover{
 
 
-    color:#D4A940;
+color:#D4A940;
 
 
 }
-
-
-
-
 
 .experience-scroll span{
 
 
-    text-transform:uppercase;
+text-transform:uppercase;
 
-    letter-spacing:.25em;
+letter-spacing:.25em;
 
-    font-size:13px;
-
+font-size:13px;
 
 }
-
-
-
-
 
 .experience-scroll strong{
 
+font-size:36px;
 
-    font-size:36px;
+font-weight:400;
 
-    font-weight:400;
-
-    animation:bounce 2s infinite;
-
+animation:bounce 2s infinite;
 
 }
 
-
-
-
-
-
+/* =========================================
+ARROW ANIMATION
+========================================= */
 
 @keyframes bounce{
 
+0%,100%{
 
-    0%,100%{
-
-        transform:translateY(0);
-
-    }
-
-
-    50%{
-
-        transform:translateY(12px);
-
-    }
-
+    transform:translateY(0);
 
 }
 
 
+50%{
 
+    transform:translateY(12px);
 
+}
 
+}
 
-
-
-/* MOBILE */
-
+/* =========================================
+MOBILE
+========================================= */
 
 @media(max-width:768px){
 
+.experience-hero{
+
+    height:100svh;
+
+    min-height:600px;
+
+}
+
+
+.experience-hero-video{
+
+    object-position:center;
+
+}
+
+
+.experience-hero-content{
+
+    padding:0 24px;
+
+}
+
+
+.experience-tag{
+
+    font-size:12px;
+
+    letter-spacing:.3em;
+
+    margin-bottom:24px;
+
+}
 
 
 .experience-hero-content h1{
 
-
     font-size:42px;
 
+    line-height:1.05;
 
 }
-
-
 
 
 .experience-hero-content p{
 
-
     font-size:17px;
 
+    line-height:1.7;
+
+    margin-top:28px;
+
+    max-width:500px;
 
 }
-
 
 
 .experience-scroll{
 
-
     margin-top:45px;
-
 
 }
 
+
+.experience-scroll span{
+
+    font-size:12px;
+
+    letter-spacing:.2em;
+
+}
+
+
+.experience-scroll strong{
+
+    font-size:32px;
+
+}
+
+}
+
+/* =========================================
+SMALL PHONES
+========================================= */
+
+@media(max-width:480px){
+
+
+.experience-hero{
+
+    min-height:560px;
+
+}
+
+
+.experience-hero-content{
+
+    padding:0 18px;
+
+}
+
+
+.experience-tag{
+
+    font-size:11px;
+
+    letter-spacing:.25em;
+
+}
+
+
+.experience-hero-content h1{
+
+    font-size:36px;
+
+    line-height:1.08;
+
+}
+
+
+.experience-hero-content p{
+
+    font-size:15px;
+
+    line-height:1.65;
+
+    margin-top:24px;
+
+}
+
+
+.experience-scroll{
+
+    margin-top:38px;
+
+}
+
+
+.experience-scroll span{
+
+    font-size:10px;
+
+    letter-spacing:.17em;
+
+}
+
+
+.experience-scroll strong{
+
+    font-size:28px;
+
+}
 
 
 }

@@ -96,7 +96,7 @@ function Hero() {
 
 
         <h1>
-          Where The Wild Meets <em>Purpose</em>
+          <em>Where The Wild Meets</em> Purpose
         </h1>
 
 

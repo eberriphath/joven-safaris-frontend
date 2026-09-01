@@ -262,3 +262,40 @@
 
 
 }
+
+/* =========================================
+MEMORY VIDEOS
+========================================= */
+
+.memory-card video {
+
+
+width: 100%;
+
+height: 100%;
+
+display: block;
+
+object-fit: cover;
+
+object-position: center;
+
+
+}
+
+/* Keep videos behaving exactly like images
+on smaller screens */
+
+@media (max-width:768px) {
+
+
+.memory-card video {
+
+    object-fit: cover;
+
+    object-position: center;
+
+}
+
+
+}

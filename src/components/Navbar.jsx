@@ -125,7 +125,7 @@ function Navbar() {
             path:"/experiences",
             type:"page"
         },
-        
+
 
         {
             name:"Services",
@@ -255,7 +255,7 @@ function Navbar() {
                     Joven
 
 
-                    <span className="text-[#C4873A]">
+                    <span className="text-[#2D5016]">
 
                         Safaris
 
