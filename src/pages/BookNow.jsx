@@ -1,13 +1,22 @@
 import Navbar from "../components/Navbar";
 import BookingForm from "../components/booking/BookingForm";
 import "./BookNow.css";
+import SEO from "../components/SEO";
 
 function BookNow() {
 
     return (
+        
 
+
+        
         <>
 
+<SEO
+  title="Book Your Safari | Joven Safaris"
+  description="Start planning your next adventure with Joven Safaris. Request a personalized safari, tour or luxury travel experience across Africa and beyond."
+  canonical="/book-now"
+/>
             <Navbar />
 
 

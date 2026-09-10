@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 import Navbar from "../components/Navbar";
 import "./PackageDetails.css";
@@ -85,6 +86,13 @@ function PackageDetails() {
 
 
     return (
+        <>
+        <SEO
+          title={`${pkg.title} | Joven Safaris`}
+          description={pkg.description}
+          canonical={`/packages/${id}`}
+        />
+        
 
 
         <section className="package-page">
@@ -395,6 +403,8 @@ function PackageDetails() {
 
 
         </section>
+
+        </>
 
 
     )

@@ -1,8 +1,14 @@
 import CarRentalForm from "../components/car-rental/CarRentalForm";
+import SEO from "../components/SEO";
 
 function CarRental() {
   return (
     <main className="booking-page">
+      <SEO
+        title="Car Rental | Joven Safaris"
+        description="Rent a car and explore Kenya at your own pace with Joven Safaris."
+        canonical="/car-rental"
+      />
 
       {/* =========================
           PAGE HEADER

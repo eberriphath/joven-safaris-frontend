@@ -3,24 +3,34 @@ import { Link } from "react-router-dom";
 
 const heroMedia = [
   {
-    type: "video",
-    src: "YOUR_CLOUDINARY_VIDEO_URL_1",
+    type: "image",
+    src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=80",
+    alt: "Safari adventure",
   },
   {
     type: "video",
-    src: "YOUR_CLOUDINARY_VIDEO_URL_2",
+    src: "https://res.cloudinary.com/qnyhrcim/video/upload/v1789003604/WhatsApp_Video_2026-09-10_at_4.19.10_AM_2_ly9vr7.mp4",
+  },
+  {
+    type: "video",
+    src: "https://res.cloudinary.com/qnyhrcim/video/upload/v1789003589/WhatsApp_Video_2026-09-10_at_4.19.10_AM_1_joze08.mp4",
   },
   {
     type: "image",
-    src: "YOUR_CLOUDINARY_IMAGE_URL_1",
+    src: "https://res.cloudinary.com/qnyhrcim/image/upload/v1788272582/ee1e3369-7fd5-45ae-91cf-ee442356b3b9_C1E3ED4C-A762-44F9-9536-06310A72EF64_jgxpol.jpg",
   },
   {
     type: "video",
-    src: "YOUR_CLOUDINARY_VIDEO_URL_3",
+    src: "https://res.cloudinary.com/qnyhrcim/video/upload/v1789003556/WhatsApp_Video_2026-09-10_at_4.19.10_AM_ljhkin.mp4",
   },
   {
     type: "image",
-    src: "YOUR_CLOUDINARY_IMAGE_URL_2",
+    src: "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=80",
+    alt: "Safari adventure",
+
+    type: "image",
+    src: "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=80",
+    alt: "Safari adventure",
   },
 ];
 

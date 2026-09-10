@@ -1,5 +1,6 @@
 import BookingCTA from "../components/BookingCTA";
 import "./SouthAfrica.css";
+import SEO from "../components/SEO";
 
 
 function SouthAfrica(){
@@ -49,7 +50,11 @@ function SouthAfrica(){
 
         <>
 
-
+<SEO
+  title="South Africa Tours & Safaris | Joven Safaris"
+  description="Explore unforgettable South Africa tours and safari experiences with Joven Safaris, from wildlife adventures and scenic destinations to luxury travel experiences."
+  canonical="/destinations/south-africa"
+/>
 
 
 

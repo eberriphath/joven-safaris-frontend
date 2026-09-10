@@ -68,7 +68,7 @@ const memories = [
         type: "video",
 
         video:
-        "CLOUDINARY_MEMORY_VIDEO_URL_1",
+        "https://res.cloudinary.com/qnyhrcim/video/upload/v1789003604/WhatsApp_Video_2026-09-10_at_4.19.10_AM_2_ly9vr7.mp4",
 
         alt:"Safari experience video",
     },
@@ -96,7 +96,7 @@ const memories = [
         type: "video",
 
         video:
-        "CLOUDINARY_MEMORY_VIDEO_URL_2",
+        "https://res.cloudinary.com/qnyhrcim/video/upload/v1789003589/WhatsApp_Video_2026-09-10_at_4.19.10_AM_1_joze08.mp4",
 
         alt:"African travel experience",
     },
@@ -110,7 +110,7 @@ const memories = [
         type: "video",
 
         video:
-        "CLOUDINARY_MEMORY_VIDEO_URL_3",
+        "https://res.cloudinary.com/qnyhrcim/video/upload/v1789003556/WhatsApp_Video_2026-09-10_at_4.19.10_AM_ljhkin.mp4",
 
         alt:"Safari adventure",
     },
@@ -225,6 +225,8 @@ return (
                             src={memory.image}
 
                             alt={memory.alt}
+
+                            loading="lazy"
 
                             />
 

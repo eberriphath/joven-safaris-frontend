@@ -1,5 +1,6 @@
 import BookingCTA from "../components/BookingCTA";
 import "./EastAfrica.css";
+import SEO from "../components/SEO";
 
 
 function EastAfrica(){
@@ -44,7 +45,11 @@ function EastAfrica(){
     return(
 
         <>
-
+<SEO
+  title="East Africa Safaris & Tours | Joven Safaris"
+  description="Explore unforgettable East Africa safaris and tours with Joven Safaris, featuring wildlife, culture, landscapes and personalized travel experiences across the region."
+  canonical="/destinations/east-africa"
+/>
 
         {/* HERO */}
 

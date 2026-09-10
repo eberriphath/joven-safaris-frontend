@@ -7,15 +7,15 @@ import "./ExperienceHero.css";
 
 const experienceVideos = [
 
-"CLOUDINARY_VIDEO_URL_1",
+"https://res.cloudinary.com/qnyhrcim/video/upload/v1789003556/WhatsApp_Video_2026-09-10_at_4.19.10_AM_ljhkin.mp4",
 
-"CLOUDINARY_VIDEO_URL_2",
+"https://res.cloudinary.com/qnyhrcim/video/upload/v1789003589/WhatsApp_Video_2026-09-10_at_4.19.10_AM_1_joze08.mp4",
 
-"CLOUDINARY_VIDEO_URL_3",
+"https://res.cloudinary.com/qnyhrcim/video/upload/v1789003604/WhatsApp_Video_2026-09-10_at_4.19.10_AM_2_ly9vr7.mp4",
 
-"CLOUDINARY_VIDEO_URL_4",
+"",
 
-"CLOUDINARY_VIDEO_URL_5"
+""
 
 ];
 

@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import "./Services.css";
+import SEO from "../components/SEO";
 
 function Services() {
   return (
     <main className="services-page">
+      <SEO
+        title="Services | Joven Safaris"
+        description="Explore our premium travel services and enhance your African safari experience."
+        canonical="/services"
+      />
 
       <Navbar />
 

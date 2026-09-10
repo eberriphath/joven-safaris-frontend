@@ -1,9 +1,15 @@
 import "./TermsAndConditions.css";
+import SEO from "../components/SEO";
 
 function TermsAndConditions() {
 
   return (
-
+    <>
+    <SEO
+      title="Terms and Conditions | Joven Safaris"
+      description="Review the terms and conditions for booking and using Joven Safaris services. Understand your rights and responsibilities as a client."
+      canonical="/terms-and-conditions"
+    />
     <main className="terms-page">
 
       <section className="terms-hero">
@@ -456,6 +462,7 @@ function TermsAndConditions() {
       </section>
 
     </main>
+    </>
 
   );
 

@@ -1,10 +1,17 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./PrivacyPolicy.css";
+import SEO from "../components/SEO";
 
 function PrivacyPolicy() {
 return (
-<> <Navbar />
+<> 
+<SEO
+  title="Privacy Policy | Joven Safaris"
+  description="Understand how Joven Safaris collects, uses, and protects your personal data with our comprehensive privacy policy."
+  canonical="/privacy-policy"
+/>
+<Navbar />
 
   <main className="privacy-page">
 

@@ -1,5 +1,6 @@
 import BookingCTA from "../components/BookingCTA";
 import "./Kenya.css";
+import SEO from "../components/SEO";
 
 
 function Kenya(){
@@ -44,7 +45,11 @@ function Kenya(){
 
         <>
 
-
+        <SEO
+            title="Kenya Safaris & Tours | Joven Safaris"
+            description="Explore unforgettable Kenya safaris and tours with Joven Safaris, from wildlife adventures and luxury stays to personalized experiences across Kenya."
+            canonical="/destinations/Kenya"
+        />
 
 
 

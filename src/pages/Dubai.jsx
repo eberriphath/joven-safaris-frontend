@@ -1,5 +1,6 @@
 import BookingCTA from "../components/BookingCTA";
 import "./Dubai.css";
+import SEO from "../components/SEO";
 
 
 function Dubai(){
@@ -84,7 +85,11 @@ function Dubai(){
         <>
 
 
-
+<SEO
+  title="Dubai Travel & Tours | Joven Safaris"
+  description="Discover luxury Dubai travel and tours with Joven Safaris, from unforgettable city experiences to personalized trips and premium travel services."
+  canonical="/destinations/dubai"
+/>
 
 
         {/* =========================

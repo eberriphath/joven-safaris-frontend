@@ -4,43 +4,44 @@ import About from "../components/About";
 import Destinations from "../components/Destinations";
 import Sustainability from "../components/Sustainability";
 import FeaturedPackages from "../components/FeaturedPackages";
-import PackageDetails from "../pages/PackageDetails";
 import Reviews from "../components/Reviews";
 import ReviewForm from "../components/ReviewForm";
 import BookingCTA from "../components/BookingCTA";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 
+function Home() {
+  return (
+    <>
+      <SEO
+        title="Joven Safaris | Luxury African Safaris & Tours"
+        description="Discover unforgettable safari journeys across Kenya, East Africa, South Africa and beyond with Joven Safaris."
+        canonical="/"
+      />
 
-function Home(){
+      <div>
+        <Navbar />
 
-return(
+        <Hero />
 
-<div>
+        <About />
 
-<Navbar/>
+        <Destinations />
 
-<Hero/>
+        <FeaturedPackages />
 
-<About/>
+        <Sustainability />
 
-<Destinations/>
+        <Reviews />
 
-<FeaturedPackages/>
+        <ReviewForm />
 
-<Sustainability/>
+        <BookingCTA />
 
-<Reviews/>
-
-<ReviewForm/>
-
-<BookingCTA/>
-
-<Footer/>
-
-</div>
-
-)
-
+        <Footer />
+      </div>
+    </>
+  );
 }
 
 export default Home;

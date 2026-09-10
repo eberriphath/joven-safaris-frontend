@@ -138,6 +138,8 @@ src={pkg.image_url}
 
 alt={pkg.title}
 
+loading="lazy"
+
 />
 
 
