@@ -20,12 +20,7 @@
 
   padding: 140px 24px 90px;
 
-  background:
-    linear-gradient(
-      rgba(44, 24, 16, 0.82),
-      rgba(44, 24, 16, 0.82)
-    ),
-    url("/images/safari-landscape.jpg");
+  background: #2c1810;
 
   background-size: cover;
   background-position: center;

@@ -9,6 +9,7 @@ import ReviewForm from "../components/ReviewForm";
 import BookingCTA from "../components/BookingCTA";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
+import StructuredData from "../components/StructuredData";
 
 function Home() {
   return (
@@ -18,6 +19,8 @@ function Home() {
         description="Discover unforgettable safari journeys across Kenya, East Africa, South Africa and beyond with Joven Safaris."
         canonical="/"
       />
+
+      <StructuredData />
 
       <div>
         <Navbar />

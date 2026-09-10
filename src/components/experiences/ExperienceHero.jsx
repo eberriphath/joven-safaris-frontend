@@ -13,10 +13,6 @@ const experienceVideos = [
 
 "https://res.cloudinary.com/qnyhrcim/video/upload/v1789003604/WhatsApp_Video_2026-09-10_at_4.19.10_AM_2_ly9vr7.mp4",
 
-"",
-
-""
-
 ];
 
 function ExperienceHero() {
@@ -78,6 +74,8 @@ return (
                 muted
                 loop
                 playsInline
+                preload="metadata"
+                aria-hidden="true"
 
             >
 

@@ -11,7 +11,7 @@ function Experiences() {
     <>
       <SEO
         title="Experiences | Joven Safaris"
-        description="Explore unique experiences and adventures with Joven Safaris."
+        description="Explore unforgettable safari experiences, Wildlife encounters, and cultural adventures with Joven Safaris. Discover the beauty of Africa through our curated safari journeys."
         canonical="/experiences"
       />
       <Navbar />

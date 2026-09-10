@@ -97,6 +97,7 @@ key={index}
 <img
 src={destination.image}
 alt={destination.name}
+loading="lazy"
 />
 
 

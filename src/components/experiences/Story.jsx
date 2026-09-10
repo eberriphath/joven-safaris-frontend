@@ -26,6 +26,8 @@ function Story() {
 
             className="story-image"
 
+            loading="lazy"
+
           />
 
 
