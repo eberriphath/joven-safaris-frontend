@@ -8,29 +8,8 @@ const heroMedia = [
     alt: "Safari adventure",
   },
   {
-    type: "video",
-    src: "https://res.cloudinary.com/qnyhrcim/video/upload/v1789003604/WhatsApp_Video_2026-09-10_at_4.19.10_AM_2_ly9vr7.mp4",
-  },
-  {
-    type: "video",
-    src: "https://res.cloudinary.com/qnyhrcim/video/upload/v1789003589/WhatsApp_Video_2026-09-10_at_4.19.10_AM_1_joze08.mp4",
-  },
-  {
     type: "image",
     src: "https://res.cloudinary.com/qnyhrcim/image/upload/v1788272582/ee1e3369-7fd5-45ae-91cf-ee442356b3b9_C1E3ED4C-A762-44F9-9536-06310A72EF64_jgxpol.jpg",
-  },
-  {
-    type: "video",
-    src: "https://res.cloudinary.com/qnyhrcim/video/upload/v1789003556/WhatsApp_Video_2026-09-10_at_4.19.10_AM_ljhkin.mp4",
-  },
-  {
-    type: "image",
-    src: "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=80",
-    alt: "Safari adventure",
-
-    type: "image",
-    src: "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=80",
-    alt: "Safari adventure",
   },
 ];
 
