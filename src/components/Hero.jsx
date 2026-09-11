@@ -11,6 +11,11 @@ const heroMedia = [
     type: "image",
     src: "https://res.cloudinary.com/qnyhrcim/image/upload/v1788272582/ee1e3369-7fd5-45ae-91cf-ee442356b3b9_C1E3ED4C-A762-44F9-9536-06310A72EF64_jgxpol.jpg",
   },
+  {
+    type: "image",
+    src: "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=80",
+    alt: "Elephant pictures",
+  }
 ];
 
 function Hero() {
