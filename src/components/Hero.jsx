@@ -4,18 +4,19 @@ import { Link } from "react-router-dom";
 const heroMedia = [
   {
     type: "image",
-    src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=80",
+    src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1920&q=85",
     alt: "Safari adventure",
   },
   {
     type: "image",
-    src: "https://res.cloudinary.com/qnyhrcim/image/upload/v1788272582/ee1e3369-7fd5-45ae-91cf-ee442356b3b9_C1E3ED4C-A762-44F9-9536-06310A72EF64_jgxpol.jpg",
+    src: "https://res.cloudinary.com/qnyhrcim/image/upload/f_auto,q_auto,w_1920/v1788272582/ee1e3369-7fd5-45ae-91cf-ee442356b3b9_C1E3ED4C-A762-44F9-9536-06310A72EF64_jgxpol.jpg",
+    alt: "Joven Safaris travel experience",
   },
   {
     type: "image",
-    src: "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=80",
-    alt: "Elephant pictures",
-  }
+    src: "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1920&q=85",
+    alt: "Elephants on safari",
+  },
 ];
 
 function Hero() {
@@ -34,6 +35,15 @@ function Hero() {
       return () => clearTimeout(timer);
     }
   }, [currentMedia, media.type]);
+
+  useEffect(() => {
+  heroMedia.slice(1).forEach((item) => {
+    if (item.type === "image") {
+      const img = new Image();
+      img.src = item.src;
+    }
+  });
+}, []);
 
   const handleVideoEnded = () => {
     setCurrentMedia(
@@ -68,7 +78,9 @@ function Hero() {
             key={media.src}
             className="hero-media"
             src={media.src}
-            alt=""
+            alt={media.alt}
+            fetchpriority="high"
+            decoding="async"
           />
 
         )}
