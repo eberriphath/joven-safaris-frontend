@@ -1,0 +1,529 @@
+
+/* =========================================
+   JOVEN SAFARIS NAVBAR
+   ========================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  transition:
+    background-color 500ms ease,
+    box-shadow 500ms ease,
+    backdrop-filter 500ms ease;
+}
+
+.navbar--transparent {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.navbar--solid {
+  background-color: rgba(250, 246, 238, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(44, 24, 16, 0.1);
+}
+
+.navbar__container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================================
+   BRAND
+   ========================================= */
+
+.navbar__logo {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: color 300ms ease;
+}
+
+.navbar--transparent .navbar__logo {
+  color: #ffffff;
+}
+
+.navbar--solid .navbar__logo {
+  color: #2c1810;
+}
+
+.navbar__logo-accent {
+  color: #2d5016;
+}
+
+/* =========================================
+   DESKTOP NAVIGATION
+   ========================================= */
+
+.navbar__desktop-menu {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar__desktop-link {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #2c1810;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 300ms ease;
+}
+
+.navbar__desktop-link:hover {
+  color: #c4873a;
+}
+
+.navbar__link-underline {
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #c4873a;
+  transition: width 300ms ease;
+}
+
+.navbar__desktop-link:hover .navbar__link-underline {
+  width: 100%;
+}
+
+/* Desktop booking button */
+
+.navbar__book-button {
+  width: 9rem;
+  height: 2.75rem;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  background-color: #2c1810;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+.navbar--transparent .navbar__book-button {
+  background-color: #d4a940;
+  color: #2c1810;
+}
+
+.navbar--transparent .navbar__book-button:hover {
+  background-color: #ffffff;
+}
+
+.navbar--solid .navbar__book-button:hover {
+  background-color: #c4873a;
+}
+
+/* =========================================
+   MOBILE MENU TOGGLE
+   ========================================= */
+
+.navbar__menu-toggle {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(44, 24, 16, 0.15);
+  border-radius: 50%;
+  background: transparent;
+  color: #2c1810;
+  cursor: pointer;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease,
+    border-color 300ms ease;
+}
+
+.navbar--transparent .navbar__menu-toggle:not(
+  .navbar__menu-toggle--open
+) {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.navbar__menu-toggle:hover {
+  background-color: rgba(196, 135, 58, 0.1);
+}
+
+.navbar--transparent .navbar__menu-toggle:not(
+  .navbar__menu-toggle--open
+):hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar__menu-symbol {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.navbar__menu-toggle--open .navbar__menu-symbol {
+  font-size: 1.5rem;
+}
+
+/* =========================================
+   MOBILE DRAWER BACKDROP
+   ========================================= */
+
+.navbar__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background-color: rgba(32, 21, 15, 0.55);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 300ms ease,
+    visibility 300ms ease;
+}
+
+.navbar__backdrop--visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* =========================================
+   MOBILE SIDE DRAWER
+   ========================================= */
+
+.navbar__drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 70;
+  width: 88%;
+  max-width: 400px;
+  height: 100vh;
+  height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+
+  /* Improved drawer spacing */
+  padding: 2rem;
+  padding-bottom: 2rem;
+
+  background-color: #faf6ee;
+  color: #302017;
+  box-shadow: -12px 0 36px rgba(0, 0, 0, 0.12);
+
+  overflow-y: auto;
+  overscroll-behavior: contain;
+
+  transform: translateX(100%);
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    transform 300ms ease-out,
+    visibility 300ms ease-out;
+}
+
+.navbar__drawer--open {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* =========================================
+   DRAWER HEADER
+   ========================================= */
+
+.navbar__drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  /* Improved separation below header */
+  padding-bottom: 1.75rem;
+
+  border-bottom: 1px solid rgba(48, 32, 23, 0.15);
+}
+
+.navbar__drawer-brand {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.navbar__drawer-logo {
+  color: #302017;
+  font-size: 1.5625rem;
+  font-weight: 600;
+  letter-spacing: -1.2px;
+  line-height: 1.3;
+}
+
+.navbar__drawer-logo span {
+  color: #617653;
+}
+
+.navbar__drawer-tagline {
+  margin-top: 0.125rem;
+  color: #8b7966;
+  font-size: 0.5625rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.navbar__close-button {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(48, 32, 23, 0.15);
+  border-radius: 50%;
+  background: transparent;
+  color: #302017;
+  cursor: pointer;
+
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+.navbar__close-button:hover {
+  background-color: #302017;
+  color: #faf6ee;
+}
+
+/* =========================================
+   MOBILE NAVIGATION LINKS
+   ========================================= */
+
+.navbar__mobile-navigation {
+  margin-top: 3rem;
+}
+
+.navbar__eyebrow {
+  margin: 0 0 1.25rem;
+  color: #a27b43;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.navbar__mobile-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar__mobile-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  /* Improved, consistent tap area */
+  padding: 1.25rem 0;
+
+  border: 0;
+  border-bottom: 1px solid rgba(48, 32, 23, 0.1);
+  background: transparent;
+  color: #302017;
+
+  font-family: inherit;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  letter-spacing: -0.3px;
+  text-align: left;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: color 200ms ease;
+}
+
+.navbar__mobile-link:hover {
+  color: #71845f;
+}
+
+.navbar__mobile-link:last-child {
+  border-bottom: 0;
+}
+
+/* =========================================
+   FLEXIBLE SPACE
+   ========================================= */
+
+.navbar__drawer-spacer {
+  flex: 1;
+  min-height: 2rem;
+}
+
+/* =========================================
+   MOBILE BOOKING CTA
+   ========================================= */
+
+.navbar__drawer-cta {
+  min-height: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  /* Improved internal button spacing */
+  padding: 0 1.5rem;
+
+  background-color: #302017;
+  color: #faf6ee;
+
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+
+  transition: background-color 200ms ease;
+}
+
+.navbar__drawer-cta:hover {
+  background-color: #443024;
+}
+
+.navbar__cta-arrow {
+  color: #d2b176;
+  font-size: 1.4375rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* =========================================
+   DRAWER FOOTER
+   ========================================= */
+
+.navbar__drawer-footer {
+  margin: 1.75rem 0 0;
+
+  /* Improved footer spacing */
+  padding: 0 0.5rem;
+
+  color: #8b7966;
+  font-size: 0.625rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.navbar__drawer-footer span {
+  padding: 0 0.25rem;
+  color: #b99a65;
+}
+
+/* =========================================
+   RESPONSIVE LAYOUT
+   ========================================= */
+
+@media (min-width: 640px) {
+  .navbar__container {
+    padding: 1.5rem 2rem;
+  }
+
+  .navbar__drawer {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar__container {
+    padding: 1.5rem;
+  }
+
+  .navbar__desktop-menu {
+    display: flex;
+  }
+
+  .navbar__menu-toggle,
+  .navbar__backdrop,
+  .navbar__drawer {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .navbar__container {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+/* Keep the drawer usable on short mobile screens */
+@media (max-height: 600px) {
+  .navbar__drawer {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .navbar__mobile-navigation {
+    margin-top: 1.5rem;
+  }
+
+  .navbar__mobile-link {
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+  }
+
+  .navbar__drawer-spacer {
+    min-height: 1rem;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .navbar__desktop-link,
+  .navbar__link-underline,
+  .navbar__book-button,
+  .navbar__menu-toggle,
+  .navbar__backdrop,
+  .navbar__drawer,
+  .navbar__mobile-link,
+  .navbar__drawer-cta,
+  .navbar__close-button {
+    transition: none;
+  }
+}

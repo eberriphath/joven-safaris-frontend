@@ -1,793 +1,289 @@
+
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
+import "./Navbar.css";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
+  const location = useLocation();
+  const navigate = useNavigate();
 
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+  const isHome = location.pathname === "/";
 
-
-    const location = useLocation();
-
-    const navigate = useNavigate();
-
-
-    const isHome = location.pathname === "/";
-
-
-
-
-
-    useEffect(() => {
-
-
-        function handleScroll(){
-
-            setScrolled(window.scrollY > 60);
-
-        }
-
-
-        window.addEventListener(
-            "scroll",
-            handleScroll
-        );
-
-
-        handleScroll();
-
-
-        return () => {
-
-            window.removeEventListener(
-                "scroll",
-                handleScroll
-            );
-
-        };
-
-
-    }, []);
-
-
-
-
-
-
-
-
-
-    function handleScrollLink(section){
-
-
-        setMenuOpen(false);
-
-
-
-        if(isHome){
-
-
-            document
-            .getElementById(section)
-            ?.scrollIntoView({
-                behavior:"smooth"
-            });
-
-
-        }
-
-        else{
-
-
-            navigate("/");
-
-
-            setTimeout(()=>{
-
-
-                document
-                .getElementById(section)
-                ?.scrollIntoView({
-                    behavior:"smooth"
-                });
-
-
-            },300);
-
-
-        }
-
-
+  useEffect(() => {
+    function handleScroll() {
+      setScrolled(window.scrollY > 60);
     }
 
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
+  // Close the drawer on Escape and lock background scrolling.
+  useEffect(() => {
+    if (!menuOpen) return;
 
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
 
+    function handleKeyDown(event) {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    }
 
+    window.addEventListener("keydown", handleKeyDown);
 
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [menuOpen]);
 
+  function handleScrollLink(section) {
+    setMenuOpen(false);
 
-    const links = [
+    if (isHome) {
+      document.getElementById(section)?.scrollIntoView({
+        behavior: "smooth",
+      });
+    } else {
+      navigate("/");
 
+      setTimeout(() => {
+        document.getElementById(section)?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }, 300);
+    }
+  }
 
-        {
-            name:"Destinations",
-            section:"destinations",
-            type:"scroll"
-        },
+  const links = [
+    {
+      name: "Destinations",
+      section: "destinations",
+      type: "scroll",
+    },
+    {
+      name: "Experiences",
+      path: "/experiences",
+      type: "page",
+    },
+    {
+      name: "Services",
+      path: "/services",
+      type: "page",
+    },
+    {
+      name: "Sustainability",
+      section: "sustainability",
+      type: "scroll",
+    },
+    {
+      name: "Contact",
+      section: "footer",
+      type: "scroll",
+    },
+  ];
 
+  const navbarTheme =
+    isHome && !scrolled ? "navbar--transparent" : "navbar--solid";
 
-        {
-            name:"Experiences",
-            path:"/experiences",
-            type:"page"
-        },
+  return (
+    <>
+      <nav className={`navbar ${navbarTheme}`}>
+        <div className="navbar__container">
+          {/* LOGO */}
+          <Link to="/" className="navbar__logo">
+            Joven
+            <span className="navbar__logo-accent"> Safaris</span>
+          </Link>
 
-
-        {
-            name:"Services",
-            path:"/services",
-            type:"page"
-        },
-
-
-        {
-            name:"Sustainability",
-            section:"sustainability",
-            type:"scroll"
-        },
-
-
-        {
-            name:"Contact",
-            section:"footer",
-            type:"scroll"
-        }
-
-
-    ];
-
-
-
-
-
-
-
-
-    return (
-
-
-
-        <nav
-
-        className={`
-
-        fixed
-        top-0
-        left-0
-        w-full
-        z-50
-        transition-all
-        duration-500
-
-
-        ${
-            isHome && !scrolled
-
-            ?
-
-            "bg-transparent"
-
-            :
-
-            "bg-[#FAF6EE]/95 backdrop-blur shadow-md"
-
-        }
-
-
-        `}
-
-        >
-
-
-
-
-
-
-
-            <div
-
-            className="
-            max-w-7xl
-            mx-auto
-            px-6
-            py-6
-            flex
-            items-center
-            justify-between
-            "
-
-            >
-
-
-
-
-
-
-
-                {/* LOGO */}
-
-
+          {/* DESKTOP MENU */}
+          <div className="navbar__desktop-menu">
+            {links.map((link) =>
+              link.type === "scroll" ? (
+                <button
+                  key={link.name}
+                  onClick={() => handleScrollLink(link.section)}
+                  className="navbar__desktop-link"
+                >
+                  {link.name}
+                  <span className="navbar__link-underline" />
+                </button>
+              ) : (
                 <Link
-
-                to="/"
-
-                className={`
-
-                text-4xl
-                font-serif
-                font-bold
-                transition-colors
-                duration-300
-
-
-                ${
-                    isHome && !scrolled
-
-                    ?
-
-                    "text-white"
-
-                    :
-
-                    "text-[#2C1810]"
-
-                }
-
-                `}
-
+                  key={link.name}
+                  to={link.path}
+                  className="navbar__desktop-link"
                 >
-
-
-                    Joven
-
-
-                    <span className="text-[#2D5016]">
-
-                        Safaris
-
-                    </span>
-
-
+                  {link.name}
+                  <span className="navbar__link-underline" />
                 </Link>
+              )
+            )}
 
+            {/* DESKTOP BOOK BUTTON */}
+            <Link to="/book-now" className="navbar__book-button">
+              Book Now
+            </Link>
+          </div>
 
+          {/* MOBILE MENU BUTTON */}
+          <button
+            type="button"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={
+              menuOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+            }
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            className={`navbar__menu-toggle ${
+              menuOpen ? "navbar__menu-toggle--open" : ""
+            }`}
+          >
+            {menuOpen ? (
+              <span className="navbar__menu-symbol" aria-hidden="true">
+                &times;
+              </span>
+            ) : (
+              <span className="navbar__menu-symbol" aria-hidden="true">
+                ☰
+              </span>
+            )}
+          </button>
+        </div>
+      </nav>
 
+      {/* MOBILE DRAWER BACKDROP */}
+      <div
+        aria-hidden="true"
+        onClick={() => setMenuOpen(false)}
+        className={`navbar__backdrop ${
+          menuOpen ? "navbar__backdrop--visible" : ""
+        }`}
+      />
 
+      {/* MOBILE SIDE DRAWER */}
+      <aside
+        id="mobile-navigation"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation"
+        aria-hidden={!menuOpen}
+        className={`navbar__drawer ${
+          menuOpen ? "navbar__drawer--open" : ""
+        }`}
+      >
+        {/* DRAWER HEADER */}
+        <div className="navbar__drawer-header">
+          <Link
+            to="/"
+            onClick={() => setMenuOpen(false)}
+            className="navbar__drawer-brand"
+          >
+            <span className="navbar__drawer-logo">
+              Joven <span>Safaris</span>
+            </span>
 
+            <span className="navbar__drawer-tagline">
+              Safaris &amp; Tours
+            </span>
+          </Link>
 
+          {/* CLOSE BUTTON */}
+          <button
+            type="button"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close navigation menu"
+            tabIndex={menuOpen ? 0 : -1}
+            className="navbar__close-button"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="19"
+              height="19"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
 
+        {/* MINIMALIST NAVIGATION */}
+        <div className="navbar__mobile-navigation">
+          <p className="navbar__eyebrow">
+            Discover your next journey
+          </p>
 
-
-
-
-
-
-                {/* DESKTOP MENU */}
-
-
-
-                <div
-
-                className="
-                hidden
-                md:flex
-                items-center
-                gap-8
-                "
-
-                >
-
-
-
-
-
-                {
-
-
-                links.map((link)=>(
-
-
-
-                    link.type === "scroll"
-
-
-                    ?
-
-
-
-
-                    <button
-
+          <nav aria-label="Main mobile navigation">
+            <div className="navbar__mobile-links">
+              {links.map((link) => {
+                return link.type === "scroll" ? (
+                  <button
                     key={link.name}
-
-                    onClick={()=>handleScrollLink(link.section)}
-
-                    className="
-
-                    group
-                    relative
-                    text-base
-                    font-medium
-                    transition
-                    text-[#2C1810]
-                    hover:text-[#C4873A]
-
-                    "
-
-                    >
-
-
-                        {link.name}
-
-
-
-                        <span
-
-                        className="
-
-                        absolute
-                        left-0
-                        -bottom-2
-                        h-[2px]
-                        w-0
-                        bg-[#C4873A]
-                        transition-all
-                        duration-300
-                        group-hover:w-full
-
-                        "
-
-                        ></span>
-
-
-
-                    </button>
-
-
-
-
-
-                    :
-
-
-
-
-
-                    <Link
-
+                    type="button"
+                    tabIndex={menuOpen ? 0 : -1}
+                    onClick={() => handleScrollLink(link.section)}
+                    className="navbar__mobile-link"
+                  >
+                    {link.name}
+                  </button>
+                ) : (
+                  <Link
                     key={link.name}
-
                     to={link.path}
-
-                    className="
-
-                    group
-                    relative
-                    text-base
-                    font-medium
-                    transition
-                    text-[#2C1810]
-                    hover:text-[#C4873A]
-
-                    "
-
-                    >
-
-
-                        {link.name}
-
-
-
-                        <span
-
-                        className="
-
-                        absolute
-                        left-0
-                        -bottom-2
-                        h-[2px]
-                        w-0
-                        bg-[#C4873A]
-                        transition-all
-                        duration-300
-                        group-hover:w-full
-
-                        "
-
-                        ></span>
-
-
-
-                    </Link>
-
-
-
-
-                ))
-
-                }
-
-
-
-
-
-
-
-
-
-                    {/* BOOK BUTTON */}
-
-
-
-                    <Link
-
-                    to="/book-now"
-
-
-                    className={`
-
-
-                    ml-4
-                    w-36
-                    h-11
-                    rounded-md
-                    font-semibold
-                    text-sm
-                    uppercase
-                    tracking-[0.15em]
-                    flex
-                    items-center
-                    justify-center
-                    shadow-md
-                    transition-all
-                    duration-300
-
-
-
-                    ${
-
-
-                    isHome && !scrolled
-
-
-                    ?
-
-
-                    "bg-[#D4A940] text-[#2C1810] hover:bg-white"
-
-
-                    :
-
-
-                    "bg-[#2C1810] text-white hover:bg-[#C4873A]"
-
-
-                    }
-
-
-                    `}
-
-
-                    >
-
-
-                        Book Now
-
-
-                    </Link>
-
-
-
-
-                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                {/* MOBILE BUTTON */}
-
-
-
-                <button
-
-
-                onClick={()=>setMenuOpen(!menuOpen)}
-
-
-                className={`
-
-
-                md:hidden
-                text-2xl
-                transition-colors
-                duration-300
-
-
-
-                ${
-
-
-                isHome && !scrolled
-
-
-                ?
-
-
-                "text-white"
-
-
-                :
-
-
-                "text-[#2C1810]"
-
-
-                }
-
-
-                `}
-
-
-                >
-
-
-
-                    {
-
-                    menuOpen
-
-                    ?
-
-                    "✕"
-
-                    :
-
-                    "☰"
-
-                    }
-
-
-
-                </button>
-
-
-
-
-
-
-
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-            {/* MOBILE MENU */}
-
-
-
-            <div
-
-
-            className={`
-
-
-            absolute
-            top-full
-            left-0
-            w-full
-            md:hidden
-            bg-[#FAF6EE]
-            shadow-lg
-            px-6
-            py-8
-            space-y-6
-            transition-all
-            duration-300
-
-
-
-            ${
-
-
-            menuOpen
-
-
-            ?
-
-
-            "opacity-100 translate-y-0"
-
-
-            :
-
-
-            "opacity-0 -translate-y-5 pointer-events-none"
-
-
-            }
-
-
-            `}
-
-
-            >
-
-
-
-
-
-
-            {
-
-
-            links.map((link)=>(
-
-
-                link.type === "scroll"
-
-
-
-                ?
-
-
-
-                <button
-
-                key={link.name}
-
-                onClick={()=>handleScrollLink(link.section)}
-
-                className="
-
-                block
-                text-[#2C1810]
-                font-medium
-                hover:text-[#C4873A]
-
-                "
-
-                >
-
+                    tabIndex={menuOpen ? 0 : -1}
+                    onClick={() => setMenuOpen(false)}
+                    className="navbar__mobile-link"
+                  >
                     {link.name}
-
-
-                </button>
-
-
-
-
-                :
-
-
-
-
-
-                <Link
-
-                key={link.name}
-
-                to={link.path}
-
-                onClick={()=>setMenuOpen(false)}
-
-                className="
-
-                block
-                text-[#2C1810]
-                font-medium
-                hover:text-[#C4873A]
-
-                "
-
-                >
-
-                    {link.name}
-
-
-                </Link>
-
-
-
-            ))
-
-            }
-
-
-
-
-
-
-
-                {/* MOBILE BOOK BUTTON */}
-
-
-
-                <Link
-
-                to="/book-now"
-
-                onClick={()=>setMenuOpen(false)}
-
-                className="
-
-                block
-                w-full
-                text-center
-                bg-[#C4873A]
-                text-white
-                py-4
-                rounded-md
-                font-semibold
-                text-sm
-                uppercase
-                tracking-[0.15em]
-                shadow-md
-                hover:bg-[#2C1810]
-                transition-all
-                duration-300
-
-                "
-
-                >
-
-                    Book Now
-
-
-                </Link>
-
-
-
-
-
-
+                  </Link>
+                );
+              })}
             </div>
+          </nav>
+        </div>
 
+        {/* FLEXIBLE SPACE */}
+        <div className="navbar__drawer-spacer" />
 
+        {/* BOOKING CALL TO ACTION */}
+        <Link
+          to="/book-now"
+          tabIndex={menuOpen ? 0 : -1}
+          onClick={() => setMenuOpen(false)}
+          className="navbar__drawer-cta"
+        >
+          <span>Plan Your Safari</span>
 
+          <span className="navbar__cta-arrow" aria-hidden="true">
+            →
+          </span>
+        </Link>
 
-
-
-        </nav>
-
-
-
-    );
-
-
+        {/* DRAWER FOOTER */}
+        <p className="navbar__drawer-footer">
+          Adventure <span>·</span> Comfort <span>·</span> Discovery
+        </p>
+      </aside>
+    </>
+  );
 }
-
-
 
 export default Navbar;
