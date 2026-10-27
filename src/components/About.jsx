@@ -35,7 +35,7 @@ loading="lazy"
 <div className="about-badge">
 
 <h3>
-10+
+5+
 </h3>
 
 <p>
